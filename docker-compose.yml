@@ -1,0 +1,9 @@
+version: '3'
+services:
+  erddap:
+    image: axiom/docker-erddap
+    ports:
+    - "8080:8080"
+    volumes:
+    - ./content/erddap:/usr/local/tomcat/content/erddap
+    - ./kiatest:/erddapData
