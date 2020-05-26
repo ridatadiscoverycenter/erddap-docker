@@ -86,3 +86,4 @@ Use netcat to test if this works:
     </servlet-mapping>
 
 <!-- JSPC servlet mappings end -->
+</web-app>

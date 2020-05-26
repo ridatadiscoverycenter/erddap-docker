@@ -1,11 +1,10 @@
 version: '3'
 services:
   erddap:
-    build: docker-erddap
+    image: axiom/docker-erddap
     ports:
-    - 8080:8080
+    - "127.0.0.1:8080:8080"
     volumes:
-    - ./content/erddap:/usr/local/tomcat/content/erddap
-    - ./kiatest:/erddapData
-    - ./raw:/raw
-    - ./config/web.xml:/usr/local/tomcat/WEB-INF/web.xml
+      - ./content/erddap:/usr/local/tomcat/content/erddap
+      - /isilon_erddap/kiatest:/erddapData
+      - ${PWD}/config/web.xml:/usr/local/tomcat/webapps/erddap/WEB-INF/web.xml

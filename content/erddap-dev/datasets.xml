@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<erddapDatasets>
+<!-- GENERAL INFORMATION
+The information in this file specifies which datasets your ERDDAP will serve.
+The initial version of this file has a few examples which should work for you.
+But after your initial experiments with ERDDAP, 
+you should replace them with information for your datasets.
+
+You can change this document (e.g., add datasets, change metadata) while ERDDAP is running. 
+The changes will be detected the next time this document is read
+(as often as setup.xml loadDatasetsMinMinutes).
+
+Each dataset has a reloadEveryNMinutes value (default = 10080 (one week)).
+When this document is reread, datasets that haven't been been reloaded in 
+their reloadEveryNMinutes will be reloaded.
+You only need to specify a reloadEveryNMinutes value if you anticipate that
+the dataset will change periodically.
+
+If this document has an xml error, processing will stop and an email
+will be sent to emailEverythingTo as specified in setup.xml.
+
+If you want to remove a dataset while ERDDAP is running, add 
+    active="false"
+to the dataset tag.  For example,
+    <dataset type="EDDGridFromDap" datasetID="erdMHchla8day" active="false">
+
+For more information, see 
+https://coastwatch.pfel.noaa.gov/erddap/download/setupDatasetsXml.html
+-->
+
+<!-- If you want to refuse requests from certain clients
+  (e.g., to fend off a Denial of Service attack or an overly zealous web robot), 
+  add their numeric IP address (e.g., 123.45.67.89) to this comma-separated list. 
+  You can also replace the last number in an IP address with * to block 0-255 (e.g., 123.45.67.*).
+  See your ERDDAP daily report for a list/tally of the most active requesters. -->
+<requestBlacklist></requestBlacklist>
+
+<!-- Blacklisted IP addresses often have troublesome scripts that make
+rapid-fire, repeated, bad requests.
+With this setting, you can slow down the response to blacklisted IP addresses 
+or other failed requests by some number of milliseconds. 
+Recommendations:
+* If the trouble is a Distributed Denial Of Service (DDOS) attack from 100+
+  attackers, set this to a smaller number (0? 10? 100?).
+  Slowing them all down for too long leads to too many waiting threads.
+* If the trouble is from 1-10 sources, set this to 1000 ms (the default).
+  That slows them down so they waste fewer network resources.
+  Also, 1000 ms won't annoy human users who make a bad request.
+-->
+<slowDownTroubleMillis>1000</slowDownTroubleMillis>
+
+<!-- If you want to prevent specific people from using the email/URL subscription
+     system, add their email addresses to this comma-separated list. 
+     You can use the name "*" to blacklist an entire domain, e.g., *@example.com .
+-->
+<subscriptionEmailBlacklist>your.email@yourinstitution.edu, some.name@company.com, 
+another.name@company.com, *@example.com</subscriptionEmailBlacklist>
+
+<!-- For security reasons and reasons related to the subscription system, DON'T USE THIS!
+Instead, always use the public domain name in the <sourceUrl> tag
+and use the /etc/hosts table on your server to convert local domain names 
+to IP numbers without using a DNS server. 
+(see http://man7.org/linux/man-pages/man5/hosts.5.html )
+You can test if a domain name is properly converted into an IP # by using:
+  ping some.domain.name
+
+But if you insist:
+You can use <convertToPublicSourceUrl> tags to convert the local sourceUrl 
+(used in dataset tags) into the public sourceUrl (which appears in a 
+dataset's globalAttributes).
+This is only needed if some datasets use non-public sourceUrl's
+(usually because their computer is in your DMZ or a local LAN). 
+'from' and 'to' are the start of the URLs and are case sensitive.
+'from' must be '[something]//[something]/' . 
+For example,
+<convertToPublicSourceUrl from="http://192.168.31.18/" to="http://oceanwatch.pfeg.noaa.gov/" />
+will cause a matching local sourceUrl (such as http://192.168.31.18/thredds/dodsC/satellite/BA/ssta/5day)
+into a public sourceUrl (http://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite/BA/ssta/5day). 
+-->
+
+<dataset type="EDDTableFromNcFiles" datasetID="raw_59d1_0a18_37ba" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/raw/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>false</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <preExtractRegex/>
+    <postExtractRegex/>
+    <extractRegex/>
+    <columnNameForExtract/>
+    <sortedColumnSourceName>time</sortedColumnSourceName>
+    <sortFilesBySourceNames>time</sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <addAttributes>
+        <att name="alt_label">QP</att>
+        <att name="date_created">2020-05-04</att>
+        <att name="date_issued">2020-05-04</att>
+        <att name="label">B7</att>
+        <att name="lat" type="double">41.5903</att>
+        <att name="lon" type="double">-71.38</att>
+        <att name="long_name">Quonset Pt</att>
+        <att name="status" type="long">1</att>
+        <att name="time_coverage_end">2012-10-27T23:45:00Z</att>
+        <att name="time_coverage_start">2005-07-29T10:15:00Z</att>
+        <att name="cdm_data_type">Timeseries</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="infoUrl">https://ridatadiscovery.org</att>
+        <att name="institution">Brown</att>
+        <att name="keywords">data, latitude, longitude, name, quonset, station, station_name</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="summary">Quonset Pt. Data from a local source.</att>
+        <att name="title">Quonset Pt</att>
+        <att name="cdm_timeseries_variables">station_name, longitude, latitude, SalinitySurface</att>
+        <att name="subsetVariables">station_name, longitude, latitude, SalinitySurface</att>
+    </addAttributes>
+    <dataVariable>
+    <sourceName>time</sourceName>
+    <destinationName>time</destinationName>
+    <dataType>long</dataType>
+    <addAttributes>
+      <att name="long_name">Time</att>
+      <att name="standard_name">time</att>
+    </addAttributes>
+  </dataVariable>
+    <dataVariable>
+        <sourceName>station_name</sourceName>
+        <destinationName>station_name</destinationName>
+        <dataType>String</dataType>
+        <addAttributes>
+            <att name="long_name">station name</att>
+            <att name="standard_name">station_name</att>
+            <att name="cf_role">timeseries_id</att>
+        </addAttributes>
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="long_name">Latitude</att>
+            <att name="short_name">lat</att>
+            <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="long_name">Longitude</att>
+            <att name="short_name">lon</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degrees_east</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinitySurface</sourceName>
+        <destinationName>SalinitySurface</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="long_name">Surface Salinity Sea Water Salinity</att>
+            <att name="short_name">SalinitySurface</att>
+            <att name="standard_name">sea_water_salinity</att>
+            <att name="units">ppt</att>
+            <!-- <att name="colorBarMaximum" type="double">180.0</att>
+            <att name="colorBarMinimum" type="double">-180.0</att> -->
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<dataset type="EDDTableFromNcFiles" datasetID="combined_e784_bee5_492e" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/raw/combined/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <sortedColumnSourceName>time</sortedColumnSourceName>
+    <sortFilesBySourceNames>time</sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="alt_label">NP</att>
+        <att name="date_created">2020-05-11</att>
+        <att name="date_issued">2020-05-11</att>
+        <att name="label">B2</att>
+        <att name="lat" type="double">41.6708</att>
+        <att name="lon" type="double">-71.3549</att>
+        <att name="long_name">North Prudence</att>
+        <att name="status" type="long">1</att>
+        <att name="time_coverage_end">2012-10-31T23:45:00Z</att>
+        <att name="time_coverage_start">2003-06-06T09:47:34Z</att>
+    </sourceAttributes -->
+    <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
+        <att name="cdm_timeseries_variables">station_id, longitude, latitude</att>
+        <att name="subsetVariables">station_id, longitude, latitude</att>
+    -->
+    <addAttributes>
+        <att name="cdm_data_type">Timeseries</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="infoUrl">ridatadiscovery.org</att>
+        <att name="institution">Rhode Island Data Discovery</att>
+        <att name="keywords">bottom, chemistry, chlorophyll, ChlorophyllSurface, concentration, cond, conductivity, data, density, depth, DepthBottom, dissolved, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Oxygen, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; pH, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Conductivity, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, electrical, fractional, fractional_saturation_of_oxygen_in_sea_water, FSpercentSurface, mass, mass_concentration_of_chlorophyll_in_sea_water, mass_concentration_of_oxygen_in_sea_water, north, O2, O2PercentSurface, O2Surface, ocean, oceans, oxygen, percent, pHBottom, pHSurface, practical, prudence, reported, salinity, SalinityBottom, SalinitySurface, sample, saturated, saturation, scale, science, sea, sea_water_electrical_conductivity, sea_water_ph_reported_on_total_scale, sea_water_practical_salinity, sea_water_temperature, seawater, SpCondBottom, SpCondSurface, surface, temperature, time, total, turbidity, TurbidityBottom, water, WaterTempBottom, WaterTempSurface</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="summary">RI Buoy Data.</att>
+        <att name="title">RI Buoy Data</att>
+        <att name="cdm_timeseries_variables">O2PercentSurface,SalinityBottom,pHBottom,DepthBottom,TurbidityBottom,ChlorophyllSurface,pHSurface,SpCondSurface,SpCondBottom,FSpercentSurface,WaterTempBottom,O2Surface,WaterTempSurface,SalinitySurface</att>
+    </addAttributes>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>int</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="int">-999</att>
+            <att name="calendar">gregorian</att>
+            <att name="cf_role">timeseries_id</att>
+            <att name="long_name">UTC Sample Time</att>
+            <att name="short_name">time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+        <dataVariable>
+        <sourceName>station_name</sourceName>
+        <destinationName>station_name</destinationName>
+        <dataType>String</dataType>
+        <addAttributes>
+            <att name="long_name">station name</att>
+            <att name="standard_name">station_name</att>
+        </addAttributes>
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2PercentSurface</sourceName>
+        <destinationName>O2PercentSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Percent Oxygen Saturated Dissolved Oxygen</att>
+            <att name="short_name">O2PercentSurface</att>
+            <att name="standard_name">fractional_saturation_of_oxygen_in_sea_water</att>
+            <att name="units">per cent</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DepthSurface</sourceName>
+        <destinationName>depth</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Depth</att>
+            <att name="short_name">DepthSurface</att>
+            <att name="standard_name">depth</att>
+            <att name="units">m</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">8000.0</att>
+            <att name="colorBarMinimum" type="double">-8000.0</att>
+            <att name="colorBarPalette">TopographyDepth</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="source_name">DepthSurface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinityBottom</sourceName>
+        <destinationName>SalinityBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Salinity Sea Water Salinity</att>
+            <att name="short_name">SalinityBottom</att>
+            <att name="standard_name">sea_water_salinity</att>
+            <att name="units">ppt</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>pHBottom</sourceName>
+        <destinationName>pHBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom pH Sea Water pH</att>
+            <att name="short_name">pHBottom</att>
+            <att name="standard_name">sea_water_ph_reported_on_total_scale</att>
+            <att name="units">1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">9.0</att>
+            <att name="colorBarMinimum" type="double">7.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DepthBottom</sourceName>
+        <destinationName>DepthBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Depth</att>
+            <att name="short_name">DepthBottom</att>
+            <att name="standard_name">depth</att>
+            <att name="units">m</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">8000.0</att>
+            <att name="colorBarMinimum" type="double">-8000.0</att>
+            <att name="colorBarPalette">TopographyDepth</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>TurbidityBottom</sourceName>
+        <destinationName>TurbidityBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Turbidity</att>
+            <att name="short_name">TurbidityBottom</att>
+            <att name="standard_name">?</att>
+            <att name="units">?</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">null</att>
+            <att name="units">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ChlorophyllSurface</sourceName>
+        <destinationName>ChlorophyllSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Chlorophyll Mass Concentration of Chlorophyll</att>
+            <att name="short_name">ChlorophyllSurface</att>
+            <att name="standard_name">mass_concentration_of_chlorophyll_in_sea_water</att>
+            <att name="units">ug L-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.03</att>
+            <att name="colorBarScale">Log</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>pHSurface</sourceName>
+        <destinationName>pHSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface pH Sea Water pH</att>
+            <att name="short_name">pHSurface</att>
+            <att name="standard_name">sea_water_ph_reported_on_total_scale</att>
+            <att name="units">1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">9.0</att>
+            <att name="colorBarMinimum" type="double">7.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SpCondSurface</sourceName>
+        <destinationName>SpCondSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Sp Cond sea_water_electrical_conductivity</att>
+            <att name="short_name">SpCondSurface</att>
+            <att name="standard_name">sea_water_electrical_conductivity</att>
+            <att name="units">mS cm-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">40.0</att>
+            <att name="colorBarMinimum" type="double">30.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SpCondBottom</sourceName>
+        <destinationName>SpCondBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Sp Cond sea_water_electrical_conductivity</att>
+            <att name="short_name">SpCondBottom</att>
+            <att name="standard_name">sea_water_electrical_conductivity</att>
+            <att name="units">mS cm-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">40.0</att>
+            <att name="colorBarMinimum" type="double">30.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>FSpercentSurface</sourceName>
+        <destinationName>FSpercentSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface FS percent</att>
+            <att name="short_name">FSpercentSurface</att>
+            <att name="standard_name">?</att>
+            <att name="units">?</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">null</att>
+            <att name="units">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempBottom</sourceName>
+        <destinationName>WaterTempBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Water Temperature Sea Water Temperature</att>
+            <att name="short_name">WaterTempBottom</att>
+            <att name="standard_name">sea_water_temperature</att>
+            <att name="units">celsius</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2Surface</sourceName>
+        <destinationName>O2Surface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="coordinates">time</att>
+            <att name="long_name">Surface Oxygen Mass Concentration of Dissolved Oxygen</att>
+            <att name="short_name">O2Surface</att>
+            <att name="standard_name">mass_concentration_of_oxygen_in_sea_water</att>
+            <att name="units">mg L-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">500.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempSurface</sourceName>
+        <destinationName>WaterTempSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Water Temperature Sea Water Temperature</att>
+            <att name="short_name">WaterTempSurface</att>
+            <att name="standard_name">sea_water_temperature</att>
+            <att name="units">celsius</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinitySurface</sourceName>
+        <destinationName>SalinitySurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Salinity Sea Water Salinity</att>
+            <att name="short_name">SalinitySurface</att>
+            <att name="standard_name">sea_water_salinity</att>
+            <att name="units">ppt</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+        <dataVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="long_name">Latitude</att>
+            <att name="short_name">lat</att>
+            <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="long_name">Longitude</att>
+            <att name="short_name">lon</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degrees_east</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<!-- This is an example of EDDTableFromNcFiles, but commented out since you won't have these files.
+<dataset type="EDDTableFromNcFiles" datasetID="cwwcNDBCMetF">
+    <reloadEveryNMinutes>10</reloadEveryNMinutes>
+    <accessibleViaFiles>true</accessibleViaFiles>
+    <fileDir>/u00/data/points/ndbcMet/</fileDir>
+    <recursive>false</recursive>
+    <fileNameRegex>NDBC_.*\x2Enc</fileNameRegex>
+    <metadataFrom>last</metadataFrom>
+    <preExtractRegex>^NDBC_</preExtractRegex>
+    <postExtractRegex>_met\x2Enc$</postExtractRegex>
+    <extractRegex>.*</extractRegex>
+    <columnNameForExtract>station</columnNameForExtract>
+    <sortedColumnSourceName>TIME</sortedColumnSourceName>
+    <addAttributes>
+        <att name="cdm_data_type">TimeSeries</att>
+        <att name="featureType">TimeSeries</att>
+        <att name="cdm_timeseries_variables">station, longitude, latitude</att>
+        <att name="subsetVariables">station, longitude, latitude</att>
+        <att name="Conventions">COARDS, CF-1.6, Unidata Dataset Discovery v1.0</att>
+        <att name="Metadata_Conventions">COARDS, CF-1.6, Unidata Dataset Discovery v1.0</att>
+        <att name="date_created">null</att>
+        <att name="date_issued">null</att>
+        <att name="id">null</att>
+        <att name="infoUrl">http://www.ndbc.noaa.gov/</att>
+        <att name="institution">NOAA NDBC, CoastWatch WCN</att>
+        <att name="keywords">
+Earth Science &gt; Atmosphere &gt; Air Quality &gt; Visibility,
+Earth Science &gt; Atmosphere &gt; Atmospheric Pressure &gt; Surface Pressure,
+Earth Science &gt; Atmosphere &gt; Atmospheric Temperature &gt; Surface Air Temperature,
+Earth Science &gt; Atmosphere &gt; Atmospheric Winds &gt; Surface Winds,
+Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature,
+Earth Science &gt; Oceans &gt; Ocean Waves &gt; Wave Height,
+Earth Science &gt; Oceans &gt; Ocean Waves &gt; Wave Period,
+Earth Science &gt; Oceans &gt; Ocean Waves &gt; Wave Speed/Direction
+</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">http://www.ndbc.noaa.gov/</att>
+        <att name="summary">The National Data Buoy Center (NDBC) distributes meteorological data from
+moored buoys maintained by NDBC and others. Moored buoys are the weather
+sentinels of the sea. They are deployed in the coastal and offshore waters
+from the western Atlantic to the Pacific Ocean around Hawaii, and from the
+Bering Sea to the South Pacific. NDBC's moored buoys measure and transmit
+barometric pressure; wind direction, speed, and gust; air and sea
+temperature; and wave energy spectra from which significant wave height,
+dominant wave period, and average wave period are derived. Even the
+direction of wave propagation is measured on many moored buoys.
+
+The data is from NOAA NDBC. It has been reformatted by NOAA Coastwatch,
+West Coast Node. This dataset only has the data that is closest to a
+given hour. The time values in the dataset are rounded to the nearest hour.
+
+This dataset has both historical data (quality controlled, before
+2011-04-01T00:00:00) and near real time data (less quality controlled, from
+2011-04-01T00:00:00 on).</att>
+        <att name="testOutOfDate">now-1day</att>
+        <att name="title">NDBC Standard Meteorological Buoy Data</att>
+    </addAttributes>
+    <dataVariable>
+        <sourceName>station</sourceName>
+        <destinationName>station</destinationName>
+        <dataType>String</dataType>
+        <addAttributes>
+            <att name="ioos_category">Identifier</att>
+            <att name="long_name">Station Name</att>
+            <att name="cf_role">timeseries_id</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>LON</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>LAT</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>TIME</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="point_spacing">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WD</sourceName>
+        <destinationName>wd</destinationName>
+        <dataType>short</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">360</att>
+            <att name="_FillValue" type="short">32767</att>
+            <att name="ioos_category">Wind</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WSPD</sourceName>
+        <destinationName>wspd</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">15</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Wind</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>GST</sourceName>
+        <destinationName>gst</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">30</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Wind</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WVHT</sourceName>
+        <destinationName>wvht</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">10</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Surface Waves</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DPD</sourceName>
+        <destinationName>dpd</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">20</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Surface Waves</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>APD</sourceName>
+        <destinationName>apd</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">20</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Surface Waves</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>MWD</sourceName>
+        <destinationName>mwd</destinationName>
+        <dataType>short</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">360</att>
+            <att name="_FillValue" type="short">32767</att>
+            <att name="ioos_category">Surface Waves</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>BAR</sourceName>
+        <destinationName>bar</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">970</att>
+            <att name="colorBarMaximum" type="double">1030</att>
+            <att name="comment">Air pressure (hPa). ('PRES' on some NDBC tables.) For C-MAN sites and Great Lakes buoys, the recorded pressure is reduced to sea level using the method described in NWS Technical Procedures Bulletin 291 (11/14/80).</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Pressure</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ATMP</sourceName>
+        <destinationName>atmp</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">40</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Temperature</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WTMP</sourceName>
+        <destinationName>wtmp</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">32</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Temperature</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DEWP</sourceName>
+        <destinationName>dewp</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">40</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Meteorology</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>VIS</sourceName>
+        <destinationName>vis</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">100</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Meteorology</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PTDY</sourceName>
+        <destinationName>ptdy</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">-3</att>
+            <att name="colorBarMaximum" type="double">3</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Pressure</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>TIDE</sourceName>
+        <destinationName>tide</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">-5</att>
+            <att name="colorBarMaximum" type="double">5</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Sea Level</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WSPU</sourceName>
+        <destinationName>wspu</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">-15</att>
+            <att name="colorBarMaximum" type="double">15</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Wind</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WSPV</sourceName>
+        <destinationName>wspv</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">-15</att>
+            <att name="colorBarMaximum" type="double">15</att>
+            <att name="_FillValue" type="float">-9999999</att>
+            <att name="ioos_category">Wind</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+-->
+
+<!-- This is an example of EDDTableFromDatabase, 
+     but commented out and with generic setup information (e.g., "yourUserName") 
+     since you won't have access to this database.
+<dataset type="EDDTableFromDatabase" datasetID="yourDatasetID">
+    <sourceUrl>jdbc:postgresql://123.45.67.89:5432/yourDatabaseName</sourceUrl>
+    <driverName>org.postgresql.Driver</driverName>
+    <connectionProperty name="user">yourUserName</connectionProperty>
+    <connectionProperty name="password">yourPassword</connectionProperty>
+    <connectionProperty name="ssl">true</connectionProperty>
+    <connectionProperty name="sslfactory">org.postgresql.ssl.NonValidatingFactory</connectionProperty>
+    <catalogName></catalogName>
+    <schemaName>yourSchemaName</schemaName>
+    <tableName>yourTableName</tableName>
+    <orderBy>id, timestamp</orderBy>
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <addAttributes>
+        <att name="cdm_data_type">Point</att>
+        <att name="featureType">Point</att>
+        <att name="Conventions">COARDS, CF-1.6, Unidata Dataset Discovery v1.0</att>
+        <att name="infoUrl">http://www.coml.org/</att>
+        <att name="institution">yourInstitution</att>
+        <att name="keywords">Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="standard_name_vocabulary">CF-11</att>
+        <att name="subsetVariables">id, longitude, latitude</att>
+        <att name="summary">yourSummary</att>
+        <att name="testOutOfDate">now-1day</att>
+        <att name="title">yourTitle</att>        
+    </addAttributes>
+    <dataVariable>
+        <sourceName>id</sourceName>
+        <dataType>int</dataType>
+        <addAttributes>
+            <att name="ioos_category">Identifier</att>
+            <att name="long_name">Station ID</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>timestamp</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>String</dataType>
+        <addAttributes>
+            <att name="units">yyyy-MM-dd HH:mm:ssZ</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>station_latitude</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>station_longitude</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>temperature</sourceName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="ioos_category">Temperature</att>
+            <att name="long_name">Sea Surface Temperature</att>
+            <att name="standard_name">sea_surface_temperature</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+-->
+
+</erddapDatasets>
+

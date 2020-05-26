@@ -31,9 +31,9 @@ For ERD releases, we use
 If you want to encourage all users to use https (not http),
   make the baseUrl the same as the baseHttpsUrl (see below).
 -->
-<!-- <baseUrl>http://localhost:8080</baseUrl> -->
+<baseUrl>http://localhost:8080</baseUrl>
 <!--<baseUrl>http://pricaimcit.services.brown.edu:8080</baseUrl>-->
-<baseUrl>https://pricaimcit.services.brown.edu</baseUrl>
+<!-- <baseUrl>https://pricaimcit.services.brown.edu</baseUrl> -->
 
 <!-- Daily status reports and all error messages are emailed to emailEverythingTo.
 Daily status reports are emailed to emailDailyReportsTo.
