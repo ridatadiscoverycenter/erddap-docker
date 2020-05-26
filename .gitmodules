@@ -1,3 +1,0 @@
-[submodule "docker-erddap"]
-	path = docker-erddap
-	url = https://github.com/axiom-data-science/docker-erddap.git
