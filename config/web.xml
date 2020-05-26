@@ -1,0 +1,88 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+    <display-name>ERDDAP</display-name>
+    <description>ERDDAP lets humans and computer programs download gridded data and tabular data in common file formats.</description>
+
+<!-- 2013-04-20 Bob Simons added this to [tomcat]/webapps/erddap/WEB-INF/web.xml and [tomcat]/conf/web.xml.
+See https://www.owasp.org/index.php/Testing_for_HTTP_Methods_and_XST_%28OWASP-CM-008%29
+http://www.j2eeprogrammer.com/2011/11/disabling-certain-http-methods-in.html
+Use netcat to test if this works:
+  nc 127.0.0.1 8080[Enter]  //or some other domain
+  OPTIONS / HTTP/1.1[Enter]
+  Host: 127.0.0.1[Enter]    //or some other domain
+  [Enter]
+  //If you get HTTP/1.1 403 Forbidden, the constraint is in effect. Yea!
+  //If you get the html for the Tomcat welcome page, the constraint is not in effect. Boo!
+  ^C   //exits netcat
+-->
+<security-constraint>
+<web-resource-collection>
+<web-resource-name>restricted methods</web-resource-name>
+<url-pattern>/*</url-pattern>
+<http-method>TRACE</http-method>
+<http-method>PUT</http-method>
+<http-method>OPTIONS</http-method>
+<http-method>DELETE</http-method>
+</web-resource-collection>
+<auth-constraint />
+</security-constraint>
+
+<!-- CORS -->
+
+
+<filter>
+  <filter-name>CorsFilter</filter-name>
+  <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+  <init-param>
+    <param-name>cors.allowed.origins</param-name>
+    <param-value>*</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.allowed.methods</param-name>
+    <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.allowed.headers</param-name>
+    <param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.exposed.headers</param-name>
+    <param-value>Access-Control-Allow-Origin,Access-Control-Allow-Credentials</param-value>
+  </init-param>
+</filter>
+<filter-mapping>
+  <filter-name>CorsFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+<!-- This filter (for Consumer side) automatically parses OpenID responses and sets the user's identity in the session. netcdf-java 4.6.4 - ->
+	<filter>
+        <filter-name>OpenIdFilter</filter-name>
+        <filter-class>org.verisign.joid.consumer.OpenIdFilter</filter-class>
+		<init-param>
+			<param-name>saveInCookie</param-name>
+			<!- - If param-value is true, the identity url will be stored in a cookie under "openid.identity". - ->
+			<param-value>true</param-value>
+		</init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>OpenIdFilter</filter-name>
+        <url-pattern>/login.html</url-pattern>
+    </filter-mapping>
+
+
+<!- - JSPC servlet mappings start -->
+
+    <servlet>
+        <servlet-name>ERDDAP</servlet-name>
+        <servlet-class>gov.noaa.pfel.erddap.Erddap</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ERDDAP</servlet-name>
+        <url-pattern>/*</url-pattern>  <!-- this works for ERDDAP and ERDDAP2 -->
+    </servlet-mapping>
+
+<!-- JSPC servlet mappings end -->
