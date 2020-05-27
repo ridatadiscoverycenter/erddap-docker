@@ -9,8 +9,7 @@ that provides a simple interface for downloading datasets.
 
 The configuration in this repository is designed for deployments. If you'd like
 to test this image locally you can use the `docker-compose.dev.yml`. 
-This file differs from the production compose in two aspects:and 
-`content/erddap/setup.xml`.
+This file differs from the production compose in two aspects:
 
 1. The port mapping is changed from `127.0.0.1:8080:8080` to `8080`.
 
