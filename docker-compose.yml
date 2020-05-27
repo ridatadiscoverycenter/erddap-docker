@@ -3,8 +3,8 @@ services:
   erddap:
     image: axiom/docker-erddap
     ports:
-    - "127.0.0.1:8080:8080"
+      - "127.0.0.1:8080:8080"
     volumes:
       - ./content/erddap:/usr/local/tomcat/content/erddap
       - /isilon_erddap/erddap_data:/erddapData
-      - ${PWD}/config/web.xml:/usr/local/tomcat/webapps/erddap/WEB-INF/web.xml
+      - /maintain/erddap-docker/config/web.xml:/usr/local/tomcat/webapps/erddap/WEB-INF/web.xml
