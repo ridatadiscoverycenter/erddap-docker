@@ -81,7 +81,7 @@ into a public sourceUrl (http://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite
 <dataset type="EDDTableFromNcFiles" datasetID="raw_59d1_0a18_37ba" active="true">
     <reloadEveryNMinutes>10080</reloadEveryNMinutes>
     <updateEveryNMillis>10000</updateEveryNMillis>
-    <fileDir>/isilon_erddap/buoy_data/</fileDir>
+    <fileDir>/erddapData/netcdf/buoy_data/</fileDir>
     <fileNameRegex>.*\.nc</fileNameRegex>
     <recursive>false</recursive>
     <pathRegex>.*</pathRegex>
@@ -179,7 +179,7 @@ into a public sourceUrl (http://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite
 <dataset type="EDDTableFromNcFiles" datasetID="combined_e784_bee5_492e" active="true">
     <reloadEveryNMinutes>10080</reloadEveryNMinutes>
     <updateEveryNMillis>10000</updateEveryNMillis>
-    <fileDir>/isilon_erddap/buoy_data/combined/</fileDir>
+    <fileDir>/erddapData/netcdf/buoy_data/combined/</fileDir>
     <fileNameRegex>.*\.nc</fileNameRegex>
     <recursive>true</recursive>
     <pathRegex>.*</pathRegex>
