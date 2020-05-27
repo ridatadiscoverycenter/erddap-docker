@@ -6,5 +6,6 @@ services:
     - "127.0.0.1:8080:8080"
     volumes:
       - ./content/erddap:/usr/local/tomcat/content/erddap
-      - /isilon_erddap/kiatest:/erddapData
+      - /isilon_erddap/erddap_data:/erddapData
+      - /isilon_erddap/buoy_data:/isilon_erddap/buoy_data
       - ${PWD}/config/web.xml:/usr/local/tomcat/webapps/erddap/WEB-INF/web.xml

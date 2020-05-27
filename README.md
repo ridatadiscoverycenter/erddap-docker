@@ -16,6 +16,10 @@ This file differs from the production compose in two aspects:
 2. In `content/erddap/setup.xml` the `baseUrl` field will point to
 to `http://localhost:8080` instead of `https://pricaimcit.services.brown.edu`.
 
+To run ERDDAP with real data locally, you'll need to grab the data from
+`pricaimcit.services.brown.edu:/isilon_erddap/buoy_data` and put it 
+in a folder called `buoy_data` in the root of this project.
+
 ## Running Locally
 
 To start the container run `docker-compose -f docker-compose.dev.yml up -d`. To check that the service is
