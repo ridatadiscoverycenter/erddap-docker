@@ -8,17 +8,18 @@ that provides a simple interface for downloading datasets.
 ## Development
 
 The configuration in this repository is designed for deployments. If you'd like
-to test this image locally you'll need to edit the `docker-compose.yml` and 
+to test this image locally you can use the `docker-compose.dev.yml`. 
+This file differs from the production compose in two aspects:and 
 `content/erddap/setup.xml`.
 
-In `docker-compose.yml` change the port from `127.0.0.1:8080:8080` to `8080`.
+1. The port mapping is changed from `127.0.0.1:8080:8080` to `8080`.
 
-In `content/erddap/setup.xml` change the `baseUrl` field from
-`https://pricaimcit.services.brown.edu` to `http://localhost:8080`.
+2. In `content/erddap/setup.xml` the `baseUrl` field will point to
+to `http://localhost:8080` instead of `https://pricaimcit.services.brown.edu`.
 
-## Running
+## Running Locally
 
-To start the container run `docker-compose up -d`. To check that the service is
+To start the container run `docker-compose -f docker-compose.dev.yml up -d`. To check that the service is
 up run `docker-compose exec erddap bash` and check to see that there's data in
 the `logs/` directory. Tomcat takes a while to start up, don't be surprised if
 you don't see anything.
