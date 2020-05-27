@@ -1,0 +1,11 @@
+version: '3'
+services:
+  erddap:
+    image: axiom/docker-erddap
+    ports:
+      - 8080:8080
+    volumes:
+      - ./content/erddap-dev:/usr/local/tomcat/content/erddap
+      - ./isilon_erddap/erddap_data:/erddapData
+      - ./isilon_erddap/buoy_data:/isilon_erddap/buoy_data
+      - ${PWD}/config/web.xml:/usr/local/tomcat/webapps/erddap/WEB-INF/web.xml
