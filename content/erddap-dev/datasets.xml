@@ -882,5 +882,459 @@ This dataset has both historical data (quality controlled, before
 </dataset>
 -->
 
+<dataset type="EDDTableFromNcFiles" datasetID="plankton_time_series_7615_c513_ef8e" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/plankton_time_series/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <sortedColumnSourceName>time</sortedColumnSourceName>
+    <sortFilesBySourceNames>time</sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="date_created">2020-05-11</att>
+        <att name="date_issued">2020-05-11</att>
+        <att name="lat" type="double">41.567222</att>
+        <att name="lon" type="double">-71.38444</att>
+        <att name="long_name">Station II</att>
+        <att name="status" type="long">1</att>
+        <att name="time_coverage_end">2019-03-11T08:00:00Z</att>
+        <att name="time_coverage_start">1959-01-21T08:00:00Z</att>
+    </sourceAttributes -->
+    <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
+        <att name="cdm_timeseries_variables">station_id, longitude, latitude</att>
+        <att name="subsetVariables">station_id, longitude, latitude</att>
+    -->
+    <addAttributes>
+        <att name="cdm_data_type">Timeseries</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="infoUrl">???</att>
+        <att name="institution">???</att>
+        <att name="keywords">ammonia, ammonium, bottom, chemistry, chlorophyll, ChlorophyllBottom, ChlorophyllSurface, concentration, data, density, DINBottom, DINSurface, DIPBottom, DIPSurface, dissolved, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Ammonia, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Nitrate, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, inorganic, latitude, longitude, mass, mass_concentration_of_chlorophyll_in_sea_water, mole, mole_concentration_of_ammonium_in_sea_water, mole_concentration_of_dissolved_inorganic_nitrogen_in_sea_water, mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water, mole_concentration_of_nitrate_in_sea_water, mole_concentration_of_nitrite_in_sea_water, mole_concentration_of_silica_in_sea_water, n02, name, nh4, NH4Bottom, NH4Surface, nitrate, nitrite, nitrogen, NO2Bottom, NO2Surface, no3, NO3Bottom, NO3Surface, ocean, oceans, phaeo, PhaeoBottom, PhaeoSurface, phosphorus, plankton, practical, salinity, SalinityBottom, SalinitySurface, sample, science, sea, sea_water_practical_salinity, sea_water_temperature, seawater, series, silica, SilicaBottom, SilicaSurface, station, station_name, surface, temperature, time, time series, water, WaterTempBottom, WaterTempSurface</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="subsetVariables">station_name, latitude, longitude</att>
+        <att name="cdm_timeseries_variables">station_name, longitude, latitude</att>
+        <att name="summary">Plankton Time Series. Data from a local source.</att>
+        <att name="title">Plankton Time Series</att>
+    </addAttributes>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>int</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="int">-999</att>
+            <att name="calendar">gregorian</att>
+            <att name="cf_role">timeseries_id</att>
+            <att name="long_name">UTC Sample Time</att>
+            <att name="short_name">time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SilicaBottom</sourceName>
+        <destinationName>SilicaBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of </att>
+            <att name="short_name">SilicaBottom</att>
+            <att name="standard_name">mole_concentration_of_silica_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Mole Concentration of</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>NH4Surface</sourceName>
+        <destinationName>NH4Surface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of Ammonia</att>
+            <att name="short_name">NH4Surface</att>
+            <att name="standard_name">mole_concentration_of_ammonium_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">5.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinityBottom</sourceName>
+        <destinationName>SalinityBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Salinity Sea Water Salinity</att>
+            <att name="short_name">SalinityBottom</att>
+            <att name="standard_name">sea_water_salinity</att>
+            <att name="units">ppt</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ChlorophyllSurface</sourceName>
+        <destinationName>ChlorophyllSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Chlorophyll Mass Concentration of Chlorophyll</att>
+            <att name="short_name">ChlorophyllSurface</att>
+            <att name="standard_name">mass_concentration_of_chlorophyll_in_sea_water</att>
+            <att name="units">ug L-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.03</att>
+            <att name="colorBarScale">Log</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempBottom</sourceName>
+        <destinationName>WaterTempBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Water Temperature Sea Water Temperature</att>
+            <att name="short_name">WaterTempBottom</att>
+            <att name="standard_name">sea_water_temperature</att>
+            <att name="units">celsius</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>NH4Bottom</sourceName>
+        <destinationName>NH4Bottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of Ammonia</att>
+            <att name="short_name">NH4Bottom</att>
+            <att name="standard_name">mole_concentration_of_ammonium_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">5.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>NO3Bottom</sourceName>
+        <destinationName>NO3Bottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of Nitrate</att>
+            <att name="short_name">NO3Bottom</att>
+            <att name="standard_name">mole_concentration_of_nitrate_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">50.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>NO2Surface</sourceName>
+        <destinationName>NO2Surface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of nitrite</att>
+            <att name="short_name">NO2Surface</att>
+            <att name="standard_name">mole_concentration_of_nitrite_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DINSurface</sourceName>
+        <destinationName>DINSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of nitrite dissolved_inorganic_nitrogen</att>
+            <att name="short_name">DINSurface</att>
+            <att name="standard_name">mole_concentration_of_dissolved_inorganic_nitrogen_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DIPSurface</sourceName>
+        <destinationName>DIPSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of dissolved inorganic phosphorus</att>
+            <att name="short_name">DIPSurface</att>
+            <att name="standard_name">mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>NO2Bottom</sourceName>
+        <destinationName>NO2Bottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of </att>
+            <att name="short_name">NO2Bottom</att>
+            <att name="standard_name">mole_concentration_of_nitrite_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">1.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Mole Concentration of</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempSurface</sourceName>
+        <destinationName>WaterTempSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Water Temperature Sea Water Temperature</att>
+            <att name="short_name">WaterTempSurface</att>
+            <att name="standard_name">sea_water_temperature</att>
+            <att name="units">celsius</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ChlorophyllBottom</sourceName>
+        <destinationName>ChlorophyllBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Chlorophyll Mass Concentration of Chlorophyll</att>
+            <att name="short_name">ChlorophyllBottom</att>
+            <att name="standard_name">mass_concentration_of_chlorophyll_in_sea_water</att>
+            <att name="units">ug L-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.03</att>
+            <att name="colorBarScale">Log</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PhaeoBottom</sourceName>
+        <destinationName>PhaeoBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Phaeo</att>
+            <att name="short_name">PhaeoBottom</att>
+            <att name="standard_name">?</att>
+            <att name="units">?</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">null</att>
+            <att name="units">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SilicaSurface</sourceName>
+        <destinationName>SilicaSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of nitrite</att>
+            <att name="short_name">SilicaSurface</att>
+            <att name="standard_name">mole_concentration_of_silica_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinitySurface</sourceName>
+        <destinationName>SalinitySurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Salinity Sea Water Salinity</att>
+            <att name="short_name">SalinitySurface</att>
+            <att name="standard_name">sea_water_salinity</att>
+            <att name="units">ppt</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>NO3Surface</sourceName>
+        <destinationName>NO3Surface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of nitrate</att>
+            <att name="short_name">NO3Surface</att>
+            <att name="standard_name">mole_concentration_of_nitrate_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">50.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DINBottom</sourceName>
+        <destinationName>DINBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of dissolved_inorganic_nitrogen</att>
+            <att name="short_name">DINBottom</att>
+            <att name="standard_name">mole_concentration_of_dissolved_inorganic_nitrogen_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PhaeoSurface</sourceName>
+        <destinationName>PhaeoSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Phaeo</att>
+            <att name="short_name">PhaeoSurface</att>
+            <att name="standard_name">?</att>
+            <att name="units">?</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">null</att>
+            <att name="units">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DIPBottom</sourceName>
+        <destinationName>DIPBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Mole Concentration of dissolved inorganic phosphorus</att>
+            <att name="short_name">DIPBottom</att>
+            <att name="standard_name">mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water</att>
+            <att name="units">uM</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">&#xb5;mole/liter</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>station_name</sourceName>
+        <destinationName>station_name</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">station name</att>
+            <att name="standard_name">station_name</att>
+        </sourceAttributes -->
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Latitude</att>
+            <att name="short_name">lat</att>
+            <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">90.0</att>
+            <att name="colorBarMinimum" type="double">-90.0</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Longitude</att>
+            <att name="short_name">lon</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degrees_east</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">180.0</att>
+            <att name="colorBarMinimum" type="double">-180.0</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
 </erddapDatasets>
 
