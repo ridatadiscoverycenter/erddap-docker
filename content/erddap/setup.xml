@@ -512,9 +512,6 @@ to here, then modify it.
 </table>
 ]]></startBodyHtml5>
 
-
-
-
 <!-- This is the short description of ERDDAP, which is used on the middle of the
 left side of ERDDAP's home page.
 This can refer to &erddapUrl;, &requestFormatExamplesHtml;
@@ -538,6 +535,5 @@ This particular ERDDAP installation has oceanographic data
 [standardShortDescriptionHtml]
 
 ]]></theShortDescriptionHtml>
-
 
 </erddapSetup>
