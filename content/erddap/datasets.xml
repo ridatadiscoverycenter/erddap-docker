@@ -1997,5 +1997,258 @@ This dataset has both historical data (quality controlled, before
     </dataVariable>
 </dataset>
 
+<dataset type="EDDTableFromNcFiles" datasetID="nuShuttle_1130_b0f0_f109" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/nuShuttle/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <sortedColumnSourceName>time</sortedColumnSourceName>
+    <sortFilesBySourceNames>time</sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="comment">Attribute Accuracy Report: The temperature sensor was accurate to within 0.003 degrees C however due to a lag in response time of the sensor as it was towed through the water, results were only reported to within 0.01 degrees C. Conductivity measurements were accurate to within  0.005 mmho/cm. The accuracy of salinity values derived from these conductivity measurements varies with temperature and pressure, however under typical environmental conditions values should be within 0.01 psu or better. The calibration of the conductivity cell was tested in the lab using a resistor of known resistance prior to the cruise. Chlorophyll concentrations are accurate to within 3&#37;, however, chlorophyll readings are from in vivo fluorescence, whereas the instrument was calibrated using a chlorophyll standard in acetone, and as a result the chlorophyll fluorescence can be expected to underestimate the overall concentration due to effects such as cell shading, scattering and photochemical quenching of fluorescence. This was illustrated by samples taken for lab analysis at calibration stations during this and previous cruises with this sensor. It was found that the in situ in vivo readings can underestimate the lab extracted chlorophyll estimates by over a factor of 3. The chlorophyll values presented here are the uncorrected in vivo values. Oxygen readings were accurate to within 2&#37; of saturation (i.e. accuracy is partly dependent on salinity, temperature and pressure which determine the saturation value for dissolved oxygen). Prior to the cruise the oxygen sensor was lab calibrated using an oxygen saturated seawater bath at equilibrium with the atmosphere, and Winkler titrations were used to verify the oxygen concentration of the calibration bath. Logical Consistency Report: Data were processed using a Matlab routine that checks for out of range values. Any positions for which the degrees column does not equal 41 degrees north latitude or 71 degrees west longitude were deleted.   Any temperature values not between -2 an 29 degrees C were deleted. Chlorophyll values were deleted if they were not between 0 and 30 mg m^-3. Pressure values not between 0 and 35 dbars were omitted. Conductivity values less than 0 were omitted. Three calibration stations were performed during the cruise at which samples were taken for to measure chlorophyll, oxygen, salinity and temperature independently. These measurements were used as a check on the sensor data. In the event that the calibrations samples indicated a problem with the sensor data, action would be taken to correct or eliminate those results as needed. At each calibration station the depth readings are also checked against 2 independent depth sensors, while the sensor is hanging at an approximately known depth. Anytime the oxygen sensor was restarted the first 2 minutes of data were discarded from the dataset due to the time required for the SBE-13 oxygen electrode to ionize. Completeness Report: Some data points were omitted from this data set. These data points typically corresponded to very near surface samples where the instruments were breaching the surface of the water, causing anomalous readings. Horizontal Positional Accuracy Report: All horizontal positions were determined by differential GPS with an accuracy of  +/- 5 meters. Vertical Positional Accuracy Report: Depths were determined by a pressure sensor accurate to within 0.2 dbars (1 dbar is approximately equivalent to 1 meter of depth). Process Description: This data was collected during a research cruise in Narragansett Bay, RI aboard the R/V Capn Bert. Data was collected using a Chelsea Technologies Group (CTG) NuShuttle towed undulating sampling platform permitting underway profiling of the water column. The NuShuttle contained a CTG Aquapak CTD/Fluorometer that measured conductivity (salinity), temperature, pressure (depth) and chlorophyll fluorescence. Oxygen data was collected using a Seabird SBE-13 dissolved oxygen sensor.  Prior to each cruise the oxygen sensor is calibrated in the lab, and the CTD is tested to ensure accurate readings. The cruise began at Quonset Point in the West Passage of Narragansett Bay. The ship headed south into RI Sound, then north into the East Passage of Narragansett Bay to Mt. Hope Bay and Fall River, then to Fields Point in the Providence River, then south down the West Passage returning to Quonset Point. The tow speed was maintained at approximately 8 knots. Calibration stations were performed at the beginning and end of the cruise, as well as during the cruise at near the Newport bridge to verify results. Following the cruise all data were processed by a Matlab routine that calibrates the raw instrument output, and removes anomalous values. Latitude Resolution: 0.001 minutes. Longitude Resolution: 0.001 minutes. Horizontal Datum Name: North American Datum of 1983. Ellipsoid Name: Geodetic Reference System 80. Semi-Major Axis: 6378137 meters. Denominator of Flattening: 298.257. Depth Resolution: 0.1 meters. Entity Type Label: NuShuttle transect. Entity Type Definition: Measurements of salinity, temperature, dissolved oxygen and chlorophyll made underway using a towed undulating NuShuttle sampling platform. Attribute Definition: The salt content of the water derived from measurements of conductivity by a Chelsea Technologies Group Aquapak CTD/Fluorometer. Conductivity is used to estimate salinity according to the practical salinity scale of 1978. Attribute Definition: Water temperature measured by a Chelsea Technologies Group Aquapak CTD/Flourometer. Attribute Definition: Chlorophyll concentration determined by in situ measurements of in vivo chlorophyll a fluorescence using a Chelsea Technologies Group CTD/Fluorometer. Attribute Definition: Dissolved oxygen concentration measured using a Seabird SBE-13 oxygen sensor. Distribution Liability: This data set is provided as is and free of charge. No warranty is expressed or implied by the National Marine Fisheries Service.</att>
+        <att name="history">Converted from csv files at NarrBay.org</att>
+        <att name="institution">National Marine Fisheries Service</att>
+        <att name="references">Narragansett Bay Window Project, Mark Berman, mberman@mola.na.nmfs.gov</att>
+        <att name="source">NarrBay.org</att>
+        <att name="title">Narragansett Bay Monthly Transect</att>
+    </sourceAttributes -->
+    <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
+        <att name="cdm_timeseries_variables">station_id, longitude, latitude</att>
+        <att name="subsetVariables">station_id, longitude, latitude</att>
+    -->
+    <addAttributes>
+        <att name="cdm_data_type">Point</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="creator_email">mberman@mola.na.nmfs.gov</att>
+        <att name="creator_name">MBERMAN</att>
+        <att name="creator_type">institution</att>
+        <att name="infoUrl">???</att>
+        <att name="keywords">bay, chemistry, Chl, chla, chlorophyll, chlorophyll-a, concentration, concentration_of_chlorophyll_in_sea_water, conductivity, cruise, ctd, data, density, depth, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Density, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, fisheries, global, gps, latitude, longitude, marine, mass, month, monthly, narragansett, national, nmfs, number, nushuttle, O2, O2sat, ocean, oceans, oxygen, positioning, practical, pss, S_P, salinity, scale, science, sea, sea_water_practical_salinity, sea_water_sigma_theta, sea_water_temperature, seawater, sensor, service, sigma, sigma0, sonde, system, temperature, theta, time, transect, turbid, turbidity, water</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="subsetVariables">Chl</att>
+        <att name="summary">Narragansett Bay Monthly Transect. Attribute Accuracy Report: The temperature sensor was accurate to within 0.003 degrees C however due to a lag in response time of the sensor as it was towed through the water, results were only reported to within 0.01 degrees C. Conductivity measurements were accurate to within  0.005 mmho/cm. The accuracy of salinity values derived from these conductivity measurements varies with temperature and pressure, however under typical environmental conditions values should be within 0.01 psu or better. The calibration of the conductivity cell was tested in the lab using a resistor of known resistance prior to the cruise. Chlorophyll concentrations are accurate to within 3&#37;, however, chlorophyll readings are from in vivo fluorescence, whereas the instrument was calibrated using a chlorophyll standard in acetone, and as a result the chlorophyll fluorescence can be expected to underestimate the overall concentration due to effects such as cell shading, scattering and photochemical quenching of fluorescence. This was illustrated by samples taken for lab analysis at calibration stations during this and previous cruises with this sensor. It was found that the in situ in vivo readings can underestimate the lab extracted chlorophyll estimates by over a factor of 3. The chlorophyll values presented here are the uncorrected in vivo values. Oxygen readings were accurate to within 2&#37; of saturation (i.e. accuracy is partly dependent on salinity, temperature and pressure which determine the saturation value for dissolved oxygen). Prior to the cruise the oxygen sensor was lab calibrated using an oxygen saturated seawater bath at equilibrium with the atmosphere, and Winkler titrations were used to verify the oxygen concentration of the calibration bath. Logical Consistency Report: Data were processed using a Matlab routine that checks for out of range values. Any positions for which the degrees column does not equal 41 degrees north latitude or 71 degrees west longitude were deleted.   Any temperature values not between -2 an 29 degrees C were deleted. Chlorophyll values were deleted if they were not between 0 and 30 mg m^-3. Pressure values not between 0 and 35 dbars were omitted. Conductivity values less than 0 were omitted. Three calibration stations were performed during the cruise at which samples were taken for to measure chlorophyll, oxygen, salinity and temperature independently. These measurements were used as a check on the sensor data. In the event that the calibrations samples indicated a problem with the sensor data, action would be taken to correct or eliminate those results as needed. At each calibration station the depth readings are also checked against 2 independent depth sensors, while the sensor is hanging at an approximately known depth. Anytime the oxygen sensor was restarted the first 2 minutes of data were discarded from the dataset due to the time required for the SBE-13 oxygen electrode to ionize. Completeness Report: Some data points were omitted from this data set. These data points typically corresponded to very near surface samples where the instruments were breaching the surface of the water, causing anomalous readings. Horizontal Positional Accuracy Report: All horizontal positions were determined by differential Global Positioning System (GPS) with an accuracy of  +/- 5 meters. Vertical Positional Accuracy Report: Depths were determined by a pressure sensor accurate to within 0.2 dbars (1 dbar is approximately equivalent to 1 meter of depth). Process Description: This data was collected during a research cruise in Narragansett Bay, RI aboard the R/V Capn Bert. Data was collected using a Chelsea Technologies Group (CTG) NuShuttle towed undulating sampling platform permitting underway profiling of the water column. The NuShuttle contained a CTG Aquapak Conductivity, Temperature, Depth (CTD)/Fluorometer that measured conductivity (salinity), temperature, pressure (depth) and chlorophyll fluorescence. Oxygen data was collected using a Seabird SBE-13 dissolved oxygen sensor.  Prior to each cruise the oxygen sensor is calibrated in the lab, and the CTD is tested to ensure accurate readings. The cruise began at Quonset Point in the West Passage of Narragansett Bay. The ship headed south into RI Sound, then north into the East Passage of Narragansett Bay to Mt. Hope Bay and Fall River, then to Fields Point in the Providence River, then south down the West Passage returning to Quonset Point. The tow speed was maintained at approximately 8 knots. Calibration stations were performed at the beginning and end of the cruise, as well as during the cruise at near the Newport bridge to verify results. Following the cruise all data were processed by a Matlab routine that calibrates the raw instrument output, and removes anomalous values. Latitude Resolution: 0.001 minutes. Longitude Resolution: 0.001 minutes. Horizontal Datum Name: North American Datum of 1983. Ellipsoid Name: Geodetic Reference System 80. Semi-Major Axis: 6378137 meters. Denominator of Flattening: 298.257. Depth Resolution: 0.1 meters. Entity Type Label: NuShuttle transect. Entity Type Definition: Measurements of salinity, temperature, dissolved oxygen and chlorophyll made underway using a towed undulating NuShuttle sampling platform. Attribute Definition: The salt content of the water derived from measurements of conductivity by a Chelsea Technologies Group Aquapak CTD/Fluorometer. Conductivity is used to estimate salinity according to the practical salinity scale of 1978. Attribute Definition: Water temperature measured by a Chelsea Technologies Group Aquapak CTD/Flourometer. Attribute Definition: Chlorophyll concentration determined by in situ measurements of in vivo chlorophyll a fluorescence using a Chelsea Technologies Group CTD/Fluorometer. Attribute Definition: Dissolved oxygen concentration measured using a Seabird SBE-13 oxygen sensor. Distribution Liability: This data set is provided as is and free of charge. No warranty is expressed or implied by the National Marine Fisheries Service.</att>
+        <att name="title">Narragansett Bay Monthly Transect (NuShuttle)</att>
+    </addAttributes>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="units">seconds since 1970-1-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>cruise</sourceName>
+        <destinationName>cruise</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">NuShuttle_Cruise_Number</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="accuracy">within 0.2 m</att>
+            <att name="long_name">latitude</att>
+            <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att>
+            <att name="valid_max" type="double">41.8</att>
+            <att name="valid_min" type="double">41.35</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="colorBarMaximum" type="double">90.0</att>
+            <att name="colorBarMinimum" type="double">-90.0</att>
+            <att name="long_name">Latitude</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="accuracy">0.001 minutes</att>
+            <att name="long_name">longitude</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degrees_east</att>
+            <att name="valid_max" type="double">-71.17</att>
+            <att name="valid_min" type="double">-71.44</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="colorBarMaximum" type="double">180.0</att>
+            <att name="colorBarMinimum" type="double">-180.0</att>
+            <att name="long_name">Longitude</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>depth</sourceName>
+        <destinationName>depth</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">sensor_depth</att>
+            <att name="positive">down</att>
+            <att name="units">meters</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">8000.0</att>
+            <att name="colorBarMinimum" type="double">-8000.0</att>
+            <att name="colorBarPalette">TopographyDepth</att>
+            <att name="long_name">Sensor Depth</att>
+            <att name="standard_name">depth</att>
+            <att name="units">m</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>to</sourceName>
+        <destinationName>to</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="accuracy">within 0.01 degrees C</att>
+            <att name="long_name">sea_water_temperature</att>
+            <att name="units">degC</att>
+            <att name="valid_max" type="double">29.0</att>
+            <att name="valid_min" type="double">-2.0</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Sea Water Temperature</att>
+            <att name="standard_name">sea_water_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>S_P</sourceName>
+        <destinationName>S_P</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="accuracy">Conductivity measurements were accurate to within  0.005 mmho/cm, The accuracy of salinity values derived from these conductivity measurements varies with temperature and pressure, however under typical environmental conditions values should be within 0.01 psu or better.</att>
+            <att name="long_name">sea_water_practical_salinity</att>
+            <att name="units">Practical Salinity Scale of 1978 (PSS-78)</att>
+            <att name="valid_max" type="double">35.0</att>
+            <att name="valid_min" type="double">0.0</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="long_name">Sea Water Practical Salinity</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Chl</sourceName>
+        <destinationName>Chl</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="accuracy">Chlorophyll concentrations are accurate to within 3&#37;, however, chlorophyll readings are from in vivo fluorescence, whereas the instrument was calibrated using a chlorophyll standard in acetone, and as a result the chlorophyll fluorescence can be expected to underestimate the overall concentration due to effects such as cell shading, scattering and photochemical quenching of fluorescence. This was illustrated by samples taken for lab analysis at calibration stations during this and previous cruises with this sensor. It was found that the in situ in vivo readings can underestimate the lab extracted chlorophyll estimates by over a factor of 3. The chlorophyll values presented here are the uncorrected in vivo values.</att>
+            <att name="long_name">mass_concentration_of_chlorophyll_in_seawater</att>
+            <att name="units">kg m-3</att>
+            <att name="valid_max" type="double">3.5E-5</att>
+            <att name="valid_min" type="double">0.0</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">9.96921E36</att>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.03</att>
+            <att name="colorBarScale">Log</att>
+            <att name="long_name">Mass Concentration Of Chlorophyll In Seawater</att>
+            <att name="standard_name">concentration_of_chlorophyll_in_sea_water</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DO</sourceName>
+        <destinationName>DO</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">mass_concentration_of_oxygen_in_seawater</att>
+            <att name="source">Oxygen readings were accurate to within 2&#37; of saturation</att>
+            <att name="units">kg m-3</att>
+            <att name="valid_max" type="double">0.02</att>
+            <att name="valid_min" type="double">0.0</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">200.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Mass Concentration Of Oxygen In Seawater</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2sat</sourceName>
+        <destinationName>O2sat</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">sea_water_sigma_theta</att>
+            <att name="source">Garcia &amp; Gordon (1992) method</att>
+            <att name="units">kg m-3</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">200.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Sea Water Sigma Theta</att>
+            <att name="standard_name">sea_water_sigma_theta</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>turbid</sourceName>
+        <destinationName>turbid</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">sea_water_turbidity</att>
+            <att name="units">dimensionless NTU (Nephelometric Turbidity Units)</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Sea Water Turbidity</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sigma0</sourceName>
+        <destinationName>sigma0</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Sigma0</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>H</sourceName>
+        <destinationName>H</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">H</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
 </erddapDatasets>
 
