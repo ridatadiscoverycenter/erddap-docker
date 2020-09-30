@@ -526,14 +526,14 @@ All of the information in [standardShortDescriptionHtml] is also contained in
 <theLongDescriptionHtml> in messages.xml.
 -->
 <theShortDescriptionHtml><![CDATA[
-<h1>ERDDAP</h1>
-ERDDAP is a data server that gives you a simple, consistent way to download
-subsets of scientific datasets in common file formats and make graphs and maps.
-This particular ERDDAP installation has oceanographic data
-(for example, data from satellites and buoys).
-
-[standardShortDescriptionHtml]
-
+<h1>Welcome!</h1>
+This ERDDAP server contains a variety of datasets related to Narragansett Bay, Rhode Island Sound, and surrounding regions of the ocean. Our goal is to try to provide a holistic picture of the waters around Rhode Island by including a variety of different types of data. Here you will find physical oceanographic data such as sea surface temperature, salinity, and currents, and atmospheric data including pressure, wind, and wind stress, as well as numerous biological variables. Ultimately, we would like to start including output from the Ocean State Ocean Model (OSOM), which has been developed by URI and Brown Collaborators based on the Regional Ocean Modeling System (ROMS). If you are looking to make comparisons between OSOM output and observational data, it may be  helpful to note that OSOM only models a region within latitudes 40.50714925503489°N to 42.17423565201304°N and longitudes -72.66539077917145°W to -69.9851266704007°W. Some of the gridded datasets have global data, so slicing by latitude and longitude may be useful if you are looking at a specific area.
+<h2>What kinds of data can I explore here?</h2>
+This server includes both gridded and tabular datasets. To browse all of our datasets, <a href="https://pricaimcit.services.brown.edu/erddap/info/index.html?page=1&itemsPerPage=1000">click here to view a list of datasets</a> (the number of datasets will change as we grow this resource). If you are interested in one particular dataset or type of data, take advantage of the search bar.
+<h2>Overview of Tabular Datasets</h2>
+Buoy data is tabular, and there are buoy datasets for temperature, salinity, wind speed, wave height, plankton, turbidity, etc. If you are looking for a long time series of temperature or salinity, consider looking at the Global Temperature and Salinity Profile Program data (Dataset ID: erdGtsppBest), which goes back to 1985. Another particularly helpful buoy dataset for physical variables is the National Data Buoy Center Standard Meteorological Buoy Data (Dataset ID: cwwcNDBCMet), which has data points at 10 minute intervals going back to 1970. For biological or biogeochemical data at multiple depths, see the Plankton Time series (Dataset ID:  plankton_time_series_7615_c513_ef8e) or the RI Buoy Data (Dataset ID: combined_e784_bee5_492e).
+<h2>Overview of Gridded Datasets</h2>
+Satellite data and model output are gridded. For physical atmospheric data, see the Navy Global Environmental Model datasets or the NOAA/NCDC Blended sea winds datasets. There is also one dataset for geostrophic currents (Dataset ID: miamicurrents), one for sea surface height (Dataset ID: erdTAssh1day), and two for topography (Dataset IDs: etopo180 and etopo360). For sea surface temperature, see the Multi-Scale Ultra-high Resolution Analysis (Dataset ID: jplMURSST41) or the GHRSST sea surface temperature data (Dataset ID: jplG1SST). These sea surface temperature datasets are very large, and working with them will require significant computing power and/or careful slicing of the data. We also have a variety of datasets relating to plankton from the MODIS and Suomi-NPP/VIIRS satellites instruments. MODIS data is from 2003 to present, while Suomi-NPP/VIIRS is from 2012 to present. Both the MODIS and Suomi-NPP/VIIRS data include chlorophyll a, the diffuse attenuation coefficient at 490 nm, and photosynthetically available radiation. A few other variables are included for one satellite but not the other.
 ]]></theShortDescriptionHtml>
 
 </erddapSetup>

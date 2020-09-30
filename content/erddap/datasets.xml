@@ -336,10 +336,6 @@ ssh, surface, TAsshl, term, time, topography, validation, wcn, west</att>
 </dataset>
 
 
-
-
-
-
 <dataset type="EDDTableFromSOS" datasetID="ndbcSosWTemp" active="true">
     <sourceUrl>http://sdf.ndbc.noaa.gov/sos/server.php</sourceUrl>
     <sosVersion>1.0.0</sosVersion>
