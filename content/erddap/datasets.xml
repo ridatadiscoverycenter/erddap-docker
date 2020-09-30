@@ -336,10 +336,6 @@ ssh, surface, TAsshl, term, time, topography, validation, wcn, west</att>
 </dataset>
 
 
-
-
-
-
 <dataset type="EDDTableFromSOS" datasetID="ndbcSosWTemp" active="true">
     <sourceUrl>http://sdf.ndbc.noaa.gov/sos/server.php</sourceUrl>
     <sosVersion>1.0.0</sosVersion>
@@ -421,18 +417,6 @@ Because of the nature of SOS requests, requests for data MUST include constraint
 <dataset type="EDDGridFromErddap" datasetID="erdNavgem05D10mWind_LonPM180" active="true">
     <!-- Navy Global Environmental Model (NAVGEM), 0.5 degree, 10 m Wind -->
     <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdNavgem05D10mWind_LonPM180</sourceUrl>
-</dataset>
-<dataset type="EDDGridFromErddap" datasetID="erdNavgem05D20mWind_LonPM180" active="true">
-    <!-- Navy Global Environmental Model (NAVGEM), 0.5 degree, 20 m Wind -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdNavgem05D20mWind_LonPM180</sourceUrl>
-</dataset>
-<dataset type="EDDGridFromErddap" datasetID="erdNavgem05D500mb_LonPM180" active="true">
-    <!-- Navy Global Environmental Model (NAVGEM), 0.5 degree, 500 hPa Height -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdNavgem05D500mb_LonPM180</sourceUrl>
-</dataset>
-<dataset type="EDDGridFromErddap" datasetID="erdNavgem05DPres_LonPM180" active="true">
-    <!-- Navy Global Environmental Model (NAVGEM), 0.5 degree, Pressure MSL -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdNavgem05DPres_LonPM180</sourceUrl>
 </dataset>
 
 <!-- NCDC Ocean Winds -->
@@ -621,122 +605,8 @@ Because of the nature of SOS requests, requests for data MUST include constraint
     <!-- Global Temperature and Salinity Profile Programme (GTSPP) Data -->
     <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/erdGtsppBest</sourceUrl>
 </dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyAdcp" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, ADCP -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyAdcp</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyAirt" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Air Temperature -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyAirt</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyBf" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Buoyancy Flux -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyBf</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyBp" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Barometric (Air) Pressure -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyBp</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyCur" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Currents -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyCur</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyD" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Potential Density Anomaly -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyD</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyDyn" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Dynamic Height -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyDyn</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyEmp" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Evaporation Minus Precipitation -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyEmp</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyEvap" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Evaporation -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyEvap</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyHeat" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Heat Content -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyHeat</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyIso" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, 20C Isotherm Depth -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyIso</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyLw" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Longwave Radiation -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyLw</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyLwnet" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Net Longwave Radiation -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyLwnet</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyPos" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Position -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyPos</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyQlat" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Latent Heat Flux -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyQlat</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyQnet" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Total Heat Flux -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyQnet</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyQsen" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Sensible Heat Flux -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyQsen</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyRad" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Downgoing Shortwave Radiation -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyRad</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyRain" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Precipitation -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyRain</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyRf" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Heat Flux Due To Rain -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyRf</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyRh" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Relative Humidity -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyRh</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyS" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Salinity -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyS</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDySsd" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Sigma-Theta -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySsd</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDySss" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Sea Surface Salinity -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySss</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDySst" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Sea Surface Temperature -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDySwnet" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Net Shortwave Radiation -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySwnet</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyT" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Temperature -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyT</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyTau" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Wind Stress -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyTau</sourceUrl>
-</dataset>
-<dataset type="EDDTableFromErddap" datasetID="pmelTaoDyW" active="true">
-    <!-- TAO/TRITON, RAMA, and PIRATA Buoys, Daily, Wind -->
-    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDyW</sourceUrl>
-</dataset>
+
+
 
 
 <!-- This is an example of EDDTableFromNcFiles, but commented out since you won't have these files.

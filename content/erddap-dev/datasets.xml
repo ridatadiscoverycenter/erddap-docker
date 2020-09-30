@@ -77,720 +77,537 @@ For example,
 will cause a matching local sourceUrl (such as http://192.168.31.18/thredds/dodsC/satellite/BA/ssta/5day)
 into a public sourceUrl (http://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite/BA/ssta/5day). 
 -->
-<dataset type="EDDTableFromNcFiles" datasetID="nuShuttle_1130_b0f0_f109" active="true">
-    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
-    <updateEveryNMillis>10000</updateEveryNMillis>
-    <fileDir>/erddapData/netcdf/nuShuttle/</fileDir>
-    <fileNameRegex>.*\.nc</fileNameRegex>
-    <recursive>true</recursive>
-    <pathRegex>.*</pathRegex>
-    <metadataFrom>last</metadataFrom>
-    <standardizeWhat>0</standardizeWhat>
-    <sortedColumnSourceName>time</sortedColumnSourceName>
-    <sortFilesBySourceNames>time</sortFilesBySourceNames>
-    <fileTableInMemory>false</fileTableInMemory>
-    <accessibleViaFiles>false</accessibleViaFiles>
+
+<dataset type="EDDGridFromEtopo" datasetID="etopo180" />
+
+<dataset type="EDDGridFromEtopo" datasetID="etopo360" />
+
+<dataset type="EDDGridFromDap" datasetID="erdMH1chla1dayTDS" active="true">
+    <sourceUrl>https://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite/MH1/chla/1day</sourceUrl>
+    <reloadEveryNMinutes>240</reloadEveryNMinutes>
     <!-- sourceAttributes>
-        <att name="comment">Attribute Accuracy Report: The temperature sensor was accurate to within 0.003 degrees C however due to a lag in response time of the sensor as it was towed through the water, results were only reported to within 0.01 degrees C. Conductivity measurements were accurate to within  0.005 mmho/cm. The accuracy of salinity values derived from these conductivity measurements varies with temperature and pressure, however under typical environmental conditions values should be within 0.01 psu or better. The calibration of the conductivity cell was tested in the lab using a resistor of known resistance prior to the cruise. Chlorophyll concentrations are accurate to within 3&#37;, however, chlorophyll readings are from in vivo fluorescence, whereas the instrument was calibrated using a chlorophyll standard in acetone, and as a result the chlorophyll fluorescence can be expected to underestimate the overall concentration due to effects such as cell shading, scattering and photochemical quenching of fluorescence. This was illustrated by samples taken for lab analysis at calibration stations during this and previous cruises with this sensor. It was found that the in situ in vivo readings can underestimate the lab extracted chlorophyll estimates by over a factor of 3. The chlorophyll values presented here are the uncorrected in vivo values. Oxygen readings were accurate to within 2&#37; of saturation (i.e. accuracy is partly dependent on salinity, temperature and pressure which determine the saturation value for dissolved oxygen). Prior to the cruise the oxygen sensor was lab calibrated using an oxygen saturated seawater bath at equilibrium with the atmosphere, and Winkler titrations were used to verify the oxygen concentration of the calibration bath. Logical Consistency Report: Data were processed using a Matlab routine that checks for out of range values. Any positions for which the degrees column does not equal 41 degrees north latitude or 71 degrees west longitude were deleted.   Any temperature values not between -2 an 29 degrees C were deleted. Chlorophyll values were deleted if they were not between 0 and 30 mg m^-3. Pressure values not between 0 and 35 dbars were omitted. Conductivity values less than 0 were omitted. Three calibration stations were performed during the cruise at which samples were taken for to measure chlorophyll, oxygen, salinity and temperature independently. These measurements were used as a check on the sensor data. In the event that the calibrations samples indicated a problem with the sensor data, action would be taken to correct or eliminate those results as needed. At each calibration station the depth readings are also checked against 2 independent depth sensors, while the sensor is hanging at an approximately known depth. Anytime the oxygen sensor was restarted the first 2 minutes of data were discarded from the dataset due to the time required for the SBE-13 oxygen electrode to ionize. Completeness Report: Some data points were omitted from this data set. These data points typically corresponded to very near surface samples where the instruments were breaching the surface of the water, causing anomalous readings. Horizontal Positional Accuracy Report: All horizontal positions were determined by differential GPS with an accuracy of  +/- 5 meters. Vertical Positional Accuracy Report: Depths were determined by a pressure sensor accurate to within 0.2 dbars (1 dbar is approximately equivalent to 1 meter of depth). Process Description: This data was collected during a research cruise in Narragansett Bay, RI aboard the R/V Capn Bert. Data was collected using a Chelsea Technologies Group (CTG) NuShuttle towed undulating sampling platform permitting underway profiling of the water column. The NuShuttle contained a CTG Aquapak CTD/Fluorometer that measured conductivity (salinity), temperature, pressure (depth) and chlorophyll fluorescence. Oxygen data was collected using a Seabird SBE-13 dissolved oxygen sensor.  Prior to each cruise the oxygen sensor is calibrated in the lab, and the CTD is tested to ensure accurate readings. The cruise began at Quonset Point in the West Passage of Narragansett Bay. The ship headed south into RI Sound, then north into the East Passage of Narragansett Bay to Mt. Hope Bay and Fall River, then to Fields Point in the Providence River, then south down the West Passage returning to Quonset Point. The tow speed was maintained at approximately 8 knots. Calibration stations were performed at the beginning and end of the cruise, as well as during the cruise at near the Newport bridge to verify results. Following the cruise all data were processed by a Matlab routine that calibrates the raw instrument output, and removes anomalous values. Latitude Resolution: 0.001 minutes. Longitude Resolution: 0.001 minutes. Horizontal Datum Name: North American Datum of 1983. Ellipsoid Name: Geodetic Reference System 80. Semi-Major Axis: 6378137 meters. Denominator of Flattening: 298.257. Depth Resolution: 0.1 meters. Entity Type Label: NuShuttle transect. Entity Type Definition: Measurements of salinity, temperature, dissolved oxygen and chlorophyll made underway using a towed undulating NuShuttle sampling platform. Attribute Definition: The salt content of the water derived from measurements of conductivity by a Chelsea Technologies Group Aquapak CTD/Fluorometer. Conductivity is used to estimate salinity according to the practical salinity scale of 1978. Attribute Definition: Water temperature measured by a Chelsea Technologies Group Aquapak CTD/Flourometer. Attribute Definition: Chlorophyll concentration determined by in situ measurements of in vivo chlorophyll a fluorescence using a Chelsea Technologies Group CTD/Fluorometer. Attribute Definition: Dissolved oxygen concentration measured using a Seabird SBE-13 oxygen sensor. Distribution Liability: This data set is provided as is and free of charge. No warranty is expressed or implied by the National Marine Fisheries Service.</att>
-        <att name="history">Converted from csv files at NarrBay.org</att>
-        <att name="institution">National Marine Fisheries Service</att>
-        <att name="references">Narragansett Bay Window Project, Mark Berman, mberman@mola.na.nmfs.gov</att>
-        <att name="source">NarrBay.org</att>
-        <att name="title">Narragansett Bay Monthly Transect</att>
+        <att name="_History">Direct read of HDF4 file through CDM library</att>
+        <att name="Conventions">CF-1.6</att>
+        <att name="infoUrl">https://oceancolor.gsfc.nasa.gov/</att>
+        <att name="institution">NASA/GSFC OBPG</att>
+        <att name="L2_Flag_Names">ATMFAIL,LAND,HILT,HISATZEN,STRAYLIGHT,CLDICE,COCCOLITH,LOWLW,CHLWARN,CHLFAIL, NAVWARN,MAXAERITER,ATMWARN,HISOLZEN,NAVFAIL,FILTER,HIGLINT</att>
+        <att name="Map_Projection">Equidistant Cylindrical</att>
+        <att name="Processing_Version">2013.1.1QL</att>
+        <att name="Sensor_Name">HMODISA</att>
+        <att name="Software_Name">smigen</att>
+        <att name="Software_Version">4.42</att>
+        <att name="title">MODISA Level-3 Standard Mapped Image, Chlorophyll a, Daily, 4km</att>
     </sourceAttributes -->
-    <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
-        <att name="cdm_timeseries_variables">station_id, longitude, latitude</att>
-        <att name="subsetVariables">station_id, longitude, latitude</att>
-    -->
     <addAttributes>
-        <att name="cdm_data_type">Point</att>
-        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="creator_email">mberman@mola.na.nmfs.gov</att>
-        <att name="creator_name">MBERMAN</att>
-        <att name="creator_type">institution</att>
-        <att name="infoUrl">???</att>
-        <att name="keywords">bay, chemistry, Chl, chla, chlorophyll, chlorophyll-a, concentration, concentration_of_chlorophyll_in_sea_water, conductivity, cruise, ctd, data, density, depth, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Density, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, fisheries, global, gps, latitude, longitude, marine, mass, month, monthly, narragansett, national, nmfs, number, nushuttle, O2, O2sat, ocean, oceans, oxygen, positioning, practical, pss, S_P, salinity, scale, science, sea, sea_water_practical_salinity, sea_water_sigma_theta, sea_water_temperature, seawater, sensor, service, sigma, sigma0, sonde, system, temperature, theta, time, transect, turbid, turbidity, water</att>
+        <att name="Conventions">CF-1.6, COARDS, ACDD-1.3</att>
+        <att name="creator_type">group</att>
+        <att name="creator_url">https://oceandata.sci.gsfc.nasa.gov</att>
+        <att name="data_bins">null</att>
+        <att name="data_maximum">null</att>
+        <att name="data_minimum">null</att>
+        <att name="easternmost_longitude">null</att>
+        <att name="end_orbit_number">null</att>
+        <att name="history">Files downloaded daily from https://oceandata.sci.gsfc.nasa.gov/MODIS-Aqua/L3SMI to NOAA SWFSC ERD (erd.data@noaa.gov)
+ERD uses .ncml to add a time dimension.
+Direct read of HDF4 file through CDM library</att>
+        <att name="id">null</att>
+        <att name="identifier_product_doi_authority">https://dx.doi.org</att>
+        <att name="infoUrl">https://coastwatch.pfeg.noaa.gov/infog/MH1_chla_las.html</att>
+        <att name="institution">NOAA NMFS SWFSC ERD</att>
+        <att name="keywords">algorithm, biology, center, chemistry, chlor_a, chlorophyll, color, concentration, data, ecology, flight, goddard, group, gsfc, image, imaging, L3, laboratory, level, level-3, mapped, mass, mass_concentration_chlorophyll_concentration_in_sea_water, moderate, modis, nasa, ocean, ocean color, oceans,
+Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll; Oceans &gt; Ocean Optics &gt; Ocean Color,
+oci, optics, processing, resolution, sea, seawater, smi, space, spectroradiometer, standard, time, water</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
-        <att name="license">[standard]</att>
-        <att name="sourceUrl">(local files)</att>
-        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-        <att name="subsetVariables">Chl</att>
-        <att name="summary">Narragansett Bay Monthly Transect. Attribute Accuracy Report: The temperature sensor was accurate to within 0.003 degrees C however due to a lag in response time of the sensor as it was towed through the water, results were only reported to within 0.01 degrees C. Conductivity measurements were accurate to within  0.005 mmho/cm. The accuracy of salinity values derived from these conductivity measurements varies with temperature and pressure, however under typical environmental conditions values should be within 0.01 psu or better. The calibration of the conductivity cell was tested in the lab using a resistor of known resistance prior to the cruise. Chlorophyll concentrations are accurate to within 3&#37;, however, chlorophyll readings are from in vivo fluorescence, whereas the instrument was calibrated using a chlorophyll standard in acetone, and as a result the chlorophyll fluorescence can be expected to underestimate the overall concentration due to effects such as cell shading, scattering and photochemical quenching of fluorescence. This was illustrated by samples taken for lab analysis at calibration stations during this and previous cruises with this sensor. It was found that the in situ in vivo readings can underestimate the lab extracted chlorophyll estimates by over a factor of 3. The chlorophyll values presented here are the uncorrected in vivo values. Oxygen readings were accurate to within 2&#37; of saturation (i.e. accuracy is partly dependent on salinity, temperature and pressure which determine the saturation value for dissolved oxygen). Prior to the cruise the oxygen sensor was lab calibrated using an oxygen saturated seawater bath at equilibrium with the atmosphere, and Winkler titrations were used to verify the oxygen concentration of the calibration bath. Logical Consistency Report: Data were processed using a Matlab routine that checks for out of range values. Any positions for which the degrees column does not equal 41 degrees north latitude or 71 degrees west longitude were deleted.   Any temperature values not between -2 an 29 degrees C were deleted. Chlorophyll values were deleted if they were not between 0 and 30 mg m^-3. Pressure values not between 0 and 35 dbars were omitted. Conductivity values less than 0 were omitted. Three calibration stations were performed during the cruise at which samples were taken for to measure chlorophyll, oxygen, salinity and temperature independently. These measurements were used as a check on the sensor data. In the event that the calibrations samples indicated a problem with the sensor data, action would be taken to correct or eliminate those results as needed. At each calibration station the depth readings are also checked against 2 independent depth sensors, while the sensor is hanging at an approximately known depth. Anytime the oxygen sensor was restarted the first 2 minutes of data were discarded from the dataset due to the time required for the SBE-13 oxygen electrode to ionize. Completeness Report: Some data points were omitted from this data set. These data points typically corresponded to very near surface samples where the instruments were breaching the surface of the water, causing anomalous readings. Horizontal Positional Accuracy Report: All horizontal positions were determined by differential Global Positioning System (GPS) with an accuracy of  +/- 5 meters. Vertical Positional Accuracy Report: Depths were determined by a pressure sensor accurate to within 0.2 dbars (1 dbar is approximately equivalent to 1 meter of depth). Process Description: This data was collected during a research cruise in Narragansett Bay, RI aboard the R/V Capn Bert. Data was collected using a Chelsea Technologies Group (CTG) NuShuttle towed undulating sampling platform permitting underway profiling of the water column. The NuShuttle contained a CTG Aquapak Conductivity, Temperature, Depth (CTD)/Fluorometer that measured conductivity (salinity), temperature, pressure (depth) and chlorophyll fluorescence. Oxygen data was collected using a Seabird SBE-13 dissolved oxygen sensor.  Prior to each cruise the oxygen sensor is calibrated in the lab, and the CTD is tested to ensure accurate readings. The cruise began at Quonset Point in the West Passage of Narragansett Bay. The ship headed south into RI Sound, then north into the East Passage of Narragansett Bay to Mt. Hope Bay and Fall River, then to Fields Point in the Providence River, then south down the West Passage returning to Quonset Point. The tow speed was maintained at approximately 8 knots. Calibration stations were performed at the beginning and end of the cruise, as well as during the cruise at near the Newport bridge to verify results. Following the cruise all data were processed by a Matlab routine that calibrates the raw instrument output, and removes anomalous values. Latitude Resolution: 0.001 minutes. Longitude Resolution: 0.001 minutes. Horizontal Datum Name: North American Datum of 1983. Ellipsoid Name: Geodetic Reference System 80. Semi-Major Axis: 6378137 meters. Denominator of Flattening: 298.257. Depth Resolution: 0.1 meters. Entity Type Label: NuShuttle transect. Entity Type Definition: Measurements of salinity, temperature, dissolved oxygen and chlorophyll made underway using a towed undulating NuShuttle sampling platform. Attribute Definition: The salt content of the water derived from measurements of conductivity by a Chelsea Technologies Group Aquapak CTD/Fluorometer. Conductivity is used to estimate salinity according to the practical salinity scale of 1978. Attribute Definition: Water temperature measured by a Chelsea Technologies Group Aquapak CTD/Flourometer. Attribute Definition: Chlorophyll concentration determined by in situ measurements of in vivo chlorophyll a fluorescence using a Chelsea Technologies Group CTD/Fluorometer. Attribute Definition: Dissolved oxygen concentration measured using a Seabird SBE-13 oxygen sensor. Distribution Liability: This data set is provided as is and free of charge. No warranty is expressed or implied by the National Marine Fisheries Service.</att>
-        <att name="title">Narragansett Bay Monthly Transect (NuShuttle)</att>
+        <att name="latitude_step">null</att>
+        <att name="latitude_units">null</att>
+        <att name="license">https://science.nasa.gov/earth-science/earth-science-data/data-information-policy/
+[standard]</att>
+        <att name="longitude_step">null</att>
+        <att name="longitude_units">null</att>
+        <att name="Metadata_Conventions">null</att>
+        <att name="naming_authority">gov.noaa.pfeg.coastwatch</att>
+        <att name="northernmost_latitude">null</att>
+        <att name="number_of_columns">null</att>
+        <att name="number_of_lines">null</att>
+        <att name="publisher_email">erd.data@noaa.gov</att>
+        <att name="publisher_name">NOAA NMFS SWFSC ERD</att>
+        <att name="publisher_type">institution</att>
+        <att name="publisher_url">https://www.pfeg.noaa.gov</att>
+        <att name="southernmost_latitude">null</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v29</att>
+        <att name="start_orbit_number">null</att>
+        <att name="suggested_image_scaling_applied">null</att>
+        <att name="suggested_image_scaling_maximum">null</att>
+        <att name="suggested_image_scaling_minimum">null</att>
+        <att name="suggested_image_scaling_type">null</att>
+        <att name="sw_point_latitude">null</att>
+        <att name="sw_point_longitude">null</att>
+        <att name="summary">This dataset has Level 3, Standard Mapped Image, 4km, chlorophyll-a concentration data from NASA's Aqua Spacecraft.  Measurements are gathered by the Moderate Resolution Imaging Spectroradiometer (MODIS) carried aboard the spacecraft.  This is Science Quality data.  This is the August 2015 version of this dataset.</att>
+        <att name="testOutOfDate">now-3days</att>
+        <att name="title">Chlorophyll-a, Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality, 2003-present (1 Day Composite)</att>
+        <att name="westernmost_longitude">null</att>
     </addAttributes>
-    <dataVariable>
+    <axisVariable>
         <sourceName>time</sourceName>
         <destinationName>time</destinationName>
-        <dataType>double</dataType>
         <!-- sourceAttributes>
-            <att name="units">seconds since 1970-1-1</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="long_name">Time</att>
+            <att name="_CoordinateAxisType">Time</att>
+            <att name="axis">T</att>
+            <att name="long_name">Centered Time</att>
             <att name="standard_name">time</att>
             <att name="units">seconds since 1970-01-01T00:00:00Z</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>cruise</sourceName>
-        <destinationName>cruise</destinationName>
-        <dataType>byte</dataType>
-        <!-- sourceAttributes>
-            <att name="long_name">NuShuttle_Cruise_Number</att>
         </sourceAttributes -->
         <addAttributes>
-            <att name="colorBarMaximum" type="double">100.0</att>
-            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="ioos_category">Time</att>
         </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>lat</sourceName>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>latitude</sourceName>
         <destinationName>latitude</destinationName>
-        <dataType>double</dataType>
         <!-- sourceAttributes>
-            <att name="accuracy">within 0.2 m</att>
-            <att name="long_name">latitude</att>
+            <att name="_CoordinateAxisType">Lat</att>
+            <att name="axis">Y</att>
             <att name="standard_name">latitude</att>
             <att name="units">degrees_north</att>
-            <att name="valid_max" type="double">41.8</att>
-            <att name="valid_min" type="double">41.35</att>
         </sourceAttributes -->
         <addAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="colorBarMaximum" type="double">90.0</att>
-            <att name="colorBarMinimum" type="double">-90.0</att>
+            <att name="ioos_category">Location</att>
             <att name="long_name">Latitude</att>
         </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>lon</sourceName>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>longitude</sourceName>
         <destinationName>longitude</destinationName>
-        <dataType>double</dataType>
         <!-- sourceAttributes>
-            <att name="accuracy">0.001 minutes</att>
-            <att name="long_name">longitude</att>
+            <att name="_CoordinateAxisType">Lon</att>
+            <att name="axis">X</att>
             <att name="standard_name">longitude</att>
             <att name="units">degrees_east</att>
-            <att name="valid_max" type="double">-71.17</att>
-            <att name="valid_min" type="double">-71.44</att>
         </sourceAttributes -->
         <addAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="colorBarMaximum" type="double">180.0</att>
-            <att name="colorBarMinimum" type="double">-180.0</att>
+            <att name="ioos_category">Location</att>
             <att name="long_name">Longitude</att>
         </addAttributes>
-    </dataVariable>
+    </axisVariable>
     <dataVariable>
-        <sourceName>depth</sourceName>
-        <destinationName>depth</destinationName>
-        <dataType>float</dataType>
+        <sourceName>MHchla</sourceName>
+        <destinationName>chlorophyll</destinationName>
         <!-- sourceAttributes>
-            <att name="long_name">sensor_depth</att>
-            <att name="positive">down</att>
-            <att name="units">meters</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">8000.0</att>
-            <att name="colorBarMinimum" type="double">-8000.0</att>
-            <att name="colorBarPalette">TopographyDepth</att>
-            <att name="long_name">Sensor Depth</att>
-            <att name="standard_name">depth</att>
-            <att name="units">m</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>to</sourceName>
-        <destinationName>to</destinationName>
-        <dataType>float</dataType>
-        <!-- sourceAttributes>
-            <att name="accuracy">within 0.01 degrees C</att>
-            <att name="long_name">sea_water_temperature</att>
-            <att name="units">degC</att>
-            <att name="valid_max" type="double">29.0</att>
-            <att name="valid_min" type="double">-2.0</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="_FillValue" type="float">NaN</att>
-            <att name="colorBarMaximum" type="double">32.0</att>
-            <att name="colorBarMinimum" type="double">0.0</att>
-            <att name="long_name">Sea Water Temperature</att>
-            <att name="standard_name">sea_water_temperature</att>
-            <att name="units">degree_C</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>S_P</sourceName>
-        <destinationName>S_P</destinationName>
-        <dataType>float</dataType>
-        <!-- sourceAttributes>
-            <att name="accuracy">Conductivity measurements were accurate to within  0.005 mmho/cm, The accuracy of salinity values derived from these conductivity measurements varies with temperature and pressure, however under typical environmental conditions values should be within 0.01 psu or better.</att>
-            <att name="long_name">sea_water_practical_salinity</att>
-            <att name="units">Practical Salinity Scale of 1978 (PSS-78)</att>
-            <att name="valid_max" type="double">35.0</att>
-            <att name="valid_min" type="double">0.0</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="_FillValue" type="float">NaN</att>
-            <att name="colorBarMaximum" type="double">37.0</att>
-            <att name="colorBarMinimum" type="double">32.0</att>
-            <att name="long_name">Sea Water Practical Salinity</att>
-            <att name="standard_name">sea_water_practical_salinity</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>Chl</sourceName>
-        <destinationName>Chl</destinationName>
-        <dataType>float</dataType>
-        <!-- sourceAttributes>
-            <att name="accuracy">Chlorophyll concentrations are accurate to within 3&#37;, however, chlorophyll readings are from in vivo fluorescence, whereas the instrument was calibrated using a chlorophyll standard in acetone, and as a result the chlorophyll fluorescence can be expected to underestimate the overall concentration due to effects such as cell shading, scattering and photochemical quenching of fluorescence. This was illustrated by samples taken for lab analysis at calibration stations during this and previous cruises with this sensor. It was found that the in situ in vivo readings can underestimate the lab extracted chlorophyll estimates by over a factor of 3. The chlorophyll values presented here are the uncorrected in vivo values.</att>
-            <att name="long_name">mass_concentration_of_chlorophyll_in_seawater</att>
-            <att name="units">kg m-3</att>
-            <att name="valid_max" type="double">3.5E-5</att>
-            <att name="valid_min" type="double">0.0</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="_FillValue" type="float">9.96921E36</att>
-            <att name="colorBarMaximum" type="double">30.0</att>
-            <att name="colorBarMinimum" type="double">0.03</att>
-            <att name="colorBarScale">Log</att>
-            <att name="long_name">Mass Concentration Of Chlorophyll In Seawater</att>
+            <att name="_FillValue" type="float">-32767.0</att>
+            <att name="long_name">Mean Chlorophyll a Concentration</att>
             <att name="standard_name">concentration_of_chlorophyll_in_sea_water</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>DO</sourceName>
-        <destinationName>DO</destinationName>
-        <dataType>float</dataType>
-        <!-- sourceAttributes>
-            <att name="long_name">mass_concentration_of_oxygen_in_seawater</att>
-            <att name="source">Oxygen readings were accurate to within 2&#37; of saturation</att>
-            <att name="units">kg m-3</att>
-            <att name="valid_max" type="double">0.02</att>
-            <att name="valid_min" type="double">0.0</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="_FillValue" type="float">NaN</att>
-            <att name="colorBarMaximum" type="double">200.0</att>
-            <att name="colorBarMinimum" type="double">0.0</att>
-            <att name="long_name">Mass Concentration Of Oxygen In Seawater</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>O2sat</sourceName>
-        <destinationName>O2sat</destinationName>
-        <dataType>float</dataType>
-        <!-- sourceAttributes>
-            <att name="long_name">sea_water_sigma_theta</att>
-            <att name="source">Garcia &amp; Gordon (1992) method</att>
-            <att name="units">kg m-3</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="_FillValue" type="float">NaN</att>
-            <att name="colorBarMaximum" type="double">200.0</att>
-            <att name="colorBarMinimum" type="double">0.0</att>
-            <att name="long_name">Sea Water Sigma Theta</att>
-            <att name="standard_name">sea_water_sigma_theta</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>turbid</sourceName>
-        <destinationName>turbid</destinationName>
-        <dataType>float</dataType>
-        <!-- sourceAttributes>
-            <att name="long_name">sea_water_turbidity</att>
-            <att name="units">dimensionless NTU (Nephelometric Turbidity Units)</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="_FillValue" type="float">NaN</att>
-            <att name="long_name">Sea Water Turbidity</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>sigma0</sourceName>
-        <destinationName>sigma0</destinationName>
-        <dataType>float</dataType>
-        <!-- sourceAttributes>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="_FillValue" type="float">NaN</att>
-            <att name="long_name">Sigma0</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>H</sourceName>
-        <destinationName>H</destinationName>
-        <dataType>float</dataType>
-        <!-- sourceAttributes>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="_FillValue" type="float">NaN</att>
-            <att name="long_name">H</att>
-        </addAttributes>
-    </dataVariable>
-</dataset>
-
-<dataset type="EDDTableFromNcFiles" datasetID="raw_59d1_0a18_37ba" active="true">
-    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
-    <updateEveryNMillis>10000</updateEveryNMillis>
-    <fileDir>/erddapData/netcdf/buoy_data/</fileDir>
-    <fileNameRegex>.*\.nc</fileNameRegex>
-    <recursive>false</recursive>
-    <pathRegex>.*</pathRegex>
-    <metadataFrom>last</metadataFrom>
-    <preExtractRegex/>
-    <postExtractRegex/>
-    <extractRegex/>
-    <columnNameForExtract/>
-    <sortedColumnSourceName>time</sortedColumnSourceName>
-    <sortFilesBySourceNames>time</sortFilesBySourceNames>
-    <fileTableInMemory>false</fileTableInMemory>
-    <accessibleViaFiles>false</accessibleViaFiles>
-    <addAttributes>
-        <att name="alt_label">QP</att>
-        <att name="date_created">2020-05-04</att>
-        <att name="date_issued">2020-05-04</att>
-        <att name="label">B7</att>
-        <att name="lat" type="double">41.5903</att>
-        <att name="lon" type="double">-71.38</att>
-        <att name="long_name">Quonset Pt</att>
-        <att name="status" type="long">1</att>
-        <att name="time_coverage_end">2012-10-27T23:45:00Z</att>
-        <att name="time_coverage_start">2005-07-29T10:15:00Z</att>
-        <att name="cdm_data_type">Timeseries</att>
-        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="infoUrl">https://ridatadiscovery.org</att>
-        <att name="institution">Brown</att>
-        <att name="keywords">data, latitude, longitude, name, quonset, station, station_name</att>
-        <att name="license">[standard]</att>
-        <att name="sourceUrl">(local files)</att>
-        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-        <att name="summary">Quonset Pt. Data from a local source.</att>
-        <att name="title">Quonset Pt</att>
-        <att name="cdm_timeseries_variables">station_name, longitude, latitude, SalinitySurface</att>
-        <att name="subsetVariables">station_name, longitude, latitude, SalinitySurface</att>
-    </addAttributes>
-    <dataVariable>
-    <sourceName>time</sourceName>
-    <destinationName>time</destinationName>
-    <dataType>long</dataType>
-    <addAttributes>
-      <att name="long_name">Time</att>
-      <att name="standard_name">time</att>
-    </addAttributes>
-  </dataVariable>
-    <dataVariable>
-        <sourceName>station_name</sourceName>
-        <destinationName>station_name</destinationName>
-        <dataType>String</dataType>
-        <addAttributes>
-            <att name="long_name">station name</att>
-            <att name="standard_name">station_name</att>
-            <att name="cf_role">timeseries_id</att>
-        </addAttributes>
-        <addAttributes>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>lat</sourceName>
-        <destinationName>latitude</destinationName>
-        <dataType>double</dataType>
-        <addAttributes>
-            <att name="long_name">Latitude</att>
-            <att name="short_name">lat</att>
-            <att name="standard_name">latitude</att>
-            <att name="units">degrees_north</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>lon</sourceName>
-        <destinationName>longitude</destinationName>
-        <dataType>double</dataType>
-        <addAttributes>
-            <att name="long_name">Longitude</att>
-            <att name="short_name">lon</att>
-            <att name="standard_name">longitude</att>
-            <att name="units">degrees_east</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>SalinitySurface</sourceName>
-        <destinationName>SalinitySurface</destinationName>
-        <dataType>double</dataType>
-        <addAttributes>
-            <att name="long_name">Surface Salinity Sea Water Salinity</att>
-            <att name="short_name">SalinitySurface</att>
-            <att name="standard_name">sea_water_salinity</att>
-            <att name="units">ppt</att>
-            <!-- <att name="colorBarMaximum" type="double">180.0</att>
-            <att name="colorBarMinimum" type="double">-180.0</att> -->
-        </addAttributes>
-    </dataVariable>
-</dataset>
-
-<dataset type="EDDTableFromNcFiles" datasetID="combined_e784_bee5_492e" active="true">
-    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
-    <updateEveryNMillis>10000</updateEveryNMillis>
-    <fileDir>/erddapData/netcdf/buoy_data/combined/</fileDir>
-    <fileNameRegex>.*\.nc</fileNameRegex>
-    <recursive>true</recursive>
-    <pathRegex>.*</pathRegex>
-    <metadataFrom>last</metadataFrom>
-    <standardizeWhat>0</standardizeWhat>
-    <sortedColumnSourceName>time</sortedColumnSourceName>
-    <sortFilesBySourceNames>time</sortFilesBySourceNames>
-    <fileTableInMemory>false</fileTableInMemory>
-    <accessibleViaFiles>false</accessibleViaFiles>
-    <!-- sourceAttributes>
-        <att name="alt_label">NP</att>
-        <att name="date_created">2020-05-11</att>
-        <att name="date_issued">2020-05-11</att>
-        <att name="label">B2</att>
-        <att name="lat" type="double">41.6708</att>
-        <att name="lon" type="double">-71.3549</att>
-        <att name="long_name">North Prudence</att>
-        <att name="status" type="long">1</att>
-        <att name="time_coverage_end">2012-10-31T23:45:00Z</att>
-        <att name="time_coverage_start">2003-06-06T09:47:34Z</att>
-    </sourceAttributes -->
-    <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
-        <att name="cdm_timeseries_variables">station_id, longitude, latitude</att>
-        <att name="subsetVariables">station_id, longitude, latitude</att>
-    -->
-    <addAttributes>
-        <att name="cdm_data_type">Timeseries</att>
-        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="infoUrl">ridatadiscovery.org</att>
-        <att name="institution">Rhode Island Data Discovery</att>
-        <att name="keywords">bottom, chemistry, chlorophyll, ChlorophyllSurface, concentration, cond, conductivity, data, density, depth, DepthBottom, dissolved, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Oxygen, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; pH, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Conductivity, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, electrical, fractional, fractional_saturation_of_oxygen_in_sea_water, FSpercentSurface, mass, mass_concentration_of_chlorophyll_in_sea_water, mass_concentration_of_oxygen_in_sea_water, north, O2, O2PercentSurface, O2Surface, ocean, oceans, oxygen, percent, pHBottom, pHSurface, practical, prudence, reported, salinity, SalinityBottom, SalinitySurface, sample, saturated, saturation, scale, science, sea, sea_water_electrical_conductivity, sea_water_ph_reported_on_total_scale, sea_water_practical_salinity, sea_water_temperature, seawater, SpCondBottom, SpCondSurface, surface, temperature, time, total, turbidity, TurbidityBottom, water, WaterTempBottom, WaterTempSurface</att>
-        <att name="keywords_vocabulary">GCMD Science Keywords</att>
-        <att name="license">[standard]</att>
-        <att name="sourceUrl">(local files)</att>
-        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-        <att name="summary">RI Buoy Data.</att>
-        <att name="title">RI Buoy Data</att>
-        <att name="cdm_timeseries_variables">O2PercentSurface,SalinityBottom,pHBottom,DepthBottom,TurbidityBottom,ChlorophyllSurface,pHSurface,SpCondSurface,SpCondBottom,FSpercentSurface,WaterTempBottom,O2Surface,WaterTempSurface,SalinitySurface</att>
-    </addAttributes>
-    <dataVariable>
-        <sourceName>time</sourceName>
-        <destinationName>time</destinationName>
-        <dataType>int</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="int">-999</att>
-            <att name="calendar">gregorian</att>
-            <att name="cf_role">timeseries_id</att>
-            <att name="long_name">UTC Sample Time</att>
-            <att name="short_name">time</att>
-            <att name="standard_name">time</att>
-            <att name="units">seconds since 1970-01-01</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
-        </addAttributes>
-    </dataVariable>
-        <dataVariable>
-        <sourceName>station_name</sourceName>
-        <destinationName>station_name</destinationName>
-        <dataType>String</dataType>
-        <addAttributes>
-            <att name="long_name">station name</att>
-            <att name="standard_name">station_name</att>
-        </addAttributes>
-        <addAttributes>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>O2PercentSurface</sourceName>
-        <destinationName>O2PercentSurface</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Surface Percent Oxygen Saturated Dissolved Oxygen</att>
-            <att name="short_name">O2PercentSurface</att>
-            <att name="standard_name">fractional_saturation_of_oxygen_in_sea_water</att>
-            <att name="units">per cent</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">100.0</att>
-            <att name="colorBarMinimum" type="double">0.0</att>
-            <att name="missing_value" type="double">NaN</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>DepthSurface</sourceName>
-        <destinationName>depth</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Surface Depth</att>
-            <att name="short_name">DepthSurface</att>
-            <att name="standard_name">depth</att>
-            <att name="units">m</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">8000.0</att>
-            <att name="colorBarMinimum" type="double">-8000.0</att>
-            <att name="colorBarPalette">TopographyDepth</att>
-            <att name="missing_value" type="double">NaN</att>
-            <att name="source_name">DepthSurface</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>SalinityBottom</sourceName>
-        <destinationName>SalinityBottom</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Bottom Salinity Sea Water Salinity</att>
-            <att name="short_name">SalinityBottom</att>
-            <att name="standard_name">sea_water_salinity</att>
-            <att name="units">ppt</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">37.0</att>
-            <att name="colorBarMinimum" type="double">32.0</att>
-            <att name="missing_value" type="double">NaN</att>
-            <att name="standard_name">sea_water_practical_salinity</att>
-            <att name="units">PSU</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>pHBottom</sourceName>
-        <destinationName>pHBottom</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Bottom pH Sea Water pH</att>
-            <att name="short_name">pHBottom</att>
-            <att name="standard_name">sea_water_ph_reported_on_total_scale</att>
-            <att name="units">1</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">9.0</att>
-            <att name="colorBarMinimum" type="double">7.0</att>
-            <att name="missing_value" type="double">NaN</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>DepthBottom</sourceName>
-        <destinationName>DepthBottom</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Bottom Depth</att>
-            <att name="short_name">DepthBottom</att>
-            <att name="standard_name">depth</att>
-            <att name="units">m</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">8000.0</att>
-            <att name="colorBarMinimum" type="double">-8000.0</att>
-            <att name="colorBarPalette">TopographyDepth</att>
-            <att name="missing_value" type="double">NaN</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>TurbidityBottom</sourceName>
-        <destinationName>TurbidityBottom</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Bottom Turbidity</att>
-            <att name="short_name">TurbidityBottom</att>
-            <att name="standard_name">?</att>
-            <att name="units">?</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="missing_value" type="double">NaN</att>
-            <att name="standard_name">null</att>
-            <att name="units">null</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>ChlorophyllSurface</sourceName>
-        <destinationName>ChlorophyllSurface</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Surface Chlorophyll Mass Concentration of Chlorophyll</att>
-            <att name="short_name">ChlorophyllSurface</att>
-            <att name="standard_name">mass_concentration_of_chlorophyll_in_sea_water</att>
-            <att name="units">ug L-1</att>
+            <att name="units">mg m^-3</att>
         </sourceAttributes -->
         <addAttributes>
             <att name="colorBarMaximum" type="double">30.0</att>
             <att name="colorBarMinimum" type="double">0.03</att>
             <att name="colorBarScale">Log</att>
-            <att name="missing_value" type="double">NaN</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>pHSurface</sourceName>
-        <destinationName>pHSurface</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Surface pH Sea Water pH</att>
-            <att name="short_name">pHSurface</att>
-            <att name="standard_name">sea_water_ph_reported_on_total_scale</att>
-            <att name="units">1</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">9.0</att>
-            <att name="colorBarMinimum" type="double">7.0</att>
-            <att name="missing_value" type="double">NaN</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>SpCondSurface</sourceName>
-        <destinationName>SpCondSurface</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Surface Sp Cond sea_water_electrical_conductivity</att>
-            <att name="short_name">SpCondSurface</att>
-            <att name="standard_name">sea_water_electrical_conductivity</att>
-            <att name="units">mS cm-1</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">40.0</att>
-            <att name="colorBarMinimum" type="double">30.0</att>
-            <att name="missing_value" type="double">NaN</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>SpCondBottom</sourceName>
-        <destinationName>SpCondBottom</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Bottom Sp Cond sea_water_electrical_conductivity</att>
-            <att name="short_name">SpCondBottom</att>
-            <att name="standard_name">sea_water_electrical_conductivity</att>
-            <att name="units">mS cm-1</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">40.0</att>
-            <att name="colorBarMinimum" type="double">30.0</att>
-            <att name="missing_value" type="double">NaN</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>FSpercentSurface</sourceName>
-        <destinationName>FSpercentSurface</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Surface FS percent</att>
-            <att name="short_name">FSpercentSurface</att>
-            <att name="standard_name">?</att>
-            <att name="units">?</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">100.0</att>
-            <att name="colorBarMinimum" type="double">0.0</att>
-            <att name="missing_value" type="double">NaN</att>
-            <att name="standard_name">null</att>
-            <att name="units">null</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>WaterTempBottom</sourceName>
-        <destinationName>WaterTempBottom</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Bottom Water Temperature Sea Water Temperature</att>
-            <att name="short_name">WaterTempBottom</att>
-            <att name="standard_name">sea_water_temperature</att>
-            <att name="units">celsius</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">32.0</att>
-            <att name="colorBarMinimum" type="double">0.0</att>
-            <att name="missing_value" type="double">NaN</att>
-            <att name="units">degree_C</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>O2Surface</sourceName>
-        <destinationName>O2Surface</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="coordinates">time</att>
-            <att name="long_name">Surface Oxygen Mass Concentration of Dissolved Oxygen</att>
-            <att name="short_name">O2Surface</att>
-            <att name="standard_name">mass_concentration_of_oxygen_in_sea_water</att>
-            <att name="units">mg L-1</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">500.0</att>
-            <att name="colorBarMinimum" type="double">0.0</att>
-            <att name="coordinates">null</att>
-            <att name="missing_value" type="double">NaN</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>WaterTempSurface</sourceName>
-        <destinationName>WaterTempSurface</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Surface Water Temperature Sea Water Temperature</att>
-            <att name="short_name">WaterTempSurface</att>
-            <att name="standard_name">sea_water_temperature</att>
-            <att name="units">celsius</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">32.0</att>
-            <att name="colorBarMinimum" type="double">0.0</att>
-            <att name="missing_value" type="double">NaN</att>
-            <att name="units">degree_C</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>SalinitySurface</sourceName>
-        <destinationName>SalinitySurface</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="_FillValue" type="double">NaN</att>
-            <att name="long_name">Surface Salinity Sea Water Salinity</att>
-            <att name="short_name">SalinitySurface</att>
-            <att name="standard_name">sea_water_salinity</att>
-            <att name="units">ppt</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">37.0</att>
-            <att name="colorBarMinimum" type="double">32.0</att>
-            <att name="missing_value" type="double">NaN</att>
-            <att name="standard_name">sea_water_practical_salinity</att>
-            <att name="units">PSU</att>
-        </addAttributes>
-    </dataVariable>
-        <dataVariable>
-        <sourceName>lat</sourceName>
-        <destinationName>latitude</destinationName>
-        <dataType>double</dataType>
-        <addAttributes>
-            <att name="long_name">Latitude</att>
-            <att name="short_name">lat</att>
-            <att name="standard_name">latitude</att>
-            <att name="units">degrees_north</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>lon</sourceName>
-        <destinationName>longitude</destinationName>
-        <dataType>double</dataType>
-        <addAttributes>
-            <att name="long_name">Longitude</att>
-            <att name="short_name">lon</att>
-            <att name="standard_name">longitude</att>
-            <att name="units">degrees_east</att>
+            <att name="ioos_category">Ocean Color</att>
+            <att name="units">mg m-3</att>
         </addAttributes>
     </dataVariable>
 </dataset>
+
+
+<!-- For EDDGridSideBySide, the datasetID's for the parent and the children must be different. -->
+<dataset type="EDDGridSideBySide" datasetID="erdTAssh1day">
+<dataset type="EDDGridFromDap"    datasetID="erdTAsshl1day">
+    <sourceUrl>https://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite/TA/sshl/1day</sourceUrl>
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <addAttributes> 
+        <att name="cols">null</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="creator_email">erd.data@noaa.gov</att>
+        <att name="creator_name">NOAA NMFS SWFSC ERD</att>
+        <att name="creator_type">institution</att>
+        <att name="creator_url">https://www.pfeg.noaa.gov</att>
+        <att name="cwhdf_version">null</att>
+        <att name="et_affine">null</att>
+        <att name="gctp_datum">null</att>
+        <att name="gctp_parm">null</att>
+        <att name="gctp_sys">null</att>
+        <att name="gctp_zone">null</att>
+        <att name="id">null</att>
+        <att name="infoUrl">https://coastwatch.pfeg.noaa.gov/infog/TA_sshl_las.html</att>
+        <att name="institution">NOAA NMFS SWFSC ERD</att>
+        <att name="keywords">above, absolute, altitude, archiving, aviso, coast, coastwatch, data, degrees, earth, geodetics, geoid, global, gravity, height, interpretation, level, long, ltm, mean, noaa, node, ocean, oceanography, oceans,
+Earth Science &gt; Oceans &gt; Sea Surface Topography &gt; Sea Surface Height,
+properties, quality, satellite, science, science quality, sea, sea level, sea_surface_height_above_geoid, solid,
+Earth Science &gt; Solid Earth &gt; Geodetics/Gravity &gt; Geoid Properties,
+ssh, surface, TAsshl, term, time, topography, validation, wcn, west</att>
+        <att name="license">[standard]</att>
+        <att name="naming_authority">gov.noaa.pfeg.coastwatch</att>
+        <att name="pass_date">null</att>
+        <att name="polygon_latitude">null</att>
+        <att name="polygon_longitude">null</att>
+        <att name="project">CoastWatch (https://coastwatch.noaa.gov/)</att>
+        <att name="publisher_email">erd.data@noaa.gov</att>
+        <att name="publisher_name">NOAA NMFS SWFSC ERD</att>
+        <att name="publisher_type">institution</att>
+        <att name="publisher_url">https://www.pfeg.noaa.gov</att>
+        <att name="references">Aviso: https://www.aviso.altimetry.fr/en/my-aviso.html .</att>
+        <att name="rows">null</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v29</att>
+        <att name="start_time">null</att>
+        <att name="title">Sea Surface Height, Absolute, Aviso, 0.25 degrees, Global, 1992-2012, Science Quality (1 Day Composite)</att>
+    </addAttributes>
+    <axisVariable>
+        <sourceName>time</sourceName>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>altitude</sourceName>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>latitude</destinationName>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>longitude</destinationName>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>TAsshl</sourceName>
+        <destinationName>ssh</destinationName>
+        <addAttributes> 
+            <att name="ioos_category">Sea Level</att>
+            <att name="long_name">Sea Surface Height</att>
+            <att name="colorBarMinimum" type="double">-10</att>
+            <att name="colorBarMaximum" type="double">10</att>
+            <att name="actual_range" /> 
+            <att name="numberOfObservations" /> 
+            <att name="percentCoverage" />
+        </addAttributes>
+    </dataVariable>
+</dataset>
+<dataset type="EDDGridFromDap" datasetID="erdTAsshd1day">
+    <sourceUrl>https://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite/TA/sshd/1day</sourceUrl>
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <addAttributes> 
+        <att name="Conventions">COARDS, CF-1.6, Unidata Dataset Discovery v1.0</att>
+        <att name="Metadata_Conventions">COARDS, CF-1.6, Unidata Dataset Discovery v1.0</att>
+        <att name="infoUrl">https://coastwatch.pfeg.noaa.gov/infog/TA_sshd_las.html</att>
+        <att name="institution">NOAA CoastWatch, West Coast Node</att>
+        <att name="standard_name_vocabulary">CF-12</att>
+        <att name="title">Sea Surface Height Deviation, Aviso, Global, Science Quality (1 Day Composite)</att>
+        <att name="cwhdf_version" />
+        <att name="cols" />  
+        <att name="et_affine" />
+        <att name="gctp_datum" />
+        <att name="gctp_parm" />
+        <att name="gctp_sys" />
+        <att name="gctp_zone" />
+        <att name="id" />
+        <att name="pass_date" />
+        <att name="polygon_latitude" />
+        <att name="polygon_longitude" />
+        <att name="rows" />
+        <att name="start_time" />
+        <att name="time_coverage_end" />  
+        <att name="time_coverage_start" />
+    </addAttributes>
+    <axisVariable>
+        <sourceName>time</sourceName>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>altitude</sourceName>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>latitude</destinationName>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>longitude</destinationName>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>TAsshd</sourceName>
+        <destinationName>sshd</destinationName>
+        <addAttributes> 
+            <att name="ioos_category">Sea Level</att>
+            <att name="long_name">Sea Surface Height Deviation</att>
+            <att name="colorBarMinimum" type="double">-0.5</att>
+            <att name="colorBarMaximum" type="double">0.5</att>
+            <att name="actual_range" /> 
+            <att name="numberOfObservations" /> 
+            <att name="percentCoverage" />
+        </addAttributes>
+    </dataVariable>
+</dataset>
+</dataset>
+
+
+<dataset type="EDDTableFromSOS" datasetID="ndbcSosWTemp" active="true">
+    <sourceUrl>http://sdf.ndbc.noaa.gov/sos/server.php</sourceUrl>
+    <sosVersion>1.0.0</sosVersion>
+    <sosServerType>IOOS_NDBC</sosServerType>
+    <reloadEveryNMinutes>1440</reloadEveryNMinutes>
+    <observationOfferingIdRegex>.+</observationOfferingIdRegex>
+    <requestObservedPropertiesSeparately>true</requestObservedPropertiesSeparately>
+    <bboxOffering>urn:ioos:network:noaa.nws.ndbc:all</bboxOffering>
+    <bboxParameter>featureofinterest=BBOX:</bboxParameter>
+    <addAttributes>
+        <att name="cdm_data_type">TimeSeries</att>
+        <att name="cdm_timeseries_variables">station_id, longitude, latitude, sensor_id</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="Metadata_Conventions">null</att>
+        <att name="infoUrl">http://sdf.ndbc.noaa.gov/sos/</att>
+        <att name="institution">NOAA NDBC</att>
+        <att name="keywords">
+Earth Science &gt; Atmosphere &gt; Altitude &gt; Station Height,
+Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature,
+altitude, atmosphere, height, identifier, ndbc, noaa, ocean, oceans, sea, sea_water_temperature, seawater, sensor, sos, station, temperature, time, water</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v29</att>
+        <att name="summary">The NOAA NDBC SOS server is part of the IOOS DIF SOS Project.  The stations in this dataset have sea_water_temperature data.
+
+Because of the nature of SOS requests, requests for data MUST include constraints for the longitude, latitude, time, and/or station_id variables.</att>
+        <att name="title">NOAA NDBC SOS, 2006-present, sea_water_temperature</att>
+    </addAttributes>
+    <longitudeSourceName>longitude (degree)</longitudeSourceName>
+    <latitudeSourceName>latitude (degree)</latitudeSourceName>
+    <altitudeSourceName>depth (m)</altitudeSourceName>
+    <altitudeMetersPerSourceUnit>-1</altitudeMetersPerSourceUnit>
+    <timeSourceName>date_time</timeSourceName>
+    <timeSourceFormat>yyyy-MM-dd'T'HH:mm:ssZ</timeSourceFormat>
+    <dataVariable>
+        <sourceName>sensor_id</sourceName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="comment">Always check the quality_flags before using this data.</att>
+            <att name="ioos_category">Identifier</att>
+            <att name="long_name">Sensor ID</att>
+            <att name="observedProperty">http://mmisw.org/ont/cf/parameter/sea_water_temperature</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sea_water_temperature (C)</sourceName>
+        <destinationName>sea_water_temperature</destinationName>
+        <dataType>float</dataType>
+        <addAttributes>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarMaximum" type="double">32</att>
+            <att name="ioos_category">Temperature</att>
+            <att name="long_name">Sea Water Temperature</att>
+            <att name="observedProperty">http://mmisw.org/ont/cf/parameter/sea_water_temperature</att>
+            <att name="standard_name">sea_water_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+
+<!-- Here are some excellent gridded datasets that you can include in your ERDDAP
+     via EDDGridFromErddap links. All requests for actual data from these
+     datasets get rerouted to the source server. -->
+
+<!-- JPL High Resolution SST -->
+<dataset type="EDDGridFromErddap" datasetID="jplG1SST" active="true">
+    <!-- GHRSST Global 1-km Sea Surface Temperature (G1SST), Global, 0.01 Degree, Daily -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplG1SST</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="jplMURSST41" active="true">
+    <!-- Multi-scale Ultra-high Resolution (MUR) SST analysis fv04.1, Global, 0.011 Degree, Daily -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41</sourceUrl>
+</dataset>
+
+<!-- NAVGEM -->
+<dataset type="EDDGridFromErddap" datasetID="erdNavgem05D10mWind_LonPM180" active="true">
+    <!-- Navy Global Environmental Model (NAVGEM), 0.5 degree, 10 m Wind -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdNavgem05D10mWind_LonPM180</sourceUrl>
+</dataset>
+
+<!-- NCDC Ocean Winds -->
+<dataset type="EDDGridFromErddap" datasetID="ncdcOw6hr_LonPM180" active="true">
+    <!-- NOAA/NCDC Blended 6-Hourly 0.25-degree Sea Surface Winds -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOw6hr_LonPM180</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="ncdcOwClm9505_LonPM180" active="true">
+    <!-- NOAA/NCDC Blended 0.25-degree Sea Winds, Climatological Monthly Means -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOwClm9505_LonPM180</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="ncdcOwDly_LonPM180" active="true">
+    <!-- NOAA/NCDC Blended Daily 0.25-degree Sea Surface Winds -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOwDly_LonPM180</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="ncdcOwMon_LonPM180" active="true">
+    <!-- NOAA/NCDC Blended Monthly 0.25-degree Sea Surface Winds -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOwMon_LonPM180</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="ncdcOwDlyStrs_LonPM180" active="true">
+    <!-- NOAA/NCDC Blended Daily 0.25-degree Sea Surface Wind Stress -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOwDlyStrs_LonPM180</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="ncdcOwMonStrs_LonPM180" active="true">
+    <!-- NOAA/NCDC Blended Monthly 0.25-degree Sea Surface Wind Stress -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/ncdcOwMonStrs_LonPM180</sourceUrl>
+</dataset>
+
+<!-- Miami Currents -->
+<dataset type="EDDGridFromErddap" datasetID="miamicurrents">
+  <defaultGraphQuery>&amp;.draw=vectors</defaultGraphQuery>
+  <sourceUrl>http://cwcgom.aoml.noaa.gov/erddap/griddap/miamicurrents</sourceUrl>
+</dataset>
+
+<!-- Aqua MODIS -->
+<dataset type="EDDGridFromErddap" datasetID="erdMH1cflh1day" active="true">
+    <!-- Fluorescense Line Height, Aqua MODIS, NPP, L3SMI, Global, Science Quality (1 Day Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1cflh1day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1cflh8day" active="true">
+    <!-- Fluorescense Line Height, Aqua MODIS, NPP, L3SMI, Global, Science Quality (8 Day Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1cflh8day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1cflhmday" active="true">
+    <!-- Fluorescense Line Height, Aqua MODIS, NPP, L3SMI, Global, Science Quality (Monthly Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1cflhmday</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1chla1day" active="true">
+    <!-- Chlorophyll-a, Aqua MODIS, NPP, L3SMI, Global, Science Quality (1 Day Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1chla1day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1chla8day" active="true">
+    <!-- Chlorophyll-a, Aqua MODIS, NPP, L3SMI, Global, Science Quality (8 Day Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1chla8day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1chlamday" active="true">
+    <!-- Chlorophyll-a, Aqua MODIS, NPP, L3SMI, Global, Science Quality (Monthly Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1chlamday</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1kd4901day" active="true">
+    <!-- Diffuse Attenuation K490, Aqua MODIS, NPP, L3SMI, Global, Science Quality (1 Day Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1kd4901day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1kd4908day" active="true">
+    <!-- Diffuse Attenuation K490, Aqua MODIS, NPP, L3SMI, Global, Science Quality (8 Day Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1kd4908day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1kd490mday" active="true">
+    <!-- Diffuse Attenuation K490, Aqua MODIS, NPP, L3SMI, Global, Science Quality (Monthly Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1kd490mday</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1par01day" active="true">
+    <!-- Photosynthetically Available Radiation, Aqua MODIS, NPP, L3SMI, Global, Science Quality (1 Day Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1par01day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1par08day" active="true">
+    <!-- Photosynthetically Available Radiation, Aqua MODIS, NPP, L3SMI, Global, Science Quality (8 Day Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1par08day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdMH1par0mday" active="true">
+    <!-- Photosynthetically Available Radiation, Aqua MODIS, NPP, L3SMI, Global, Science Quality (Monthly Composite) -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1par0mday</sourceUrl>
+</dataset>
+
+<!-- VIIRS -->
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018chla1day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, Chlorophyll a, Evaluation Data, Daily -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018chla1day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018chla8day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, Chlorophyll a, Evaluation Data, 8-Day -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018chla8day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018chlamday" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, Chlorophyll a, Evaluation Data, Monthly -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018chlamday</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018k4901day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, K490, Evaluation Data, Daily -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018k4901day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018k4908day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, K490, Evaluation Data, 8-Day -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018k4908day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018k490mday" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, K490, Evaluation Data, Monthly -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018k490mday</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018par1day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, PAR, Evaluation Data, Daily -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018par1day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018par8day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, PAR, Evaluation Data, 8-Day -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018par8day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018parmday" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, PAR, Evaluation Data, Monthly -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018parmday</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018pic1day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, PIC, Evaluation Data, Daily -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018pic1day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018pic8day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, PIC, Evaluation Data, 8-Day -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018pic8day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018picmday" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, PIC, Evaluation Data, Monthly -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018picmday</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018poc1day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, POC, Evaluation Data, Daily -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018poc1day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018poc8day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, POC, Evaluation Data, 8-Day -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018poc8day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018pocmday" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, POC, Evaluation Data, Monthly -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018pocmday</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018r6711day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, Reflectance at 671 nm, Evaluation Data, Daily -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018r6711day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018r6718day" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, Reflectance at 671 nm, Evaluation Data, 8-Day -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018r6718day</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="erdVH2018r671mday" active="true">
+    <!-- VIIRSN, Suomi-NPP, Level-3 SMI, Global, 4km, Reflectance at 671 nm, Evaluation Data, Monthly -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdVH2018r671mday</sourceUrl>
+</dataset>
+
+<!-- Aquarius -->
+<dataset type="EDDGridFromErddap" datasetID="jplAquariusSSS3MonthV5" active="true">
+    <!-- Aquarius Sea Surface Salinity, Version 5, Global, 3-Month -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplAquariusSSS3MonthV5</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="jplAquariusSSS7DayV5" active="true">
+    <!-- Aquarius Sea Surface Salinity, Version 5, Global, 7-Day -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplAquariusSSS7DayV5</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="jplAquariusSSSDailyV5" active="true">
+    <!-- Aquarius Sea Surface Salinity, Version 5, Global, Daily -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplAquariusSSSDailyV5</sourceUrl>
+</dataset>
+<dataset type="EDDGridFromErddap" datasetID="jplAquariusSSSMonthlyV5" active="true">
+    <!-- Aquarius Sea Surface Salinity, Version 5, Global, Monthly -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplAquariusSSSMonthlyV5</sourceUrl>
+</dataset>
+
+
+<!-- Here are some excellent tabular datasets that you can include in your ERDDAP
+     via EDDTableFromErddap links. All requests for actual data from these
+     datasets get rerouted to the source server. -->
+<dataset type="EDDTableFromErddap" datasetID="cwwcNDBCMet" active="true">
+    <!-- NDBC Standard Meteorological Buoy Data -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/cwwcNDBCMet</sourceUrl>
+</dataset>
+<dataset type="EDDTableFromErddap" datasetID="erdGtsppBest" active="true">
+    <!-- Global Temperature and Salinity Profile Programme (GTSPP) Data -->
+    <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/erdGtsppBest</sourceUrl>
+</dataset>
+
+
+
 
 <!-- This is an example of EDDTableFromNcFiles, but commented out since you won't have these files.
 <dataset type="EDDTableFromNcFiles" datasetID="cwwcNDBCMetF">
@@ -1584,6 +1401,623 @@ This dataset has both historical data (quality controlled, before
         <addAttributes>
             <att name="colorBarMaximum" type="double">180.0</att>
             <att name="colorBarMinimum" type="double">-180.0</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<dataset type="EDDTableFromNcFiles" datasetID="combined_e784_bee5_492e" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/buoy_data/combined/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <sortedColumnSourceName>time</sortedColumnSourceName>
+    <sortFilesBySourceNames>time</sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="alt_label">NP</att>
+        <att name="date_created">2020-05-11</att>
+        <att name="date_issued">2020-05-11</att>
+        <att name="label">B2</att>
+        <att name="lat" type="double">41.6708</att>
+        <att name="lon" type="double">-71.3549</att>
+        <att name="long_name">North Prudence</att>
+        <att name="status" type="long">1</att>
+        <att name="time_coverage_end">2012-10-31T23:45:00Z</att>
+        <att name="time_coverage_start">2003-06-06T09:47:34Z</att>
+    </sourceAttributes -->
+    <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
+        <att name="cdm_timeseries_variables">station_id, longitude, latitude</att>
+        <att name="subsetVariables">station_id, longitude, latitude</att>
+    -->
+    <addAttributes>
+        <att name="cdm_data_type">Timeseries</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="infoUrl">ridatadiscovery.org</att>
+        <att name="institution">Rhode Island Data Discovery</att>
+        <att name="keywords">bottom, chemistry, chlorophyll, ChlorophyllSurface, concentration, cond, conductivity, data, density, depth, DepthBottom, dissolved, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Oxygen, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; pH, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Conductivity, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, electrical, fractional, fractional_saturation_of_oxygen_in_sea_water, FSpercentSurface, mass, mass_concentration_of_chlorophyll_in_sea_water, mass_concentration_of_oxygen_in_sea_water, north, O2, O2PercentSurface, O2Surface, ocean, oceans, oxygen, percent, pHBottom, pHSurface, practical, prudence, reported, salinity, SalinityBottom, SalinitySurface, sample, saturated, saturation, scale, science, sea, sea_water_electrical_conductivity, sea_water_ph_reported_on_total_scale, sea_water_practical_salinity, sea_water_temperature, seawater, SpCondBottom, SpCondSurface, surface, temperature, time, total, turbidity, TurbidityBottom, water, WaterTempBottom, WaterTempSurface</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="summary">RI Buoy Data.</att>
+        <att name="title">RI Buoy Data</att>
+        <att name="cdm_timeseries_variables">O2PercentSurface,SalinityBottom,pHBottom,DepthBottom,TurbidityBottom,ChlorophyllSurface,pHSurface,SpCondSurface,SpCondBottom,FSpercentSurface,WaterTempBottom,O2Surface,WaterTempSurface,SalinitySurface</att>
+    </addAttributes>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>int</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="int">-999</att>
+            <att name="calendar">gregorian</att>
+            <att name="cf_role">timeseries_id</att>
+            <att name="long_name">UTC Sample Time</att>
+            <att name="short_name">time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+        <dataVariable>
+        <sourceName>station_name</sourceName>
+        <destinationName>station_name</destinationName>
+        <dataType>String</dataType>
+        <addAttributes>
+            <att name="long_name">station name</att>
+            <att name="standard_name">station_name</att>
+        </addAttributes>
+        <addAttributes>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2PercentSurface</sourceName>
+        <destinationName>O2PercentSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Percent Oxygen Saturated Dissolved Oxygen</att>
+            <att name="short_name">O2PercentSurface</att>
+            <att name="standard_name">fractional_saturation_of_oxygen_in_sea_water</att>
+            <att name="units">per cent</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DepthSurface</sourceName>
+        <destinationName>depth</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Depth</att>
+            <att name="short_name">DepthSurface</att>
+            <att name="standard_name">depth</att>
+            <att name="units">m</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">8000.0</att>
+            <att name="colorBarMinimum" type="double">-8000.0</att>
+            <att name="colorBarPalette">TopographyDepth</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="source_name">DepthSurface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinityBottom</sourceName>
+        <destinationName>SalinityBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Salinity Sea Water Salinity</att>
+            <att name="short_name">SalinityBottom</att>
+            <att name="standard_name">sea_water_salinity</att>
+            <att name="units">ppt</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>pHBottom</sourceName>
+        <destinationName>pHBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom pH Sea Water pH</att>
+            <att name="short_name">pHBottom</att>
+            <att name="standard_name">sea_water_ph_reported_on_total_scale</att>
+            <att name="units">1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">9.0</att>
+            <att name="colorBarMinimum" type="double">7.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DepthBottom</sourceName>
+        <destinationName>DepthBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Depth</att>
+            <att name="short_name">DepthBottom</att>
+            <att name="standard_name">depth</att>
+            <att name="units">m</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">8000.0</att>
+            <att name="colorBarMinimum" type="double">-8000.0</att>
+            <att name="colorBarPalette">TopographyDepth</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>TurbidityBottom</sourceName>
+        <destinationName>TurbidityBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Turbidity</att>
+            <att name="short_name">TurbidityBottom</att>
+            <att name="standard_name">?</att>
+            <att name="units">?</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">null</att>
+            <att name="units">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ChlorophyllSurface</sourceName>
+        <destinationName>ChlorophyllSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Chlorophyll Mass Concentration of Chlorophyll</att>
+            <att name="short_name">ChlorophyllSurface</att>
+            <att name="standard_name">mass_concentration_of_chlorophyll_in_sea_water</att>
+            <att name="units">ug L-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.03</att>
+            <att name="colorBarScale">Log</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>pHSurface</sourceName>
+        <destinationName>pHSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface pH Sea Water pH</att>
+            <att name="short_name">pHSurface</att>
+            <att name="standard_name">sea_water_ph_reported_on_total_scale</att>
+            <att name="units">1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">9.0</att>
+            <att name="colorBarMinimum" type="double">7.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SpCondSurface</sourceName>
+        <destinationName>SpCondSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Sp Cond sea_water_electrical_conductivity</att>
+            <att name="short_name">SpCondSurface</att>
+            <att name="standard_name">sea_water_electrical_conductivity</att>
+            <att name="units">mS cm-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">40.0</att>
+            <att name="colorBarMinimum" type="double">30.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SpCondBottom</sourceName>
+        <destinationName>SpCondBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Sp Cond sea_water_electrical_conductivity</att>
+            <att name="short_name">SpCondBottom</att>
+            <att name="standard_name">sea_water_electrical_conductivity</att>
+            <att name="units">mS cm-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">40.0</att>
+            <att name="colorBarMinimum" type="double">30.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>FSpercentSurface</sourceName>
+        <destinationName>FSpercentSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface FS percent</att>
+            <att name="short_name">FSpercentSurface</att>
+            <att name="standard_name">?</att>
+            <att name="units">?</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">null</att>
+            <att name="units">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempBottom</sourceName>
+        <destinationName>WaterTempBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Water Temperature Sea Water Temperature</att>
+            <att name="short_name">WaterTempBottom</att>
+            <att name="standard_name">sea_water_temperature</att>
+            <att name="units">celsius</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2Surface</sourceName>
+        <destinationName>O2Surface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="coordinates">time</att>
+            <att name="long_name">Surface Oxygen Mass Concentration of Dissolved Oxygen</att>
+            <att name="short_name">O2Surface</att>
+            <att name="standard_name">mass_concentration_of_oxygen_in_sea_water</att>
+            <att name="units">mg L-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">500.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempSurface</sourceName>
+        <destinationName>WaterTempSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Water Temperature Sea Water Temperature</att>
+            <att name="short_name">WaterTempSurface</att>
+            <att name="standard_name">sea_water_temperature</att>
+            <att name="units">celsius</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinitySurface</sourceName>
+        <destinationName>SalinitySurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Salinity Sea Water Salinity</att>
+            <att name="short_name">SalinitySurface</att>
+            <att name="standard_name">sea_water_salinity</att>
+            <att name="units">ppt</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+        <dataVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="long_name">Latitude</att>
+            <att name="short_name">lat</att>
+            <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="long_name">Longitude</att>
+            <att name="short_name">lon</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degrees_east</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<dataset type="EDDTableFromNcFiles" datasetID="nuShuttle_1130_b0f0_f109" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/nuShuttle/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <sortedColumnSourceName>time</sortedColumnSourceName>
+    <sortFilesBySourceNames>time</sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="comment">Attribute Accuracy Report: The temperature sensor was accurate to within 0.003 degrees C however due to a lag in response time of the sensor as it was towed through the water, results were only reported to within 0.01 degrees C. Conductivity measurements were accurate to within  0.005 mmho/cm. The accuracy of salinity values derived from these conductivity measurements varies with temperature and pressure, however under typical environmental conditions values should be within 0.01 psu or better. The calibration of the conductivity cell was tested in the lab using a resistor of known resistance prior to the cruise. Chlorophyll concentrations are accurate to within 3&#37;, however, chlorophyll readings are from in vivo fluorescence, whereas the instrument was calibrated using a chlorophyll standard in acetone, and as a result the chlorophyll fluorescence can be expected to underestimate the overall concentration due to effects such as cell shading, scattering and photochemical quenching of fluorescence. This was illustrated by samples taken for lab analysis at calibration stations during this and previous cruises with this sensor. It was found that the in situ in vivo readings can underestimate the lab extracted chlorophyll estimates by over a factor of 3. The chlorophyll values presented here are the uncorrected in vivo values. Oxygen readings were accurate to within 2&#37; of saturation (i.e. accuracy is partly dependent on salinity, temperature and pressure which determine the saturation value for dissolved oxygen). Prior to the cruise the oxygen sensor was lab calibrated using an oxygen saturated seawater bath at equilibrium with the atmosphere, and Winkler titrations were used to verify the oxygen concentration of the calibration bath. Logical Consistency Report: Data were processed using a Matlab routine that checks for out of range values. Any positions for which the degrees column does not equal 41 degrees north latitude or 71 degrees west longitude were deleted.   Any temperature values not between -2 an 29 degrees C were deleted. Chlorophyll values were deleted if they were not between 0 and 30 mg m^-3. Pressure values not between 0 and 35 dbars were omitted. Conductivity values less than 0 were omitted. Three calibration stations were performed during the cruise at which samples were taken for to measure chlorophyll, oxygen, salinity and temperature independently. These measurements were used as a check on the sensor data. In the event that the calibrations samples indicated a problem with the sensor data, action would be taken to correct or eliminate those results as needed. At each calibration station the depth readings are also checked against 2 independent depth sensors, while the sensor is hanging at an approximately known depth. Anytime the oxygen sensor was restarted the first 2 minutes of data were discarded from the dataset due to the time required for the SBE-13 oxygen electrode to ionize. Completeness Report: Some data points were omitted from this data set. These data points typically corresponded to very near surface samples where the instruments were breaching the surface of the water, causing anomalous readings. Horizontal Positional Accuracy Report: All horizontal positions were determined by differential GPS with an accuracy of  +/- 5 meters. Vertical Positional Accuracy Report: Depths were determined by a pressure sensor accurate to within 0.2 dbars (1 dbar is approximately equivalent to 1 meter of depth). Process Description: This data was collected during a research cruise in Narragansett Bay, RI aboard the R/V Capn Bert. Data was collected using a Chelsea Technologies Group (CTG) NuShuttle towed undulating sampling platform permitting underway profiling of the water column. The NuShuttle contained a CTG Aquapak CTD/Fluorometer that measured conductivity (salinity), temperature, pressure (depth) and chlorophyll fluorescence. Oxygen data was collected using a Seabird SBE-13 dissolved oxygen sensor.  Prior to each cruise the oxygen sensor is calibrated in the lab, and the CTD is tested to ensure accurate readings. The cruise began at Quonset Point in the West Passage of Narragansett Bay. The ship headed south into RI Sound, then north into the East Passage of Narragansett Bay to Mt. Hope Bay and Fall River, then to Fields Point in the Providence River, then south down the West Passage returning to Quonset Point. The tow speed was maintained at approximately 8 knots. Calibration stations were performed at the beginning and end of the cruise, as well as during the cruise at near the Newport bridge to verify results. Following the cruise all data were processed by a Matlab routine that calibrates the raw instrument output, and removes anomalous values. Latitude Resolution: 0.001 minutes. Longitude Resolution: 0.001 minutes. Horizontal Datum Name: North American Datum of 1983. Ellipsoid Name: Geodetic Reference System 80. Semi-Major Axis: 6378137 meters. Denominator of Flattening: 298.257. Depth Resolution: 0.1 meters. Entity Type Label: NuShuttle transect. Entity Type Definition: Measurements of salinity, temperature, dissolved oxygen and chlorophyll made underway using a towed undulating NuShuttle sampling platform. Attribute Definition: The salt content of the water derived from measurements of conductivity by a Chelsea Technologies Group Aquapak CTD/Fluorometer. Conductivity is used to estimate salinity according to the practical salinity scale of 1978. Attribute Definition: Water temperature measured by a Chelsea Technologies Group Aquapak CTD/Flourometer. Attribute Definition: Chlorophyll concentration determined by in situ measurements of in vivo chlorophyll a fluorescence using a Chelsea Technologies Group CTD/Fluorometer. Attribute Definition: Dissolved oxygen concentration measured using a Seabird SBE-13 oxygen sensor. Distribution Liability: This data set is provided as is and free of charge. No warranty is expressed or implied by the National Marine Fisheries Service.</att>
+        <att name="history">Converted from csv files at NarrBay.org</att>
+        <att name="institution">National Marine Fisheries Service</att>
+        <att name="references">Narragansett Bay Window Project, Mark Berman, mberman@mola.na.nmfs.gov</att>
+        <att name="source">NarrBay.org</att>
+        <att name="title">Narragansett Bay Monthly Transect</att>
+    </sourceAttributes -->
+    <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
+        <att name="cdm_timeseries_variables">station_id, longitude, latitude</att>
+        <att name="subsetVariables">station_id, longitude, latitude</att>
+    -->
+    <addAttributes>
+        <att name="cdm_data_type">Point</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="creator_email">mberman@mola.na.nmfs.gov</att>
+        <att name="creator_name">MBERMAN</att>
+        <att name="creator_type">institution</att>
+        <att name="infoUrl">???</att>
+        <att name="keywords">bay, chemistry, Chl, chla, chlorophyll, chlorophyll-a, concentration, concentration_of_chlorophyll_in_sea_water, conductivity, cruise, ctd, data, density, depth, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Density, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, fisheries, global, gps, latitude, longitude, marine, mass, month, monthly, narragansett, national, nmfs, number, nushuttle, O2, O2sat, ocean, oceans, oxygen, positioning, practical, pss, S_P, salinity, scale, science, sea, sea_water_practical_salinity, sea_water_sigma_theta, sea_water_temperature, seawater, sensor, service, sigma, sigma0, sonde, system, temperature, theta, time, transect, turbid, turbidity, water</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="subsetVariables">Chl</att>
+        <att name="summary">Narragansett Bay Monthly Transect. Attribute Accuracy Report: The temperature sensor was accurate to within 0.003 degrees C however due to a lag in response time of the sensor as it was towed through the water, results were only reported to within 0.01 degrees C. Conductivity measurements were accurate to within  0.005 mmho/cm. The accuracy of salinity values derived from these conductivity measurements varies with temperature and pressure, however under typical environmental conditions values should be within 0.01 psu or better. The calibration of the conductivity cell was tested in the lab using a resistor of known resistance prior to the cruise. Chlorophyll concentrations are accurate to within 3&#37;, however, chlorophyll readings are from in vivo fluorescence, whereas the instrument was calibrated using a chlorophyll standard in acetone, and as a result the chlorophyll fluorescence can be expected to underestimate the overall concentration due to effects such as cell shading, scattering and photochemical quenching of fluorescence. This was illustrated by samples taken for lab analysis at calibration stations during this and previous cruises with this sensor. It was found that the in situ in vivo readings can underestimate the lab extracted chlorophyll estimates by over a factor of 3. The chlorophyll values presented here are the uncorrected in vivo values. Oxygen readings were accurate to within 2&#37; of saturation (i.e. accuracy is partly dependent on salinity, temperature and pressure which determine the saturation value for dissolved oxygen). Prior to the cruise the oxygen sensor was lab calibrated using an oxygen saturated seawater bath at equilibrium with the atmosphere, and Winkler titrations were used to verify the oxygen concentration of the calibration bath. Logical Consistency Report: Data were processed using a Matlab routine that checks for out of range values. Any positions for which the degrees column does not equal 41 degrees north latitude or 71 degrees west longitude were deleted.   Any temperature values not between -2 an 29 degrees C were deleted. Chlorophyll values were deleted if they were not between 0 and 30 mg m^-3. Pressure values not between 0 and 35 dbars were omitted. Conductivity values less than 0 were omitted. Three calibration stations were performed during the cruise at which samples were taken for to measure chlorophyll, oxygen, salinity and temperature independently. These measurements were used as a check on the sensor data. In the event that the calibrations samples indicated a problem with the sensor data, action would be taken to correct or eliminate those results as needed. At each calibration station the depth readings are also checked against 2 independent depth sensors, while the sensor is hanging at an approximately known depth. Anytime the oxygen sensor was restarted the first 2 minutes of data were discarded from the dataset due to the time required for the SBE-13 oxygen electrode to ionize. Completeness Report: Some data points were omitted from this data set. These data points typically corresponded to very near surface samples where the instruments were breaching the surface of the water, causing anomalous readings. Horizontal Positional Accuracy Report: All horizontal positions were determined by differential Global Positioning System (GPS) with an accuracy of  +/- 5 meters. Vertical Positional Accuracy Report: Depths were determined by a pressure sensor accurate to within 0.2 dbars (1 dbar is approximately equivalent to 1 meter of depth). Process Description: This data was collected during a research cruise in Narragansett Bay, RI aboard the R/V Capn Bert. Data was collected using a Chelsea Technologies Group (CTG) NuShuttle towed undulating sampling platform permitting underway profiling of the water column. The NuShuttle contained a CTG Aquapak Conductivity, Temperature, Depth (CTD)/Fluorometer that measured conductivity (salinity), temperature, pressure (depth) and chlorophyll fluorescence. Oxygen data was collected using a Seabird SBE-13 dissolved oxygen sensor.  Prior to each cruise the oxygen sensor is calibrated in the lab, and the CTD is tested to ensure accurate readings. The cruise began at Quonset Point in the West Passage of Narragansett Bay. The ship headed south into RI Sound, then north into the East Passage of Narragansett Bay to Mt. Hope Bay and Fall River, then to Fields Point in the Providence River, then south down the West Passage returning to Quonset Point. The tow speed was maintained at approximately 8 knots. Calibration stations were performed at the beginning and end of the cruise, as well as during the cruise at near the Newport bridge to verify results. Following the cruise all data were processed by a Matlab routine that calibrates the raw instrument output, and removes anomalous values. Latitude Resolution: 0.001 minutes. Longitude Resolution: 0.001 minutes. Horizontal Datum Name: North American Datum of 1983. Ellipsoid Name: Geodetic Reference System 80. Semi-Major Axis: 6378137 meters. Denominator of Flattening: 298.257. Depth Resolution: 0.1 meters. Entity Type Label: NuShuttle transect. Entity Type Definition: Measurements of salinity, temperature, dissolved oxygen and chlorophyll made underway using a towed undulating NuShuttle sampling platform. Attribute Definition: The salt content of the water derived from measurements of conductivity by a Chelsea Technologies Group Aquapak CTD/Fluorometer. Conductivity is used to estimate salinity according to the practical salinity scale of 1978. Attribute Definition: Water temperature measured by a Chelsea Technologies Group Aquapak CTD/Flourometer. Attribute Definition: Chlorophyll concentration determined by in situ measurements of in vivo chlorophyll a fluorescence using a Chelsea Technologies Group CTD/Fluorometer. Attribute Definition: Dissolved oxygen concentration measured using a Seabird SBE-13 oxygen sensor. Distribution Liability: This data set is provided as is and free of charge. No warranty is expressed or implied by the National Marine Fisheries Service.</att>
+        <att name="title">Narragansett Bay Monthly Transect (NuShuttle)</att>
+    </addAttributes>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="units">seconds since 1970-1-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>cruise</sourceName>
+        <destinationName>cruise</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">NuShuttle_Cruise_Number</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="accuracy">within 0.2 m</att>
+            <att name="long_name">latitude</att>
+            <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att>
+            <att name="valid_max" type="double">41.8</att>
+            <att name="valid_min" type="double">41.35</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="colorBarMaximum" type="double">90.0</att>
+            <att name="colorBarMinimum" type="double">-90.0</att>
+            <att name="long_name">Latitude</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="accuracy">0.001 minutes</att>
+            <att name="long_name">longitude</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degrees_east</att>
+            <att name="valid_max" type="double">-71.17</att>
+            <att name="valid_min" type="double">-71.44</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="colorBarMaximum" type="double">180.0</att>
+            <att name="colorBarMinimum" type="double">-180.0</att>
+            <att name="long_name">Longitude</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>depth</sourceName>
+        <destinationName>depth</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">sensor_depth</att>
+            <att name="positive">down</att>
+            <att name="units">meters</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">8000.0</att>
+            <att name="colorBarMinimum" type="double">-8000.0</att>
+            <att name="colorBarPalette">TopographyDepth</att>
+            <att name="long_name">Sensor Depth</att>
+            <att name="standard_name">depth</att>
+            <att name="units">m</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>to</sourceName>
+        <destinationName>to</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="accuracy">within 0.01 degrees C</att>
+            <att name="long_name">sea_water_temperature</att>
+            <att name="units">degC</att>
+            <att name="valid_max" type="double">29.0</att>
+            <att name="valid_min" type="double">-2.0</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Sea Water Temperature</att>
+            <att name="standard_name">sea_water_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>S_P</sourceName>
+        <destinationName>S_P</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="accuracy">Conductivity measurements were accurate to within  0.005 mmho/cm, The accuracy of salinity values derived from these conductivity measurements varies with temperature and pressure, however under typical environmental conditions values should be within 0.01 psu or better.</att>
+            <att name="long_name">sea_water_practical_salinity</att>
+            <att name="units">Practical Salinity Scale of 1978 (PSS-78)</att>
+            <att name="valid_max" type="double">35.0</att>
+            <att name="valid_min" type="double">0.0</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="long_name">Sea Water Practical Salinity</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Chl</sourceName>
+        <destinationName>Chl</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="accuracy">Chlorophyll concentrations are accurate to within 3&#37;, however, chlorophyll readings are from in vivo fluorescence, whereas the instrument was calibrated using a chlorophyll standard in acetone, and as a result the chlorophyll fluorescence can be expected to underestimate the overall concentration due to effects such as cell shading, scattering and photochemical quenching of fluorescence. This was illustrated by samples taken for lab analysis at calibration stations during this and previous cruises with this sensor. It was found that the in situ in vivo readings can underestimate the lab extracted chlorophyll estimates by over a factor of 3. The chlorophyll values presented here are the uncorrected in vivo values.</att>
+            <att name="long_name">mass_concentration_of_chlorophyll_in_seawater</att>
+            <att name="units">kg m-3</att>
+            <att name="valid_max" type="double">3.5E-5</att>
+            <att name="valid_min" type="double">0.0</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">9.96921E36</att>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.03</att>
+            <att name="colorBarScale">Log</att>
+            <att name="long_name">Mass Concentration Of Chlorophyll In Seawater</att>
+            <att name="standard_name">concentration_of_chlorophyll_in_sea_water</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DO</sourceName>
+        <destinationName>DO</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">mass_concentration_of_oxygen_in_seawater</att>
+            <att name="source">Oxygen readings were accurate to within 2&#37; of saturation</att>
+            <att name="units">kg m-3</att>
+            <att name="valid_max" type="double">0.02</att>
+            <att name="valid_min" type="double">0.0</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">200.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Mass Concentration Of Oxygen In Seawater</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2sat</sourceName>
+        <destinationName>O2sat</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">sea_water_sigma_theta</att>
+            <att name="source">Garcia &amp; Gordon (1992) method</att>
+            <att name="units">kg m-3</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">200.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Sea Water Sigma Theta</att>
+            <att name="standard_name">sea_water_sigma_theta</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>turbid</sourceName>
+        <destinationName>turbid</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">sea_water_turbidity</att>
+            <att name="units">dimensionless NTU (Nephelometric Turbidity Units)</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Sea Water Turbidity</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sigma0</sourceName>
+        <destinationName>sigma0</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Sigma0</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>H</sourceName>
+        <destinationName>H</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">H</att>
         </addAttributes>
     </dataVariable>
 </dataset>
