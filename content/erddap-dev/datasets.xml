@@ -2022,5 +2022,194 @@ This dataset has both historical data (quality controlled, before
     </dataVariable>
 </dataset>
 
+<dataset type="EDDTableFromNcFiles" datasetID="fib_828a_964e_ab0d" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/fib/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <sortedColumnSourceName>time</sortedColumnSourceName>
+    <sortFilesBySourceNames>time</sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="history">Converted from spreadsheets provided by the Rhode Island Department of Health</att>
+        <att name="institution">Rhode Island Department of Health</att>
+        <att name="references">Bacterial data is from Sherry Poucher at the RIDOH Beach Monitoring Program, Sherry.Poucher@health.ri.gov</att>
+        <att name="source">Bacterial count lab data comes from Rhode Island Department of Health lab measurements using samples from beach locations. Beach closure data is also from RIDOH. Minor cleaning of some of the data was done in the process of converting to this file format.</att>
+        <att name="title">Saltwater RIDOH Bacterial Count Lab Data Entry and Beach Closure Data, 2006-2019</att>
+    </sourceAttributes -->
+    <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
+        <att name="cdm_timeseries_variables">station_id, longitude, latitude</att>
+        <att name="subsetVariables">station_id, longitude, latitude</att>
+    -->
+    <addAttributes>
+        <att name="cdm_data_type">Other</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="creator_email">Sherry.Poucher@health.ri.gov</att>
+        <att name="creator_name">Sherry Poucher</att>
+        <att name="creator_type">person</att>
+        <att name="infoUrl">???</att>
+        <att name="keywords">2006-2019, bacterial, beach, beach_closures, closure, closures, colony, colony-forming, count, counts, data, department, duplicate, edt, enterococci, enterococci_counts_in_colony-forming_units, entry, exported, forming, health, island, lab, lab_id, LabID, rhode, ridoh, saltwater, sample, sampler, station, station_id, StationID, SWResults, test, Test_Type, time, type, units, validation, water, water_type, WaterType</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="subsetVariables">StationID</att>
+        <att name="summary">Saltwater RIDOH Bacterial Count Lab Data Entry and Beach Closure Data, 2006-2019</att>
+    </addAttributes>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_CoordinateAxisType">Time</att>
+            <att name="actual_range">0, 7080213</att>
+            <att name="axis">T</att>
+            <att name="calendar">standard</att>
+            <att name="ioos_category">Time</att>
+            <att name="long_name">EDT Sample Time</att>
+            <att name="short_name">time</att>
+            <att name="standard_name">time</att>
+            <att name="time_origin">2006-05-01 12:00:00</att>
+            <att name="units">minutes since 2006-05-01 12:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="units">minutes since 2006-05-01T12:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>StationID</sourceName>
+        <destinationName>StationID</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">Station ID</att>
+            <att name="standard_name">Station_ID</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="standard_name">station_id</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>LabID</sourceName>
+        <destinationName>LabID</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">Lab ID</att>
+            <att name="standard_name">Lab_ID</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="standard_name">lab_id</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterType</sourceName>
+        <destinationName>WaterType</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">Water Type</att>
+            <att name="standard_name">Water_Type</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="standard_name">water_type</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Duplicate</sourceName>
+        <destinationName>Duplicate</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">Duplicate</att>
+            <att name="standard_name">Duplicate</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="standard_name">duplicate</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Validation</sourceName>
+        <destinationName>Validation</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">Validation</att>
+            <att name="standard_name">Validation</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="standard_name">validation</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SWResults</sourceName>
+        <destinationName>SWResults</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="actual_range">10, 24200</att>
+            <att name="long_name">Enterococci Counts in colony-forming units</att>
+            <att name="short_name">ECounts</att>
+            <att name="standard_name">Enterococci_Counts_in_colony-forming_units</att>
+            <att name="units">colony-forming unit</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="standard_name">enterococci_counts_in_colony-forming_units</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Exported</sourceName>
+        <destinationName>Exported</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Exported</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Test_Type</sourceName>
+        <destinationName>Test_Type</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Test Type</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Sampler</sourceName>
+        <destinationName>Sampler</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Sampler</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Beach_Closures</sourceName>
+        <destinationName>Beach_Closures</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="actual_range">0, 1</att>
+            <att name="comment">The original beach closures dataset was for beaches, not observational stations, but in this NetCDF file, the beach closures are indexed to the Station ID dimension. Stations corresponding to closed beaches were marked 1 for closed (as opposed to 0 for open) for the times when the corresponding beaches were closed. To find which beach corresponds to each Station ID, see the Name of Beach variable. In the original Beach Closures data, there were a few inconsistencies in the way the beaches were named, and due to these inconsistencies, there may be inaccuracies for a small minority (5 or 6 beaches) of the beach closure data in this dataset. To see the code that was used to convert between the beach naming systems in the lab data entry file and the beach closure file, see this github page: https://github.com/austinbennysmith/OSOM-ERDDAP/tree/master/Making_NetCDF_Files. For the original beach closure data, see the Rhode Island Department of Health.</att>
+            <att name="long_name">Beach Closures</att>
+            <att name="short_name">Closures</att>
+            <att name="standard_name">Beach_Closures</att>
+            <att name="units">0 for open, 1 for closed</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="standard_name">beach_closures</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
 </erddapDatasets>
 
