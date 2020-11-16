@@ -1,6 +1,6 @@
 version: '3'
 services:
-  erddap:
+  erddap: &erddap
     image: axiom/docker-erddap
     ports:
       - 8080:8080
@@ -8,3 +8,13 @@ services:
       - ./content/erddap-dev:/usr/local/tomcat/content/erddap
       - ./isilon_erddap/erddap_data:/erddapData
       - ${PWD}/config/web.xml:/usr/local/tomcat/webapps/erddap/WEB-INF/web.xml
+  generate_dataset_xml:
+    <<: *erddap
+    command: |
+      bash -c "cd webapps/erddap/WEB-INF/ && \
+      bash GenerateDatasetsXml.sh -verbose"
+  generate_data_structure:
+    <<: *erddap
+    command: |
+      bash -c "cd webapps/erddap/WEB-INF/ && \
+      bash DasDds.sh -verbose"
