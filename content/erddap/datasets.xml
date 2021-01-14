@@ -2625,7 +2625,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
 </dataset>
 
-<dataset type="EDDTableFromNcFiles" datasetID="model_data_77bb_15c2_6ab3" active="true">
+<dataset type="EDDTableFromMultidimNcFiles" datasetID="model_data_77bb_15c2_6ab3" active="true">
     <reloadEveryNMinutes>10080</reloadEveryNMinutes>
     <updateEveryNMillis>10000</updateEveryNMillis>
     <fileDir>/erddapData/netcdf/model_data/</fileDir>
@@ -2634,15 +2634,15 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <pathRegex>.*</pathRegex>
     <metadataFrom>last</metadataFrom>
     <standardizeWhat>0</standardizeWhat>
-    <sortedColumnSourceName>ocean_time</sortedColumnSourceName>
-    <sortFilesBySourceNames>ocean_time</sortFilesBySourceNames>
+    <removeMVRows>true</removeMVRows>
+    <sortFilesBySourceNames></sortFilesBySourceNames>
     <fileTableInMemory>false</fileTableInMemory>
     <accessibleViaFiles>false</accessibleViaFiles>
     <!-- sourceAttributes>
         <att name="ana_file">ROMS/Functionals/ana_btflux.h, ROMS/Functionals/ana_stflux.h</att>
         <att name="bio_file">ROMS/Nonlinear/Biology/bio_UMAINE15.h</att>
-        <att name="bpar_file">bio_UMAINE15_v5.in</att>
-        <att name="bry_file">bry_osom_cosine_monthly_grid4_mindep_smlp_mod7_2018.nc</att>
+        <att name="bpar_file">bio_UMAINE15_v15.in</att>
+        <att name="bry_file">bry_osom_cosine_monthly_grid4_mindep_smlp_mod8_2006.nc</att>
         <att name="code_dir">/gpfs_home/dullman1/ROMS/trunk</att>
         <att name="compiler_command">/gpfs/runtime/opt/mpi/openmpi_2.0.3_intel/bin/mpif90</att>
         <att name="compiler_flags">-heap-arrays -fp-model precise -ip -O3 -free -free</att>
@@ -2650,17 +2650,17 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="Conventions">CF-1.4</att>
         <att name="CPP_options">epscor_umaine15, ADD_FSOBC, ADD_M2OBC, ANA_BPFLUX, ANA_BSFLUX, ANA_BTFLUX, ANA_SPFLUX, ASSUMED_SHAPE, BIO_UMAINE15, BULK_FLUXES, CARBON, CURVGRID, DEFLATE, DIFF_GRID, DJ_GRADPS, DOUBLE_PRECISION, EMINUSP, GLS_MIXING, HDF5, LONGWAVE_OUT, MASKING, MIX_GEO_TS, MIX_S_UV, MPI, NONLINEAR, NONLIN_EOS, NO_WRITE_GRID, OXYGEN, SINK_OP2, TALK_NONCO PERFECT_RESTART, POWER_LAW, PROFILE, K_GSCHEME, RADIATION_2D, RAMP_TIDES, !RST_SINGLE, SALINITY, SOLVE3D, SSH_TIDES, STATIONS, TS_A4HADVECTION, TS_A4VADVECTION, TS_DIF2, UV_ADV, UV_COR, UV_U3HADVECTION, UV_C4VADVECTION, UV_LOGDRAG, UV_TIDES, UV_VIS2, VAR_RHO_2D, VISC_GRID</att>
         <att name="cpu">x86_64</att>
-        <att name="file">/users/dullman1/data/dullman1/EPSCOR/2018_run1_NAM/ocean_his_0001.nc</att>
+        <att name="file">/users/dullman1/data/dullman1/EPSCOR/2006_mod8_run15_NAM/ocean_his_0001.nc</att>
         <att name="format">netCDF-4/HDF5 file</att>
-        <att name="frc_file_01">osom_grid4_mindep_smlp_mod7_tidalforcing_2018.nc</att>
-        <att name="frc_file_02">frc_NAM_wind_fields_osom_2018.nc</att>
-        <att name="frc_file_03">frc_bulk8_point_osom_2018.nc</att>
-        <att name="grd_file">osom_grid4_mindep_smlp_mod7.nc</att>
+        <att name="frc_file_01">osom_grid4_mindep_smlp_mod8_tidalforcing_2006-2007.nc</att>
+        <att name="frc_file_02">frc_NAM_wind_fields_OSOM_2006.nc</att>
+        <att name="frc_file_03">frc_bulk8_point_osom_2006.nc</att>
+        <att name="grd_file">osom_grid4_mindep_smlp_mod8.nc</att>
         <att name="header_dir">/users/dullman1/projects/EPSCoR</att>
         <att name="header_file">epscor_umaine15.h</att>
-        <att name="his_base">/users/dullman1/data/dullman1/EPSCOR/2018_run1_NAM/ocean_his</att>
-        <att name="history">ROMS/TOMS, Version 3.7, Monday - February 24, 2020 - 10:50:00 AM</att>
-        <att name="ini_file">osom_cosine_grid4_mindep_smlp_mod7_ini_hydro_2018.nc</att>
+        <att name="his_base">/users/dullman1/data/dullman1/EPSCOR/2006_mod8_run15_NAM/ocean_his</att>
+        <att name="history">ROMS/TOMS, Version 3.7, Friday - October 9, 2020 -  6:35:23 AM</att>
+        <att name="ini_file">osom_cosine_grid4_mindep_smlp_mod8_ini_hydro_2006_fromspinup.nc</att>
         <att name="NLM_LBC">
 EDGE:                WEST   SOUTH  EAST   NORTH
 zeta:                Cha    Cha    Cha    Clo
@@ -2687,12 +2687,12 @@ TIC:                 Rad    Rad    Rad    Clo
 alkalinity:          Rad    Rad    Rad    Clo
 tke:                 Rad    Rad    Rad    Clo</att>
         <att name="os">Linux</att>
-        <att name="rst_file">/users/dullman1/data/dullman1/EPSCOR/2018_run1_NAM/ocean_rst.nc</att>
-        <att name="spos_file">stations_osom_cosine_feb2020.in</att>
-        <att name="sta_file">/users/dullman1/data/dullman1/EPSCOR/2018_run1_NAM/ocean_sta.nc</att>
+        <att name="rst_file">/users/dullman1/data/dullman1/EPSCOR/2006_mod8_run15_NAM/ocean_rst.nc</att>
+        <att name="spos_file">stations_osom_cosine_sep2020.in</att>
+        <att name="sta_file">/users/dullman1/data/dullman1/EPSCOR/2006_mod8_run15_NAM/ocean_sta.nc</att>
         <att name="svn_url">https://www.myroms.org/svn/src/trunk</att>
-        <att name="tiling">016x013</att>
-        <att name="title">OSOM-Beta0.1-2018-buoys</att>
+        <att name="tiling">016x014</att>
+        <att name="title">OSOM-Beta0.1-2006-buoys</att>
         <att name="type">ROMS/TOMS history file</att>
     </sourceAttributes -->
     <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
@@ -2700,13 +2700,15 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="subsetVariables">station_id, longitude, latitude</att>
     -->
     <addAttributes>
-        <att name="cdm_data_type">Other</att>
+        <att name="cdm_data_type">Point</att>
         <att name="Conventions">CF-1.6, COARDS, ACDD-1.3</att>
         <att name="cpu">null</att>
+        <att name="creator_name">RIDDC</att>
+        <att name="creator_type">institution</att>
         <att name="format">null</att>
         <att name="infoUrl">ridatadiscovery.org</att>
         <att name="institution">Rhode Island Data Discovery</att>
-        <att name="keywords">beta0.1, buoys, data, density, earth, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Potential Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, name, ocean, oceans, osom, osom-beta0.1-2018-buoys, potential, practical, salinity, SalinityBottom, SalinitySurface, science, sea, sea_water_potential_temperature, sea_water_practical_salinity, seawater, station, station_name, temperature, time, water, WaterTempBottom, WaterTempSurface</att>
+        <att name="keywords">beta0.1, buoy, buoys, data, density, dim, earth, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Potential Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, latitude, latitute, longitude, multi, name, ocean, oceans, osom, osom-beta0.1-2006-buoys, points, potential, practical, rho, rho-points, riddc, salinity, SalinityBottom, SalinitySurface, science, sea, sea_water_potential_temperature, sea_water_practical_salinity, seawater, station, station_name, temperature, test, time, water, WaterTempBottom, WaterTempSurface</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
         <att name="license">[standard]</att>
         <att name="NLM_LBC">EDGE:                WEST   SOUTH  EAST   NORTH
@@ -2736,36 +2738,9 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="os">null</att>
         <att name="sourceUrl">(local files)</att>
         <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-        <att name="subsetVariables">station_name</att>
         <att name="summary">OSOM-Beta0.1-buoys. OSOM model data at buoy locations in latitude/longitude. Data from a local source.</att>
         <att name="title">OSOM-Beta0.1-buoys</att>
     </addAttributes>
-    <dataVariable>
-        <sourceName>ocean_time</sourceName>
-        <destinationName>time</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="calendar">gregorian</att>
-            <att name="field">time, scalar, series</att>
-            <att name="long_name">time since initialization</att>
-            <att name="units">seconds since 2018-01-01 00:00:00</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="source_name">ocean_time</att>
-            <att name="standard_name">time</att>
-            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>station_name</sourceName>
-        <destinationName>station_name</destinationName>
-        <dataType>String</dataType>
-        <!-- sourceAttributes>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="long_name">Station Name</att>
-        </addAttributes>
-    </dataVariable>
     <dataVariable>
         <sourceName>SalinityBottom</sourceName>
         <destinationName>SalinityBottom</destinationName>
@@ -2842,6 +2817,62 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="coordinates">null</att>
             <att name="standard_name">sea_water_potential_temperature</att>
             <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ocean_time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="calendar">gregorian</att>
+            <att name="field">time, scalar, series</att>
+            <att name="long_name">time since initialization</att>
+            <att name="units">seconds since 1970-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="source_name">ocean_time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>station_name</sourceName>
+        <destinationName>station_name</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Station Name</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>longitude</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">longitude of RHO-points</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degree_east</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">180.0</att>
+            <att name="colorBarMinimum" type="double">-180.0</att>
+            <att name="units">degrees_east</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>latitude</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="long_name">latitute of RHO-points</att>
+            <att name="standard_name">latitude</att>
+            <att name="units">degree_north</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">90.0</att>
+            <att name="colorBarMinimum" type="double">-90.0</att>
+            <att name="units">degrees_north</att>
         </addAttributes>
     </dataVariable>
 </dataset>
