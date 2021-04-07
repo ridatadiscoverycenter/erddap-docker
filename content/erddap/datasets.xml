@@ -2878,4 +2878,609 @@ tke:                 Rad    Rad    Rad    Clo</att>
 </dataset>
 
 
+<!-- added on 1/19/21 By MD -->
+
+<dataset type="EDDTableFromAsciiFiles" datasetID="fish_trawl_79f9_f9fd_5a42" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/fish_trawl/</fileDir>
+    <fileNameRegex> \w*[^x]Temps-reformat\w*\.csv</fileNameRegex>
+    <!-- <fileNameRegex>WR-Temps.csv</fileNameRegex> -->
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <charset>ISO-8859-1</charset>
+    <columnSeparator>,</columnSeparator>
+    <columnNamesRow>1</columnNamesRow>
+    <firstDataRow>2</firstDataRow>
+    <sortedColumnSourceName></sortedColumnSourceName>
+    <sortFilesBySourceNames></sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+    </sourceAttributes -->
+    
+
+    <addAttributes>
+        <att name="cdm_data_type">Other</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="infoUrl">ridatadicovery.org</att>
+        <att name="institution">Rhode Island Data Discovery</att>
+        <att name="keywords">bottom, Bottom_Temperature, data, date, earth, Earth Science &gt; Land Surface &gt; Land Temperature &gt; Land Surface Temperature, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, fish, land, ocean, oceans, science, sea, station, surface, surface_temperature, temperature, temps, trawl</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="subsetVariables">Station</att>
+        <att name="summary">Fish Trawl Temps. Data from a local source.</att>
+        <att name="title">Fish Trawl: Fox Island and Whale Rock Temps</att>
+    </addAttributes>
+    
+    
+    <dataVariable>
+        <sourceName>Date</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>String</dataType>
+        <addAttributes>
+            <att name="units">yyyy-MM-dd HH:mm:ssZ</att>
+        </addAttributes>
+
+        
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Station</sourceName>
+        <destinationName>Station</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Station</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Surface Temperature</sourceName>
+        <destinationName>Surface_Temperature</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">40.0</att>
+            <att name="colorBarMinimum" type="double">-10.0</att>
+            <att name="long_name">Surface Temperature</att>
+            <att name="standard_name">sea_surface_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Bottom Temperature</sourceName>
+        <destinationName>Bottom_Temperature</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">40.0</att>
+            <att name="colorBarMinimum" type="double">-10.0</att>
+            <att name="long_name">Bottom Temperature</att>
+            <att name="standard_name">sea_bottom_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<!-- added on 2/26/21 By MD -->
+
+<dataset type="EDDTableFromAsciiFiles" datasetID="fish_trawl_79f9_f9fd_5a43" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/fish_trawl/</fileDir>
+    <fileNameRegex>YSI_website-reformat\.csv</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <charset>ISO-8859-1</charset>
+    <columnSeparator>,</columnSeparator>
+    <columnNamesRow>1</columnNamesRow>
+    <firstDataRow>3</firstDataRow>
+    <sortedColumnSourceName></sortedColumnSourceName>
+    <sortFilesBySourceNames></sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+    </sourceAttributes -->
+    
+    <addAttributes>
+        <att name="cdm_data_type">Other</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="infoUrl">ridatadicovery.org</att>
+        <att name="institution">Rhode Island Data Discovery</att>
+        <att name="keywords">2006-2017, bottom, Bottom_Depth, Bottom_Dissolved_Oxygen_Concentration, Bottom_Dissolved_Oxygen_Percent, Bottom_Salinity, Bottom_Temperature, chemistry, concentration, data, density, depth, dissolved, earth, Earth Science &gt; Land Surface &gt; Land Temperature &gt; Land Surface Temperature, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Oxygen, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, fox, fraction, i_Date, island, land, O2, ocean, oceans, oxygen, oygen, practical, rock, salinity, science, sea, sea_water_practical_salinity, seawater, station, surface, Surface_Depth, Surface_Dissolved_Oxygen_Percent, Surface_Dissolved_Oygen_Concentration, Surface_Salinity, surface_temperature, temperature, volume, volume_fraction_of_oxygen_in_sea_water, water, whale, &#xef;&#xbb;&#xbf;date</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="summary">Fox Island and Whale Rock 2006-2017</att>
+        <att name="title">Fish Trawl: Fox Island and Whale Rock Data 2006-2017</att>
+    </addAttributes>
+    
+   
+
+   <dataVariable>
+        <sourceName>Date</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>String</dataType>
+        <addAttributes>
+            <att name="units">yyyy-MM-dd HH:mm:ssZ</att>
+        </addAttributes>
+        
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Station</sourceName>
+        <destinationName>Station</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Station</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Surface Temperature</sourceName>
+        <destinationName>Surface_Temperature</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="colorBarMaximum" type="double">40.0</att>
+            <att name="colorBarMinimum" type="double">-10.0</att>
+            <att name="long_name">Surface Temperature</att>
+            <att name="standard_name">surface_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Surface Salinity</sourceName>
+        <destinationName>Surface_Salinity</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="long_name">Sea Water Practical Salinity</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">ppt</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Surface Depth</sourceName>
+        <destinationName>Surface_Depth</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Surface Depth</att>
+            <att name="units">m</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Surface Dissolved Oxygen Percent</sourceName>
+        <destinationName>Surface_Dissolved_Oxygen_Percent</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Volume Fraction Of Oxygen In Sea Water</att>
+            <att name="standard_name">volume_fraction_of_oxygen_in_sea_water</att>
+            <att name="units">percent</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Surface Dissolved Oygen Concentration</sourceName>
+        <destinationName>Surface_Dissolved_Oygen_Concentration</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Surface Dissolved Oygen Concentration</att>
+            <att name="units">mg/L</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Bottom Temperature</sourceName>
+        <destinationName>Bottom_Temperature</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Bottom Temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Bottom Salinity</sourceName>
+        <destinationName>Bottom_Salinity</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="long_name">Sea Water Practical Salinity</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">ppt</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Bottom Depth</sourceName>
+        <destinationName>Bottom_Depth</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Bottom Depth</att>
+            <att name="units">m</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Bottom Dissolved Oxygen Percent</sourceName>
+        <destinationName>Bottom_Dissolved_Oxygen_Percent</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Volume Fraction Of Oxygen In Sea Water</att>
+            <att name="standard_name">volume_fraction_of_oxygen_in_sea_water</att>
+            <att name="units">percent</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Bottom Dissolved Oxygen Concentration</sourceName>
+        <destinationName>Bottom_Dissolved_Oxygen_Concentration</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">1.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Volume Fraction Of Oxygen In Sea Water</att>
+            <att name="standard_name">volume_fraction_of_oxygen_in_sea_water</att>
+            <att name="units">mg/L</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+
+<!-- added 3/20/21 by MD -->
+
+<!-- NOTE! Since the source files don't have any metadata, you must add metadata
+  below, notably 'units' for each of the dataVariables. -->
+<dataset type="EDDTableFromAsciiFiles" datasetID="fish_trawl_3ce2_fedf_6833" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/fish_trawl/</fileDir>
+    <fileNameRegex>\w*[^x]CatchData-reformat\w*\.csv</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <charset>ISO-8859-1</charset>
+    <columnSeparator>,</columnSeparator>
+    <columnNamesRow>1</columnNamesRow>
+    <firstDataRow>2</firstDataRow>
+    <sortedColumnSourceName></sortedColumnSourceName>
+    <sortFilesBySourceNames></sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+    </sourceAttributes -->
+    
+    <addAttributes>
+        <att name="cdm_data_type">Other</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="institution">Rhode Island Data Discovery</att>
+        <att name="infoUrl">ridatadicovery.org</att>
+        <att name="keywords">alosa, Alosa_spp, atlantic, Atlantic_herring, bluefish, brown, butterfish, cancer, Cancer_crab, catch, crab, cunner, data, flounder, fourspot, Fourspot_flounder, fox, hake, herring, horseshoe, Horseshoe_crab, i_Year, island, lady, Lady_crab, little, Little_skate, lobster, Longhorned_sculpin, longitude, northern, Northern_searobin, red, Red_Hake, rock, scup, sea, Sea_star, searobin, silver, Silver_hake, skate, spider, Spider_crab, spp, star, striped, Striped_searobin, summer, Summer_flounder, tautog, university, weakfish, whale, windowpane, winter, Winter_flounder, &#xef;&#xbb;&#xbf;year</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="summary">Catch Data for Whale Rock and Fox Island</att>
+        <att name="title">Fish Trawl: Catch Data for Whale Rock and Fox Island</att>
+    </addAttributes>
+    <dataVariable>
+        <sourceName>Year</sourceName>
+        <destinationName>Year</destinationName>
+        <dataType>short</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Year</att>
+        </addAttributes>
+    </dataVariable>
+
+    <dataVariable>
+        <sourceName>Station</sourceName>
+        <destinationName>Station</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Station</att>
+        </addAttributes>
+    </dataVariable>
+
+    <dataVariable>
+        <sourceName>Alosa spp.</sourceName>
+        <destinationName>Alosa_spp</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Alosa Spp.</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Atlantic herring</sourceName>
+        <destinationName>Atlantic_herring</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Atlantic Herring</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Bluefish</sourceName>
+        <destinationName>Bluefish</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Bluefish</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Butterfish</sourceName>
+        <destinationName>Butterfish</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Butterfish</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Cancer crab</sourceName>
+        <destinationName>Cancer_crab</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Cancer Crab</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Cunner</sourceName>
+        <destinationName>Cunner</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Cunner</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Fourspot flounder</sourceName>
+        <destinationName>Fourspot_flounder</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Fourspot Flounder</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Horseshoe crab</sourceName>
+        <destinationName>Horseshoe_crab</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Horseshoe Crab</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Lady crab</sourceName>
+        <destinationName>Lady_crab</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Lady Crab</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Little skate</sourceName>
+        <destinationName>Little_skate</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Little Skate</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Lobster</sourceName>
+        <destinationName>Lobster</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Lobster</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Long finned squid</sourceName>
+        <destinationName>Long_finned_Squid</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Long finned squid</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Longhorned sculpin</sourceName>
+        <destinationName>Longhorned_sculpin</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Longhorned sculpin</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Northern searobin</sourceName>
+        <destinationName>Northern_searobin</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Northern Searobin</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Red Hake</sourceName>
+        <destinationName>Red_Hake</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Red Hake</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Scup</sourceName>
+        <destinationName>Scup</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Scup</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Sea star</sourceName>
+        <destinationName>Sea_star</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Sea Star</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Silver hake</sourceName>
+        <destinationName>Silver_hake</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Silver Hake</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Spider crab</sourceName>
+        <destinationName>Spider_crab</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Spider Crab</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Striped searobin</sourceName>
+        <destinationName>Striped_searobin</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Striped Searobin</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Summer flounder</sourceName>
+        <destinationName>Summer_flounder</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Summer Flounder</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Tautog</sourceName>
+        <destinationName>Tautog</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Tautog</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Weakfish</sourceName>
+        <destinationName>Weakfish</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Weakfish</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Windowpane</sourceName>
+        <destinationName>Windowpane</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Windowpane</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Winter flounder</sourceName>
+        <destinationName>Winter_flounder</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Winter Flounder</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+
+
+
+
 </erddapDatasets>
