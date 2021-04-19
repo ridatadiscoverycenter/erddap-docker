@@ -1592,6 +1592,23 @@ This dataset has both historical data (quality controlled, before
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>O2PercentBottom</sourceName>
+        <destinationName>O2PercentBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Surface Percent Oxygen Saturated Dissolved Oxygen</att>
+            <att name="short_name">O2PercentSurface</att>
+            <att name="standard_name">fractional_saturation_of_oxygen_in_sea_water</att>
+            <att name="units">per cent</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>DepthSurface</sourceName>
         <destinationName>depth</destinationName>
         <dataType>double</dataType>
@@ -1807,6 +1824,25 @@ This dataset has both historical data (quality controlled, before
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>O2Bottom</sourceName>
+        <destinationName>O2Bottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="coordinates">time</att>
+            <att name="long_name">Surface Oxygen Mass Concentration of Dissolved Oxygen</att>
+            <att name="short_name">O2Surface</att>
+            <att name="standard_name">mass_concentration_of_oxygen_in_sea_water</att>
+            <att name="units">mg L-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">500.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+            <att name="missing_value" type="double">NaN</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>WaterTempSurface</sourceName>
         <destinationName>WaterTempSurface</destinationName>
         <dataType>double</dataType>
@@ -1843,7 +1879,31 @@ This dataset has both historical data (quality controlled, before
             <att name="units">PSU</att>
         </addAttributes>
     </dataVariable>
-        <dataVariable>
+    <dataVariable>
+        <sourceName>DensitySurface</sourceName>
+        <destinationName>DensitySurface</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">2.0</att>
+            <att name="colorBarMinimum" type="double">0.5</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">sea_surface_density</att>
+            <att name="units">g cm-3</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DensityBottom</sourceName>
+        <destinationName>DensityBottom</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">2.0</att>
+            <att name="colorBarMinimum" type="double">0.5</att>
+            <att name="missing_value" type="double">NaN</att>
+            <att name="standard_name">sea_water_density</att>
+            <att name="units">g cm-3</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>lat</sourceName>
         <destinationName>latitude</destinationName>
         <dataType>double</dataType>
