@@ -4640,7 +4640,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </addAttributes>
     <dataVariable>
         <sourceName>Station</sourceName>
-        <destinationName>Station</destinationName>
+        <destinationName>station_name</destinationName>
         <dataType>String</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
