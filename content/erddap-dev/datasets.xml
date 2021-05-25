@@ -4719,5 +4719,675 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
 </dataset>
 
+<!-- MA buoy data added by MCM 2021-05-21 -->
+<dataset type="EDDTableFromMultidimNcFiles" datasetID="ma_buoy_data_a6c9_12eb_1ec5" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/ma_buoy_data/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <removeMVRows>true</removeMVRows>
+    <sortFilesBySourceNames></sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+    </sourceAttributes -->
+    <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
+        <att name="cdm_timeseries_variables">station_id, longitude, latitude</att>
+        <att name="subsetVariables">station_id, longitude, latitude</att>
+    -->
+    <addAttributes>
+        <att name="cdm_data_type">Point</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="infoUrl">https://www.mass.gov/info-details/mount-hope-bay-marine-buoy-continuous-probe-data</att>
+        <att name="institution">MassDEP</att>
+        <att name="publisher_name">Rhode Island Data Discovery</att>
+        <att name="publisher_url">ridatadicovery.org</att>
+        <att name="keywords">bottom, buoy, chemistry, chlorophyll, ChlorophyllBottom, ChlorophyllQualifiersBottom, ChlorophyllQualifiersSurface, ChlorophyllSurface, concentration, concentration_of_chlorophyll_in_sea_water, cond, data, density, depth, DepthQualifiersBottom, DepthQualifiersSurface, DepthSurface, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Nitrate, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, hbottom, hqualifiers, hsurface, latitude, longitude, mole, mole_concentration_of_nitrate_in_sea_water, n02, name, nitrate, NitrateNQualifiersSurface, NitrateNSurface, no3, nqualifiers, O2, O2Bottom, O2PercentBottom, O2PercentQualifiersBottom, O2PercentQualifiersSurface, O2PercentSurface, O2QualifiersBottom, O2QualifiersSurface, O2Surface, ocean, oceans, oxygen, percent, pHBottom, pHQualifiersBottom, pHQualifiersSurface, pHSurface, phycoerythrin, PhycoerythrinBottom, PhycoerythrinQualifiersBottom, PhycoerythrinQualifiersSurface, PhycoerythrinSurface, practical, qualifiers, salinity, SalinityBottom, SalinityQualifiersBottom, SalinityQualifiersSurface, SalinitySurface, science, sea, sea_water_practical_salinity, sea_water_temperature, seawater, SpCondBottom, SpCondQualifiersBottom, SpCondQualifiersSurface, SpCondSurface, station, station_name, surface, temperature, time, timezone, water, WaterTempBottom, WaterTempQualifiersBottom, WaterTempQualifiersSurface, WaterTempSurface</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="subsetVariables">station_name, latitude, longitude</att>
+        <att name="summary">In partnership with the Rhode Island Department of Environmental Management (RIDEM), the University of Rhode Island Graduate School of Oceanography (URI-GSO), and EPA's Southeast New England Program (SNEP) for Coastal Watershed Restoration, MassDEP operates two fixed-location marine water quality monitoring buoys in Mount Hope Bay. The seasonal (May-November) monitoring is part of the Narragansett Bay Fixed-Site Monitoring Network (NBFSMN) and provides data in the Massachusetts portion of Mount Hope Bay, a sub-embayment of upper Narragansett Bay.</att>
+        <att name="title">MA Buoy Data</att>
+        <att name="data_qualifiers">
+          ##		Censored data (i.e., data that has been discarded as unusable. Check qualifiers for explanation).
+          **		Missing data (i.e., data that should have been reported, but are missing for some reason, e.g., probe malfunction, probe not used, out-of-water).
+          --		No data (i.e., data not taken/not required/not calibrated for/otherwise not available).
+          c		Data value greater than the highest calibration standard used for pre-calibration, or data value outside the range for the calibration standards used.
+          i		Inaccurate probe readings (based on field and/or lab QC data, wiper issue, etc.).
+          m		Field method not followed.
+          r		Data may not be representative due to circumstances and/or conditions at the time of sampling (e.g., out-of-water, side channel, backwater, etc.).
+          u		Highly unstable readings between 60 minute readings, due to non-representative conditions, highly-variable water quality conditions, etc.
+          z&lt;0.x		Value rounded to zero, originially listed as "&lt;0.x".
+        </att>
+    </addAttributes>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Time</att>
+            <att name="standard_name">time</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>timezone</sourceName>
+        <destinationName>timezone</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">timezone</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Timezone</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>station_name</sourceName>
+        <destinationName>station_name</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Station Name</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">degrees_north</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">90.0</att>
+            <att name="colorBarMinimum" type="double">-90.0</att>
+            <att name="long_name">Latitude</att>
+            <att name="standard_name">latitude</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">degrees_east</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">180.0</att>
+            <att name="colorBarMinimum" type="double">-180.0</att>
+            <att name="long_name">Longitude</att>
+            <att name="standard_name">longitude</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>pHQualifiersBottom</sourceName>
+        <destinationName>pHQualifiersBottom</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">P HQualifiers Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>pHQualifiersSurface</sourceName>
+        <destinationName>pHQualifiersSurface</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">P HQualifiers Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PhycoerythrinBottom</sourceName>
+        <destinationName>PhycoerythrinBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">RFU</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Phycoerythrin Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PhycoerythrinSurface</sourceName>
+        <destinationName>PhycoerythrinSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">RFU</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Phycoerythrin Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>pHBottom</sourceName>
+        <destinationName>pHBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">SU</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">P HBottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>pHSurface</sourceName>
+        <destinationName>pHSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">SU</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">P HSurface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DepthBottom</sourceName>
+        <destinationName>depth</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">m</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">8000.0</att>
+            <att name="colorBarMinimum" type="double">-8000.0</att>
+            <att name="colorBarPalette">TopographyDepth</att>
+            <att name="long_name">Depth</att>
+            <att name="source_name">DepthBottom</att>
+            <att name="standard_name">depth</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DepthSurface</sourceName>
+        <destinationName>DepthSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">m</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">8000.0</att>
+            <att name="colorBarMinimum" type="double">-8000.0</att>
+            <att name="colorBarPalette">TopographyDepth</att>
+            <att name="long_name">Depth</att>
+            <att name="standard_name">depth</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempQualifiersBottom</sourceName>
+        <destinationName>WaterTempQualifiersBottom</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Water Temp Qualifiers Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempQualifiersSurface</sourceName>
+        <destinationName>WaterTempQualifiersSurface</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Water Temp Qualifiers Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DepthQualifiersBottom</sourceName>
+        <destinationName>DepthQualifiersBottom</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Depth</att>
+            <att name="standard_name">depth</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>DepthQualifiersSurface</sourceName>
+        <destinationName>DepthQualifiersSurface</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Depth</att>
+            <att name="standard_name">depth</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SpCondBottom</sourceName>
+        <destinationName>SpCondBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">mS cm-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Sp Cond Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SpCondSurface</sourceName>
+        <destinationName>SpCondSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">mS cm-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Sp Cond Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinityQualifiersBottom</sourceName>
+        <destinationName>SalinityQualifiersBottom</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Salinity Qualifiers Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinityQualifiersSurface</sourceName>
+        <destinationName>SalinityQualifiersSurface</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Salinity Qualifiers Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2QualifiersBottom</sourceName>
+        <destinationName>O2QualifiersBottom</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">O2 Qualifiers Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2QualifiersSurface</sourceName>
+        <destinationName>O2QualifiersSurface</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">O2 Qualifiers Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2PercentBottom</sourceName>
+        <destinationName>O2PercentBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">per cent</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">O2 Percent Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2PercentSurface</sourceName>
+        <destinationName>O2PercentSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">per cent</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">O2 Percent Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SpCondQualifiersBottom</sourceName>
+        <destinationName>SpCondQualifiersBottom</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Sp Cond Qualifiers Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SpCondQualifiersSurface</sourceName>
+        <destinationName>SpCondQualifiersSurface</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Sp Cond Qualifiers Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ChlorophyllQualifiersBottom</sourceName>
+        <destinationName>ChlorophyllQualifiersBottom</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Chlorophyll Qualifiers Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ChlorophyllQualifiersSurface</sourceName>
+        <destinationName>ChlorophyllQualifiersSurface</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Chlorophyll Qualifiers Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinityBottom</sourceName>
+        <destinationName>SalinityBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">PSU</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="long_name">Sea Water Practical Salinity</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinitySurface</sourceName>
+        <destinationName>SalinitySurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">PSU</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="long_name">Sea Water Practical Salinity</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PhycoerythrinQualifiersBottom</sourceName>
+        <destinationName>PhycoerythrinQualifiersBottom</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Phycoerythrin Qualifiers Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PhycoerythrinQualifiersSurface</sourceName>
+        <destinationName>PhycoerythrinQualifiersSurface</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Phycoerythrin Qualifiers Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2PercentQualifiersBottom</sourceName>
+        <destinationName>O2PercentQualifiersBottom</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">O2 Percent Qualifiers Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2PercentQualifiersSurface</sourceName>
+        <destinationName>O2PercentQualifiersSurface</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">O2 Percent Qualifiers Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ChlorophyllBottom</sourceName>
+        <destinationName>ChlorophyllBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">RFU</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.03</att>
+            <att name="colorBarScale">Log</att>
+            <att name="long_name">Concentration Of Chlorophyll In Sea Water</att>
+            <att name="standard_name">concentration_of_chlorophyll_in_sea_water</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ChlorophyllSurface</sourceName>
+        <destinationName>ChlorophyllSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">RFU</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.03</att>
+            <att name="colorBarScale">Log</att>
+            <att name="long_name">Concentration Of Chlorophyll In Sea Water</att>
+            <att name="standard_name">concentration_of_chlorophyll_in_sea_water</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempBottom</sourceName>
+        <destinationName>WaterTempBottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">degree_C</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Sea Water Temperature</att>
+            <att name="standard_name">sea_water_temperature</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempSurface</sourceName>
+        <destinationName>WaterTempSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">degree_C</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Sea Water Temperature</att>
+            <att name="standard_name">sea_water_temperature</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2Bottom</sourceName>
+        <destinationName>O2Bottom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">mg L-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">O2 Bottom</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>O2Surface</sourceName>
+        <destinationName>O2Surface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">mg L-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">O2 Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>NitrateNQualifiersSurface</sourceName>
+        <destinationName>NitrateNQualifiersSurface</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="units">data_qualifier</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Nitrate NQualifiers Surface</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>NitrateNSurface</sourceName>
+        <destinationName>NitrateNSurface</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">mg L-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">50.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Mole Concentration Of Nitrate In Sea Water</att>
+            <att name="standard_name">mole_concentration_of_nitrate_in_sea_water</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
 
 </erddapDatasets>
