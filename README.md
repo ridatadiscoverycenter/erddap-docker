@@ -8,7 +8,7 @@ that provides a simple interface for downloading datasets.
 ## Development
 
 The configuration in this repository is designed for deployments. If you'd like
-to test this image locally you can use the `docker-compose.dev.yml`. 
+to test this image locally you can use the `docker-compose.dev.yml`.
 This file differs from the production compose in two aspects:
 
 1. The port mapping is changed from `127.0.0.1:8080:8080` to `8080`.
@@ -17,7 +17,7 @@ This file differs from the production compose in two aspects:
 to `http://localhost:8080` instead of `https://pricaimcit.services.brown.edu`.
 
 To run ERDDAP with real data locally, you'll need to grab the data from
-`pricaimcit.services.brown.edu:/isilon_erddap/buoy_data` and put it 
+`pricaimcit.services.brown.edu:/isilon_erddap/buoy_data` and put it
 in a folder called `buoy_data` in the root of this project.
 
 ## Running Locally
@@ -32,7 +32,7 @@ you don't see anything.
 
 Before loading data into ERDDAP it's important to get familiar with ERDDAP's data structure and data types. [ERDDAP provides extensive documentation on that topic here.](https://coastwatch.pfeg.noaa.gov/erddap/download/setupDatasetsXml.html)
 
-ERDDAP also provides a few tools to help you create the dataset's XML file, and the data attribute structure/data descriptor structure. 
+ERDDAP also provides a few tools to help you create the dataset's XML file, and the data attribute structure/data descriptor structure.
 
 To create a XML block for a dataset, run:
 ```bash
@@ -43,7 +43,7 @@ docker-compose -f docker-compose.dev.yml run generate_dataset_xml
 docker-compose run generate_dataset_xml
 ```
 
-This will run the script `GenerateDatasetXml.sh` provided by ERDDAP. This is an interactive tool that will ask you to enter some information about the dataset. We place data files in `/erddapData/`, which is mounted to `isilon_erddap/erddap_data`. Make sure you have downloaded the `isilon_erddap` folder from Google Drive. If you don't have that, ask an administrator for the link. 
+This will run the script `GenerateDatasetXml.sh` provided by ERDDAP. This is an interactive tool that will ask you to enter some information about the dataset. We place data files in `/erddapData/`, which is mounted to `isilon_erddap/erddap_data`. Make sure you have downloaded the `isilon_erddap` folder from Google Drive. If you don't have that, ask an administrator for the link.
 
 The logs will be saved at `isilon_erddap/erddap_data/GenerateDatasetsXml.log`. You can check the logs to help you debugging the dataset. If the XML block is generated successfully, it will be printed in that log file.
 
@@ -53,17 +53,17 @@ The XML block will have the dataset ID. This ID is used to generate the dataset 
 
 ```bash
 #development
-docker-compose -f docker-compose.dev.yml run generate_data_structure 
+docker-compose -f docker-compose.dev.yml run generate_data_structure
 
 #production
-docker-compose run generate_data_structure 
+docker-compose run generate_data_structure
 ```
 
 This will run ERDDAP's `DasDds.sh` script. It will ask you the enter the ID of your dataset, which was generated in the previous step. The logs for this script will be at `isilon_erddap/erddap_data/DasDds.log`. If that is completed successfully, you can start your local ERDDAP server:
 
 ```bash
 #development
-docker-compose -f docker-compose.dev.yml up -d erddap
+docker-compose -f docker-compose.dev.yml up erddap
 
 #production
 docker-compose up -d erddap
@@ -73,7 +73,7 @@ You can then visit `localhost:8080/erddap/index.html`. The server might take a f
 
 If you can see your dataset in your local ERDDAP server, you're ready to start a Pull Request to the production server.
 
-To do that: 
+To do that:
 - paste the dataset's XML block in the production `erddap/dataset.xml` file in this repo.
 - add a link to the raw data files in your PR's description.
 
