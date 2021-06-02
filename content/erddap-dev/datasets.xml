@@ -5404,6 +5404,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <matchAxisNDigits>20</matchAxisNDigits>
     <fileTableInMemory>false</fileTableInMemory>
     <accessibleViaFiles>false</accessibleViaFiles>
+    <defaultGraphQuery>Temp[0:last][0:last][last]&amp;.draw=surface&amp;.vars=X|Y|Temp</defaultGraphQuery>
     <!-- sourceAttributes>
         <att name="comment">Attribute Accuracy Report: Satellite-derived orthorectified brightness temperature was measured within 0.1 degrees C for Landsat 8, 0.6 degrees C for Landsat 7, and 0.5 degrees C for Landsat 5. Satellite measurements were compared to in situ (buoy) surface temperatures from 2003 to 2015, and the mean bias between the RI DEM buoy temperatures and the satellite temperatures at the pixel of the buoys was added to all scenes by satellite. The standard deviation between the buoys and the satellie after adding the bias is 1.9 for Landsat 5, 1.9 for Landsat 7 and 1.3 for Landsat 8. The standard deviation is considered the uncertainty of the satellite measurements. See https://www.usgs.gov/land-resources/nli/landsat/landsat-surface-reflectance?qt-science_support_page_related_con=0#qt-science_support_page_related_con for more information.</att>
         <att name="history">Converted from Landsat 5, 7, and 8 Surface Refelectance geotiff products to netCDF. The units were changed from K to degrees C and the average bias determined through RI DEM buoy comparison in Narragansett Bay (2003-2015) to each satellite was added to all scenes from the corresponding satellite. For Landsat 5, 3.36 degrees C was added to all scenes, 3.34 for Landsat 7, and 1.92 for Landsat 8. The errors were determined by calculating the standard deviation of the difference between Landsat and buoy temperature at buoy locations for each satellite. The scenes were also cloud masked, land masked, and stripes in Landsat 7 imagery (due to sensor failure) were masked as well. Data outside of the Narragansett Bay region and for all cloud cover is included, though a buoy comparison was only conducted within Narragansett Bay for Landsat scenes with less than 50&#37; cloud cover. As a result, data uncertainties are unknown outside of the Narragansett Bay region and for scenes with greater cloud cover.</att>
@@ -5432,40 +5433,27 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <axisVariable>
         <sourceName>y</sourceName>
         <destinationName>Y</destinationName>
-        <!-- sourceAttributes>
-        </sourceAttributes -->
         <addAttributes>
             <att name="long_name">Y</att>
             <att name="source_name">y</att>
-            <!-- <att name="standard_name">latitude</att>
-            <att name="units">degrees_north</att> -->
         </addAttributes>
     </axisVariable>
     <axisVariable>
         <sourceName>x</sourceName>
         <destinationName>X</destinationName>
-        <!-- sourceAttributes>
-        </sourceAttributes -->
         <addAttributes>
             <att name="long_name">X</att>
             <att name="source_name">x</att>
-            <!-- <att name="standard_name">longitude</att>
-            <att name="units">degrees_east</att> -->
         </addAttributes>
     </axisVariable>
     <axisVariable>
         <sourceName>time</sourceName>
         <destinationName>time</destinationName>
-        <!-- sourceAttributes>
-            <att name="_ChunkSizes" type="int">143</att>
-            <att name="long_name">Time</att>
-            <att name="max" type="double">1.592146729E9</att>
-            <att name="min" type="double">4.52357657E8</att>
-            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
-        </sourceAttributes -->
         <addAttributes>
             <att name="_ChunkSizes">null</att>
             <att name="standard_name">time</att>
+            <att name="long_name">Time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
         </addAttributes>
     </axisVariable>
     <dataVariable>
