@@ -4847,7 +4847,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </sourceAttributes -->
         <addAttributes>
             <att name="_ChunkSizes">null</att>
-            <att name="long_name">P HQualifiers Bottom</att>
+            <att name="long_name">pHQualifiers Bottom</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
@@ -4860,7 +4860,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </sourceAttributes -->
         <addAttributes>
             <att name="_ChunkSizes">null</att>
-            <att name="long_name">P HQualifiers Surface</att>
+            <att name="long_name">pHQualifiers Surface</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
