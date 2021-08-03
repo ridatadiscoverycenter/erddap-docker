@@ -4466,6 +4466,18 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>station_longname</sourceName>
+        <destinationName>station_longname</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">15652</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="long_name">Station Long Name</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>lat</sourceName>
         <destinationName>latitude</destinationName>
         <dataType>double</dataType>
