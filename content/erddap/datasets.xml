@@ -4547,6 +4547,8 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <addAttributes>
             <att name="_ChunkSizes">null</att>
             <att name="long_name">Phycoerythrin Bottom</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">RFU</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
@@ -4561,6 +4563,8 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <addAttributes>
             <att name="_ChunkSizes">null</att>
             <att name="long_name">Phycoerythrin Surface</att>
+            <att name="_FillValue" type="double">9.969209968386869E36</att>
+            <att name="units">RFU</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
