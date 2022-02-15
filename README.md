@@ -2,8 +2,8 @@
 
 This repository contains the common setup files for the
 [axiom/docker-erddap][1] image. This image starts up the ERDDAP service and
-serves it using Apache Tomcat. ERRDAP is a Java application is a data server
-that provides a simple interface for downloading datasets.
+serves it using Apache Tomcat. ERRDAP is a Java application that acts as a 
+data server and provides a simple interface for downloading datasets.
 
 ## Development
 
