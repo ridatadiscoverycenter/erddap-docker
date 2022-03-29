@@ -5349,7 +5349,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="source_name">datetime</att>
             <att name="standard_name">time</att>
             <att name="time_precision">1970-01-01T00:00Z</att>
-            <att name="time_zome">US/Eastern</att>
+            <att name="time_zone">US/Eastern</att>
             <att name="units">yyyy-MM-dd&#39;T&#39;HH:mm:ss.S</att>
         </addAttributes>
     </dataVariable>
