@@ -5675,7 +5675,8 @@ tke:                 Rad    Rad    Rad    Clo</att>
         Stuck Value Test: To identify potential stuck values from a sensor, each data point is compared to subsequent values using sliding 3 and 5 frame windows. QC Flags from stuck value  tests are stored in the instrument table as 'Measurement_Stuck_Value_QC' QC Flags: No stuck value detected= 0, Suspect Stuck Sensor (3 consecutive identical values) =1, Stuck Sensor (5 consecutive identical values) =2.
         Instrument Range Test: Data point values for meterological measurements are checked against the manufacturer's specified measurement ranges. QC Flags: Measurement within instrument range= 0, Measurement below instrument range =1, Measurement above instrument range =2.</att>
         <att name="testOutOfDate">now-26days</att>
-        <att name="title">Buoy Telemetry: Raw</att>
+        <att name="title">Buoy Telemetry: Automated Quality Control</att>
+
     </addAttributes>
     <dataVariable>
         <sourceName>datetime</sourceName>
