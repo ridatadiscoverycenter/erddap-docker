@@ -5636,7 +5636,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <reloadEveryNMinutes>30</reloadEveryNMinutes>
     <updateEveryNMillis>10000</updateEveryNMillis>
     <fileDir>/erddapData/netcdf/buoy_telemetry/</fileDir>
-    <fileNameRegex>raw\.csv</fileNameRegex>
+    <fileNameRegex>automated_qc\.csv</fileNameRegex>
     <recursive>true</recursive>
     <pathRegex>.*</pathRegex>
     <metadataFrom>last</metadataFrom>
@@ -5811,7 +5811,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <dataVariable>
         <sourceName>Temperature_Stuck_Value_QC</sourceName>
         <destinationName>Temperature_Stuck_Value_QC</destinationName>
-        <dataType>String</dataType>
+        <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
         <addAttributes>
@@ -6576,7 +6576,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetPressure_Inst_Range_QC</sourceName>
-        <destinationName>gustWindSpeed_Inst_Range_QC</destinationName>
+        <destinationName>maximetPressure_Inst_Range_QC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6667,7 +6667,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetPrecipitation_despike</sourceName>
-        <destinationName>maximetPrecipitation</destinationName>
+        <destinationName>maximetPrecipitation_despike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
