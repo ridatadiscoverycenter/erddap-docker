@@ -6532,7 +6532,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="_FillValue" type="byte">127</att>
             <att name="colorBarMaximum" type="double">150.0</att>
             <att name="colorBarMinimum" type="double">0.0</att>
-            <att name="long_name"> Air Temperature Instrument Range QC</att>
+            <att name="long_name">Air Temperature Instrument Range QC</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
