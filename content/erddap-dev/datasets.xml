@@ -5695,7 +5695,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
         <dataVariable>
         <sourceName>ecoReadingRaw</sourceName>
-        <destinationName>Raw ECO Fluorescence Counts</destinationName>
+        <destinationName>FluorescenceCounts</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5712,14 +5712,14 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </sourceAttributes -->
         <addAttributes>
             <att name="_FillValue" type="float">NaN</att>
-            <att name="long_name">FDOM</att>
+            <att name="long_name">Fluorescent Dissolved Organic Matter</att>
             <att name="standard_name">concentration_of_fluorescent_dissolved_organic_matter_in_sea_water_expressed_as_equivalent_mass_fraction_of_quinine_sulfate_dihydrate</att>
             <att name="units">ppb</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
         <sourceName>FDOM_despike</sourceName>
-        <destinationName>FDOM Despike</destinationName>
+        <destinationName>FDOMDespike</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5731,7 +5731,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>FDOM_Global_Range_QC</sourceName>
-        <destinationName>FDOM Global Range QC</destinationName>
+        <destinationName>FDOMGlobalRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5744,7 +5744,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>FDOM_Stuck_Value_QC</sourceName>
-        <destinationName>FDOM Stuck Value QC</destinationName>
+        <destinationName>FDOMStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5757,7 +5757,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>hydrocatTemperature</sourceName>
-        <destinationName>Sea Surface Temperature</destinationName>
+        <destinationName>WaterTempSurface</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5770,7 +5770,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Temperature_despike</sourceName>
-        <destinationName>Sea Surface Temperature Despike</destinationName>
+        <destinationName>WaterTempSurfaceDespike</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5782,7 +5782,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Temp_Global_Range_QC</sourceName>
-        <destinationName>Sea Surface Temperature Global Range QC</destinationName>
+        <destinationName>WaterTempSurfaceGlobalRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5795,7 +5795,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Temp_Seasonal_NB_Range_QC</sourceName>
-        <destinationName>Sea Surface Temperature Seasonal NB Range QC</destinationName>
+        <destinationName>WaterTempSurfaceSeasonalNBRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5808,7 +5808,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Temperature_Stuck_Value_QC</sourceName>
-        <destinationName>Sea Surface Temperature Stuck Value QC</destinationName>
+        <destinationName>WaterTempSurfaceStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5818,7 +5818,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>hydrocatConductivity</sourceName>
-        <destinationName>Conductivity</destinationName>
+        <destinationName>SpCondSurface</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5833,7 +5833,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>hydrocatDissOxygen</sourceName>
-        <destinationName>Dissolved Oxygen</destinationName>
+        <destinationName>DissolvedOxygenSurface</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5846,7 +5846,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Oxygen_despike</sourceName>
-        <destinationName>Dissolved Oxygen Despike</destinationName>
+        <destinationName>DissolvedOxygenSurfaceDespike</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5858,7 +5858,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>oxy_Global_Range_QC</sourceName>
-        <destinationName>Dissolved Oxygen Global Range QC</destinationName>
+        <destinationName>DissolvedOxygenSurfaceGlobalRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5871,7 +5871,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Oxygen_Stuck_Value_QC</sourceName>
-        <destinationName>Dissolved Oxygen Stuck Value QC</destinationName>
+        <destinationName>DissolvedOxygenSurfaceStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5884,7 +5884,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>hydrocatSalinity</sourceName>
-        <destinationName>Salinity</destinationName>
+        <destinationName>SalinitySurface</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5899,7 +5899,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>salinity_despike</sourceName>
-        <destinationName>Salinity Despike</destinationName>
+        <destinationName>SalinitySurfaceDespike</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5914,7 +5914,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Salinity_Global_Range_QC</sourceName>
-        <destinationName>Salinity Global Range QC</destinationName>
+        <destinationName>SalinitySurfaceGlobalRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5927,7 +5927,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Salinity_Seasonal_NB_Range_QC</sourceName>
-        <destinationName>Salinity Seasonal NB Range QC</destinationName>
+        <destinationName>SalinitySurfaceSeasonalNBRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5940,7 +5940,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Salinity_Stuck_Value_QC</sourceName>
-        <destinationName>Salinity Stuck Value QC</destinationName>
+        <destinationName>SalinitySurfaceStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5953,7 +5953,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>hydrocatFluorescence</sourceName>
-        <destinationName>Chlorophyll a Fluorescence</destinationName>
+        <destinationName>ChlorophyllSurface</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5966,7 +5966,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>fluorescence_despike</sourceName>
-        <destinationName>Chlorophyll a Fluorescence Despike</destinationName>
+        <destinationName>ChlorophyllSurfaceDespike</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5978,7 +5978,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>fluorescence_Stuck_Value_QC</sourceName>
-        <destinationName>Chlorophyll a Fluorescence Stuck Value QC</destinationName>
+        <destinationName>ChlorophyllSurfaceStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6004,7 +6004,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>turbidity_despike</sourceName>
-        <destinationName>Turbidity Despike</destinationName>
+        <destinationName>TurbidityDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6016,7 +6016,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>turbidity_Stuck_Value_QC</sourceName>
-        <destinationName>Turbidity Stuck Value QC</destinationName>
+        <destinationName>TurbidityStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6029,7 +6029,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>hydrocatPH</sourceName>
-        <destinationName>pH</destinationName>
+        <destinationName>pHSurface</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6042,7 +6042,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>ph_despike</sourceName>
-        <destinationName>pH Despike</destinationName>
+        <destinationName>pHSurfaceDespike</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6054,7 +6054,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>ph_Global_Range_QC</sourceName>
-        <destinationName>pH Global Range QC</destinationName>
+        <destinationName>pHSurfaceGlobalRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6067,7 +6067,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>pH_Stuck_Value_QC</sourceName>
-        <destinationName>pH Stuck Value QC</destinationName>
+        <destinationName>pHSurfaceStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6093,7 +6093,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>QCflag</sourceName>
-        <destinationName>Phosphate QC Flag</destinationName>
+        <destinationName>PhosphateQCFlag</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6106,7 +6106,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Bubbleflag</sourceName>
-        <destinationName>Phosphate Bubble Flag</destinationName>
+        <destinationName>PhosphateBubbleFlag</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6119,7 +6119,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>COVflag</sourceName>
-        <destinationName>Phosphate Coefficient of Variation Flag</destinationName>
+        <destinationName>PhosphateCoVFlag</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6132,7 +6132,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Lowsigflag</sourceName>
-        <destinationName>Phosphate Low Signal Flag</destinationName>
+        <destinationName>PhosphateLowSigFlag</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6145,7 +6145,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>OoRflag</sourceName>
-        <destinationName>Phosphate Out of Range Flag</destinationName>
+        <destinationName>PhosphateOoRFlag</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6158,7 +6158,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Mixingflag</sourceName>
-        <destinationName>Phosphate Mixing Flag</destinationName>
+        <destinationName>PhosphateMixingFlag</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6171,7 +6171,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Calflag</sourceName>
-        <destinationName>Hydrocycle Calibration Flag</destinationName>
+        <destinationName>HydrocycleCalibrationFlag</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6184,7 +6184,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Phosphate_despike</sourceName>
-        <destinationName>Phosphate Despike</destinationName>
+        <destinationName>PhosphateDespike</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6197,7 +6197,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Phosphate_Seasonal_NB_Range_QC</sourceName>
-        <destinationName>Phosphate Seasonal NB Range QC</destinationName>
+        <destinationName>PhosphateSeasonalNBRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6210,7 +6210,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Phosphate_Stuck_Value_QC</sourceName>
-        <destinationName>Phosphate Stuck Value QC</destinationName>
+        <destinationName>PhosphateStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6238,7 +6238,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Nitrate_despike</sourceName>
-        <destinationName>Nitrate Despike</destinationName>
+        <destinationName>NitrateDespike</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6253,7 +6253,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Nitrate_Global_Range_QC</sourceName>
-        <destinationName>Nitrate Global Range QC</destinationName>
+        <destinationName>NitrateGlobalRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6266,7 +6266,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Nitrate_Seasonal_NB_Range_QC</sourceName>
-        <destinationName>Nitrate Seasonal NB Range QC</destinationName>
+        <destinationName>NitrateSeasonalNBRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6279,7 +6279,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Nitrate_Stuck_Value_QC</sourceName>
-        <destinationName>Nitrate Stuck Value QC</destinationName>
+        <destinationName>NitrateStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6292,7 +6292,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>station_name</sourceName>
-        <destinationName>Station Name</destinationName>
+        <destinationName>station_name</destinationName>
         <dataType>String</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6302,7 +6302,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>avgWindSpeed</sourceName>
-        <destinationName>Average Wind Speed</destinationName>
+        <destinationName>WindSpeedAverage</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6317,7 +6317,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>avgWindSpeed_despike</sourceName>
-        <destinationName>Average Wind Speed Despike</destinationName>
+        <destinationName>WindSpeedAverageDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6332,7 +6332,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>avgWindSpeed_Inst_Range_QC</sourceName>
-        <destinationName>Average Wind Speed Instrument Range QC</destinationName>
+        <destinationName>WindSpeedAverageInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6345,7 +6345,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>avgWindSpeed_Stuck_Value_QC</sourceName>
-        <destinationName>Average Wind Speed Stuck Value QC</destinationName>
+        <destinationName>WindSpeedAverageStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6358,7 +6358,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>avgWindDir</sourceName>
-        <destinationName>Wind From Direction</destinationName>
+        <destinationName>WindDirectionFrom</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6373,7 +6373,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>avgWindDir_Inst_Range_QC</sourceName>
-        <destinationName>Wind From Direction Instrument Range QC</destinationName>
+        <destinationName>WindDirectionFromInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6386,7 +6386,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>avgWindDir_Stuck_Value_QC</sourceName>
-        <destinationName>Wind From Direction Stuck Value QC</destinationName>
+        <destinationName>WindDirectionFromStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6399,7 +6399,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>gustWindSpeed</sourceName>
-        <destinationName>Wind Speed Of Gust</destinationName>
+        <destinationName>WindGustSpeed</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6414,7 +6414,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>gustWindSpeed_despike</sourceName>
-        <destinationName>Wind Speed Of Gust Despike</destinationName>
+        <destinationName>WindGustSpeedDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6429,7 +6429,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>gustWindSpeed_Inst_Range_QC</sourceName>
-        <destinationName>Wind Speed Of Gust Instrument Range QC</destinationName>
+        <destinationName>WindGustSpeedInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6442,7 +6442,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>gustWindSpeed_Stuck_Value_QC</sourceName>
-        <destinationName>Wind Speed Of Gust Stuck Value QC</destinationName>
+        <destinationName>WindGustSpeedStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6455,7 +6455,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>gustWindDir</sourceName>
-        <destinationName>Wind Gust From Direction</destinationName>
+        <destinationName>WindGustDirectionFrom</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6470,7 +6470,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>gustWindDir_Inst_Range_QC</sourceName>
-        <destinationName>Wind Gust From Direction Instrument Range QC</destinationName>
+        <destinationName>WindGustDirectionFromInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6483,7 +6483,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>gustWindDir_Stuck_Value_QC</sourceName>
-        <destinationName>Wind Gust From Direction Stuck Value QC</destinationName>
+        <destinationName>WindGustDirectionFromStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6496,7 +6496,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetTemperature</sourceName>
-        <destinationName>Air Temperature</destinationName>
+        <destinationName>AirTemp</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6509,7 +6509,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetTemperature_despike</sourceName>
-        <destinationName>Air Temperature Despike</destinationName>
+        <destinationName>AirTempDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6522,7 +6522,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetTemperature_Inst_Range_QC</sourceName>
-        <destinationName>Air Temperature Instrument Range QC</destinationName>
+        <destinationName>AirTempInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6535,7 +6535,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetTemperature_Stuck_Value_QC</sourceName>
-        <destinationName>Air Temperature Stuck Value QC</destinationName>
+        <destinationName>AirTemperatureStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6548,7 +6548,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetPressure</sourceName>
-        <destinationName>Air Pressure</destinationName>
+        <destinationName>AirPressure</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6561,7 +6561,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetPressure_despike</sourceName>
-        <destinationName>Air Pressure Despike</destinationName>
+        <destinationName>AirPressureDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6574,7 +6574,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetPressure_Inst_Range_QC</sourceName>
-        <destinationName>Air Pressure Instrument Range QC</destinationName>
+        <destinationName>AirPressureInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6587,7 +6587,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetPressure_Stuck_Value_QC</sourceName>
-        <destinationName>Air Pressure Stuck Value QC</destinationName>
+        <destinationName>AirPressureStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6600,7 +6600,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetHumidity</sourceName>
-        <destinationName>Surface Relative Humidity</destinationName>
+        <destinationName>HumiditySurface</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6613,7 +6613,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetHumidity_despike</sourceName>
-        <destinationName>Surface Relative Humidity Despike</destinationName>
+        <destinationName>HumiditySurfaceDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6626,7 +6626,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetHumidity_Inst_Range_QC</sourceName>
-        <destinationName>Surface Relative Humidity Instrument Range QC</destinationName>
+        <destinationName>HumiditySurfaceInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6639,7 +6639,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetHumidity_Stuck_Value_QC</sourceName>
-        <destinationName>Surface Relative Humidity Stuck Value QC</destinationName>
+        <destinationName>HumiditySurfaceStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6665,7 +6665,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetPrecipitation_despike</sourceName>
-        <destinationName>Precipitation Despike</destinationName>
+        <destinationName>PrecipitationDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6678,7 +6678,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetPrecipitation_Inst_Range_QC</sourceName>
-        <destinationName>Precipitation Instrument Range QC</destinationName>
+        <destinationName>PrecipitationInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6691,7 +6691,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetPrecipitation_Stuck_Value_QC</sourceName>
-        <destinationName>Precipitation Stuck Value QC</destinationName>
+        <destinationName>PrecipitationStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6704,7 +6704,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetSolar</sourceName>
-        <destinationName>Solar Irradiance</destinationName>
+        <destinationName>SolarIrradiance</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6717,7 +6717,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetSolar_despike</sourceName>
-        <destinationName>Solar Irradiance Despike</destinationName>
+        <destinationName>SolarIrradianceDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6730,7 +6730,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetSolar_Inst_Range_QC</sourceName>
-        <destinationName>Solar Irradiance Instrument Range QC</destinationName>
+        <destinationName>SolarIrradianceInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6743,7 +6743,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetSolar_Stuck_Value_QC</sourceName>
-        <destinationName>Solar Irradiance Stuck Value QC</destinationName>
+        <destinationName>SolarIrradianceStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6756,7 +6756,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>latitude</sourceName>
-        <destinationName>Latitude</destinationName>
+        <destinationName>latitude</destinationName>
         <dataType>double</dataType>
         <addAttributes>
             <att name="colorBarMaximum" type="double">90.0</att>
@@ -6768,7 +6768,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>longitude</sourceName>
-        <destinationName>Longitude</destinationName>
+        <destinationName>longitude</destinationName>
         <dataType>double</dataType>
         <addAttributes>
             <att name="colorBarMaximum" type="double">180.0</att>
