@@ -6132,7 +6132,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Lowsigflag</sourceName>
-        <destinationName>Lowsigflag</destinationName>
+        <destinationName>Phosphate Low Signal Flag</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
