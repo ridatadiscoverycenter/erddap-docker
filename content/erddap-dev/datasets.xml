@@ -5833,7 +5833,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>hydrocatDissOxygen</sourceName>
-        <destinationName>DissolvedOxygenSurface</destinationName>
+        <destinationName>O2Surface</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5846,7 +5846,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Oxygen_despike</sourceName>
-        <destinationName>DissolvedOxygenSurfaceDespike</destinationName>
+        <destinationName>O2SurfaceDespike</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5858,7 +5858,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>oxy_Global_Range_QC</sourceName>
-        <destinationName>DissolvedOxygenSurfaceGlobalRangeQC</destinationName>
+        <destinationName>O2SurfaceGlobalRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -5871,7 +5871,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>Oxygen_Stuck_Value_QC</sourceName>
-        <destinationName>DissolvedOxygenSurfaceStuckValueQC</destinationName>
+        <destinationName>O2SurfaceStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
