@@ -6780,5 +6780,1156 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
 </dataset>
 
+<!-- Buoy Telemetry Added by MCM on 2022-02-01 -->
+<dataset type="EDDTableFromAsciiFiles" datasetID="buoy_telemetry_0ffe_2dc0_916e" active="true">
+    <reloadEveryNMinutes>30</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/buoy_telemetry/</fileDir>
+    <fileNameRegex>automated_qc\.csv</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <charset>UTF-8</charset>
+    <columnSeparator>,</columnSeparator>
+    <columnNamesRow>1</columnNamesRow>
+    <firstDataRow>2</firstDataRow>
+    <sortedColumnSourceName>datetime</sortedColumnSourceName>
+    <sortFilesBySourceNames>datetime</sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+    </sourceAttributes -->
+    <!-- Please specify the actual cdm_data_type (TimeSeries?) and related info below, for example...
+        <att name="cdm_timeseries_variables">station_id, longitude, latitude</att>
+        <att name="subsetVariables">station_id, longitude, latitude</att>
+    -->
+    <addAttributes>
+        <att name="cdm_data_type">Other</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="creator_name">Rhode Island Data Discovery Center</att>
+        <att name="creator_type">group</att>
+        <att name="infoUrl">ridatadiscovery.org</att>
+        <att name="institution">Rhode Island Data Discovery Center</att>
+        <att name="keywords">atmosphere, atmospheric, avgWindDir, avgWindSpeed, bubbleflag, calflag, capo4, center, chemistry, concentration, conductivity, covflag, data, datetime, density, direction, discovery, diss, earth, Earth Science &gt; Atmosphere &gt; Atmospheric Winds &gt; Surface Winds, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Nitrate, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Conductivity, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, eco, ecoFDOM, ecoReadingRaw, electrical, fdom, fluorescence, gust, gustWindDir, gustWindSpeed, humidity, hydrocat, hydrocatConductivity, hydrocatDissOxygen, hydrocatFluorescence, hydrocatPH, hydrocatSalinity, hydrocatTemperature, hydrocatTurbidity, island, local, lowsigflag, maximet, maximetHumidity, maximetPrecipitation, maximetPressure, maximetSolar, maximetTemperature, mixingflag, mole, mole_concentration_of_nitrate_in_sea_water, n02, name, nitrate, no3, O2, ocean, oceans, OoRflag, oxygen, parcalibrated, practical, precipitation, pressure, qcflag, rain, rainfall, raw, reading, rflag, rhode, salinity, science, sea, sea_water_electrical_conductivity, sea_water_practical_salinity, seawater, solar, source, speed, station, station_name, sunaNitrateMicroMol, surface, temperature, time, turbidity, water, wind, wind_from_direction, wind_speed, wind_speed_of_gust, winds</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="subsetVariables">station_name</att>
+        <att name="summary">The data presented here has been subjected to automated QC pipelines,and undergone manual inspection of data on a 3-month lagging window. QA of data is performed following manufacturer guidelines for calibration and servicing of each sensor. QC'd datasets that have undergone additional manual inspection by researchers is provided in a 3 month lagging interval. 
+        See the 'Buoy Telemetry: Automated Quality Control' dataset for current near-real time automated quality controlled dataset. The Automated QC of measurements collected from buoy platforms is performed following guidelines established by the Ocean Observatories Initiative (https://oceanobservatories.org/quality-control/) and implemented in R.
+        Spike Test: To identify spikes within collected measurements, data points are assessed for deviation against a 'reference' window of measurement generated in a sliding window (k=7). If a data point exceeds the deviation threshold (N=2), the spike is replaced with the 'reference' data point, which is determined using  a median smoothing approach in the R package 'oce'.  Despiked data is then written into the instrument table as 'Measurement_Despike'.
+        Global Range Test: Data points are checked against the maximum and minimum measurements using a dataset of global measurements provided by IOOC (https://github.com/oceanobservatories/qc-lookup). QC Flags from global range tests are stored in the instrument table as 'Measurement_Global_Range_QC'. QC Flags: Measurement within global threshold= 0, Below minimum global threshold =1, Above maximum global threshold =2.
+        Local Range Test: Data point values are checked against historical seasonal ranges for each parameter, using data provided by URI GSO's Narragansett Bay Long-Term Plankton Time Series (https://web.uri.edu/gso/research/plankton/). QC Flags from local range tests are stored in the instrument table as 'Measurement_Local_Range_QC'.  Local Range QC Flags: Measurement within local seasonal threshold= 0, Below minimum local seasonal threshold =1, Above maximum local seasonal threshold =2.
+        Stuck Value Test: To identify potential stuck values from a sensor, each data point is compared to subsequent values using sliding 3 and 5 frame windows. QC Flags from stuck value  tests are stored in the instrument table as 'Measurement_Stuck_Value_QC' QC Flags: No stuck value detected= 0, Suspect Stuck Sensor (3 consecutive identical values) =1, Stuck Sensor (5 consecutive identical values) =2.
+        Instrument Range Test: Data point values for meterological measurements are checked against the manufacturer's specified measurement ranges. QC Flags: Measurement within instrument range= 0, Measurement below instrument range =1, Measurement above instrument range =2.</att>
+        <att name="testOutOfDate">now-26days</att>
+        <att name="title">Buoy Telemetry: Manually Quality Controlled </att> 
+
+
+
+    </addAttributes>
+    <dataVariable>
+        <sourceName>datetime</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Datetime</att>
+            <att name="source_name">datetime</att>
+            <att name="standard_name">time</att>
+            <att name="time_precision">1970-01-01T00:00Z</att>
+            <att name="time_zone">US/Eastern</att>
+            <att name="units">yyyy-MM-dd&#39;T&#39;HH:mm:ss.S</att>
+        </addAttributes>
+    </dataVariable>
+        <dataVariable>
+        <sourceName>ecoReadingRaw</sourceName>
+        <destinationName>FluorescenceCounts</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Raw ECO Fluorescence Counts</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ecoFDOM</sourceName>
+        <destinationName>FDOM</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Fluorescent Dissolved Organic Matter</att>
+            <att name="standard_name">concentration_of_fluorescent_dissolved_organic_matter_in_sea_water_expressed_as_equivalent_mass_fraction_of_quinine_sulfate_dihydrate</att>
+            <att name="units">ppb</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>FDOM_despike</sourceName>
+        <destinationName>FDOMDespike</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">FDOM Despike</att>
+            <att name="units">ppb</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>FDOM_Global_Range_QC</sourceName>
+        <destinationName>FDOMGlobalRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">FDOM Global Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>FDOM_Stuck_Value_QC</sourceName>
+        <destinationName>FDOMStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">FDOM Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatTemperature</sourceName>
+        <destinationName>WaterTempSurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Sea Surface Temperature</att>
+            <att name="standard_name">sea_surface_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Temperature_despike</sourceName>
+        <destinationName>WaterTempSurfaceDespike</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Sea Surface Temperature Despike</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Temp_Global_Range_QC</sourceName>
+        <destinationName>WaterTempSurfaceGlobalRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Sea Surface Temperature Global Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Temp_Seasonal_NB_Range_QC</sourceName>
+        <destinationName>WaterTempSurfaceSeasonalNBRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Sea Surface Temperature Seasonal NB Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Temperature_Stuck_Value_QC</sourceName>
+        <destinationName>WaterTempSurfaceStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Sea Surface Temperature Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatConductivity</sourceName>
+        <destinationName>SpCondSurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">40.0</att>
+            <att name="colorBarMinimum" type="double">30.0</att>
+            <att name="long_name">Conductivity</att>
+            <att name="standard_name">sea_water_electrical_conductivity</att>
+            <att name="units">mS cm-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatDissOxygen</sourceName>
+        <destinationName>O2Surface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Dissolved Oxygen</att>
+            <att name="standard_name">mass_concentration_of_dissolved_molecular_oxygen_in_sea_water</att>
+            <att name="units">ug L-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Oxygen_despike</sourceName>
+        <destinationName>O2SurfaceDespike</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Dissolved Oxygen Despike</att>
+            <att name="units">ug L-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>oxy_Global_Range_QC</sourceName>
+        <destinationName>O2SurfaceGlobalRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Dissolved Oxygen Global Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Oxygen_Stuck_Value_QC</sourceName>
+        <destinationName>O2SurfaceStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Dissolved Oxygen Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatSalinity</sourceName>
+        <destinationName>SalinitySurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="long_name">Salinity</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>salinity_despike</sourceName>
+        <destinationName>SalinitySurfaceDespike</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="long_name">Salinity Despike</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Salinity_Global_Range_QC</sourceName>
+        <destinationName>SalinitySurfaceGlobalRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Salinity Global Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Salinity_Seasonal_NB_Range_QC</sourceName>
+        <destinationName>SalinitySurfaceSeasonalNBRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Salinity Seasonal NB Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Salinity_Stuck_Value_QC</sourceName>
+        <destinationName>SalinitySurfaceStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Salinity Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatFluorescence</sourceName>
+        <destinationName>ChlorophyllSurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Chlorophyll a Fluorescence</att>
+            <att name="standard_name">mass_concentration_of_chlorophyll_a_in_sea_water</att>
+            <att name="units">ug L-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>fluorescence_despike</sourceName>
+        <destinationName>ChlorophyllSurfaceDespike</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Chlorophyll a Fluorescence Despike</att>
+            <att name="units">ug L-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>fluorescence_Stuck_Value_QC</sourceName>
+        <destinationName>ChlorophyllSurfaceStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Chlorophyll a Fluorescence Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatTurbidity</sourceName>
+        <destinationName>Turbidity</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Turbidity</att>
+            <att name="standard_name">sea_water_turbidity</att>
+            <att name="units">NTU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>turbidity_despike</sourceName>
+        <destinationName>TurbidityDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Turbidity Despike</att>
+            <att name="units">NTU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>turbidity_Stuck_Value_QC</sourceName>
+        <destinationName>TurbidityStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Turbidity Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatPH</sourceName>
+        <destinationName>pHSurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">pH</att>
+            <att name="standard_name">sea_water_ph_reported_on_total_scale</att>
+            <att name="units">1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ph_despike</sourceName>
+        <destinationName>pHSurfaceDespike</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">pH Despike</att>
+            <att name="units">1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ph_Global_Range_QC</sourceName>
+        <destinationName>pHSurfaceGlobalRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">pH Global Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>pH_Stuck_Value_QC</sourceName>
+        <destinationName>pHSurfaceStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">pH Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>CAPO4</sourceName>
+        <destinationName>Phosphate</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Phosphate</att>
+            <att name="standard_name">mole_concentration_of_phosphate_in_sea_water</att>
+            <att name="units">umol L-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>QCflag</sourceName>
+        <destinationName>PhosphateQCFlag</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Phosphate QC Flag</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Bubbleflag</sourceName>
+        <destinationName>PhosphateBubbleFlag</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Phosphate Bubble Flag</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>COVflag</sourceName>
+        <destinationName>PhosphateCoVFlag</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Phosphate Coefficient of Variation Flag</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Lowsigflag</sourceName>
+        <destinationName>PhosphateLowSigFlag</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Phosphate Low Signal Flag</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>OoRflag</sourceName>
+        <destinationName>PhosphateOoRFlag</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Phosphate Out of Range Flag</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Mixingflag</sourceName>
+        <destinationName>PhosphateMixingFlag</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Phosphate Mixing Flag</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Calflag</sourceName>
+        <destinationName>HydrocycleCalibrationFlag</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Hydrocycle Calibration Flag</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Phosphate_despike</sourceName>
+        <destinationName>PhosphateDespike</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="long_name">Phosphate Despike</att>
+            <att name="standard_name">mass_concentration_of_phosphate_in_sea_water</att>
+            <att name="units">umol L-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Phosphate_Seasonal_NB_Range_QC</sourceName>
+        <destinationName>PhosphateSeasonalNBRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Phosphate Seasonal NB Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Phosphate_Stuck_Value_QC</sourceName>
+        <destinationName>PhosphateStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Phosphate Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sunaNitrateMicroMol</sourceName>
+        <destinationName>Nitrate</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">50.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Nitrate</att>
+            <att name="standard_name">mole_concentration_of_nitrate_in_sea_water</att>
+            <att name="units">umol L-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Nitrate_despike</sourceName>
+        <destinationName>NitrateDespike</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="colorBarMaximum" type="double">50.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name"> Nitrate Despike</att>
+            <att name="standard_name">mole_concentration_of_nitrate_in_sea_water</att>
+            <att name="units">umol L-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Nitrate_Global_Range_QC</sourceName>
+        <destinationName>NitrateGlobalRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Nitrate Global Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Nitrate_Seasonal_NB_Range_QC</sourceName>
+        <destinationName>NitrateSeasonalNBRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Nitrate Seasonal NB Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Nitrate_Stuck_Value_QC</sourceName>
+        <destinationName>NitrateStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Nitrate Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>station_name</sourceName>
+        <destinationName>station_name</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Station Name</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>avgWindSpeed</sourceName>
+        <destinationName>WindSpeedAverage</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">15.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Average Wind Speed</att>
+            <att name="standard_name">wind_speed</att>
+            <att name="units">m s-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>avgWindSpeed_despike</sourceName>
+        <destinationName>WindSpeedAverageDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">15.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Average Wind Speed Despike</att>
+            <att name="standard_name">wind_speed</att>
+            <att name="units">m s-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>avgWindSpeed_Inst_Range_QC</sourceName>
+        <destinationName>WindSpeedAverageInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Average Wind Speed Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>avgWindSpeed_Stuck_Value_QC</sourceName>
+        <destinationName>WindSpeedAverageStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Average Wind Speed Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>avgWindDir</sourceName>
+        <destinationName>WindDirectionFrom</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">360.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind From Direction</att>
+            <att name="standard_name">wind_from_direction</att>
+            <att name="units">degree</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>avgWindDir_Inst_Range_QC</sourceName>
+        <destinationName>WindDirectionFromInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind From Direction Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>avgWindDir_Stuck_Value_QC</sourceName>
+        <destinationName>WindDirectionFromStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind From Direction Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>gustWindSpeed</sourceName>
+        <destinationName>WindGustSpeed</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind Speed Of Gust</att>
+            <att name="standard_name">wind_speed_of_gust</att>
+            <att name="units">m s-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>gustWindSpeed_despike</sourceName>
+        <destinationName>WindGustSpeedDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind Speed Of Gust Despike</att>
+            <att name="standard_name">wind_speed_of_gust</att>
+            <att name="units">m s-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>gustWindSpeed_Inst_Range_QC</sourceName>
+        <destinationName>WindGustSpeedInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind Speed Of Gust Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>gustWindSpeed_Stuck_Value_QC</sourceName>
+        <destinationName>WindGustSpeedStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind Speed Of Gust Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>gustWindDir</sourceName>
+        <destinationName>WindGustDirectionFrom</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">360.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind Gust From Direction</att>
+            <att name="standard_name">wind_gust_from_direction</att>
+            <att name="units">degree</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>gustWindDir_Inst_Range_QC</sourceName>
+        <destinationName>WindGustDirectionFromInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind Gust From Direction Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>gustWindDir_Stuck_Value_QC</sourceName>
+        <destinationName>WindGustDirectionFromStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind Gust From Direction Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetTemperature</sourceName>
+        <destinationName>AirTemp</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Air Temperature</att>
+            <att name="standard_name">air_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetTemperature_despike</sourceName>
+        <destinationName>AirTempDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Air Temperature Despike</att>
+            <att name="standard_name">air_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetTemperature_Inst_Range_QC</sourceName>
+        <destinationName>AirTempInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Air Temperature Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetTemperature_Stuck_Value_QC</sourceName>
+        <destinationName>AirTemperatureStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Air Temperature Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetPressure</sourceName>
+        <destinationName>AirPressure</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Air Pressure</att>
+            <att name="standard_name">air_pressure_at_sea_level</att>
+            <att name="units">mBar</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetPressure_despike</sourceName>
+        <destinationName>AirPressureDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Air Pressure Despike</att>
+            <att name="standard_name">air_pressure_at_sea_level</att>
+            <att name="units">mBar</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetPressure_Inst_Range_QC</sourceName>
+        <destinationName>AirPressureInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Air Pressure Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetPressure_Stuck_Value_QC</sourceName>
+        <destinationName>AirPressureStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Air Pressure Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetHumidity</sourceName>
+        <destinationName>HumiditySurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Surface Relative Humidity</att>
+            <att name="standard_name">surface_relative_humidity</att>
+            <att name="units">1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetHumidity_despike</sourceName>
+        <destinationName>HumiditySurfaceDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Surface Relative Humidity Despike</att>
+            <att name="standard_name">surface_relative_humidity</att>
+            <att name="units">1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetHumidity_Inst_Range_QC</sourceName>
+        <destinationName>HumiditySurfaceInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Surface Relative Humidity Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetHumidity_Stuck_Value_QC</sourceName>
+        <destinationName>HumiditySurfaceStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Surface Relative Humidity Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetPrecipitation</sourceName>
+        <destinationName>Precipitation</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Precipitation</att>
+            <att name="standard_name">precipitation_amount</att>
+            <att name="units">mm hr-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetPrecipitation_despike</sourceName>
+        <destinationName>PrecipitationDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Precipitation Despike</att>
+            <att name="standard_name">precipitation_amount</att>
+            <att name="units">mm hr-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetPrecipitation_Inst_Range_QC</sourceName>
+        <destinationName>PrecipitationInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Precipitation Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetPrecipitation_Stuck_Value_QC</sourceName>
+        <destinationName>PrecipitationStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Precipitation Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetSolar</sourceName>
+        <destinationName>SolarIrradiance</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Solar Irradiance</att>
+            <att name="standard_name">solar_irradiance</att>
+            <att name="units">W m-2</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetSolar_despike</sourceName>
+        <destinationName>SolarIrradianceDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Solar Irradiance Despike</att>
+            <att name="standard_name">solar_irradiance</att>
+            <att name="units">W m-2</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetSolar_Inst_Range_QC</sourceName>
+        <destinationName>SolarIrradianceInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Solar Irradiance Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetSolar_Stuck_Value_QC</sourceName>
+        <destinationName>SolarIrradianceStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Solar Irradiance Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>latitude</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">90.0</att>
+            <att name="colorBarMinimum" type="double">-90.0</att>
+            <att name="long_name">Latitude</att>
+            <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>longitude</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">180.0</att>
+            <att name="colorBarMinimum" type="double">-180.0</att>
+            <att name="long_name">Longitude</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degrees_east</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
 
 </erddapDatasets>
