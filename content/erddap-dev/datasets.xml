@@ -6291,6 +6291,62 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>PARcalibrated</sourceName>
+        <destinationName>PAR</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">15.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation </att>
+            <att name="standard_name">surface_downwelling_photosynthetic_photon_flux_in_air</att>
+            <att name="units">umol m-2 s-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PAR_despike</sourceName>
+        <destinationName>PARDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">15.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation Despike</att>
+            <att name="standard_name">surface_downwelling_photosynthetic_photon_flux_in_air</att>
+            <att name="units">umol m-2 s-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PAR_Inst_Range_QC</sourceName>
+        <destinationName>PARInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PAR_Stuck_Value_QC</sourceName>
+        <destinationName>PARStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>station_name</sourceName>
         <destinationName>station_name</destinationName>
         <dataType>String</dataType>
@@ -6910,6 +6966,19 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>FDOM_SME_Notes</sourceName>
+        <destinationName>FDOMSMENotes</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">FDOM SME Notes</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>hydrocatTemperature</sourceName>
         <destinationName>WaterTempSurface</destinationName>
         <dataType>float</dataType>
@@ -6968,6 +7037,17 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </sourceAttributes -->
         <addAttributes>
             <att name="long_name">Sea Surface Temperature Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatTemperature_SME_Notes</sourceName>
+        <destinationName>WaterTempSurfaceSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Sea Surface Temperature SME Notes</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
@@ -7034,6 +7114,17 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="colorBarMaximum" type="double">150.0</att>
             <att name="colorBarMinimum" type="double">0.0</att>
             <att name="long_name">Dissolved Oxygen Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatDissOxygen_SME_Notes</sourceName>
+        <destinationName>O2SurfaceSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Dissolved Oxygen SME Notes</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
@@ -7106,6 +7197,19 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>hydrocatSalinity_SME_Notes</sourceName>
+        <destinationName>SalinitySurfaceSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="long_name">Salinity SME Notes</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>hydrocatFluorescence</sourceName>
         <destinationName>ChlorophyllSurface</destinationName>
         <dataType>float</dataType>
@@ -7144,6 +7248,17 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>hydrocatFluorescence_SME_Notes</sourceName>
+        <destinationName>ChlorophyllSurfaceSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Chlorophyll a Fluorescence SME Notes</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>hydrocatTurbidity</sourceName>
         <destinationName>Turbidity</destinationName>
         <dataType>float</dataType>
@@ -7179,6 +7294,17 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="colorBarMaximum" type="double">150.0</att>
             <att name="colorBarMinimum" type="double">0.0</att>
             <att name="long_name">Turbidity Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatTurbidity_SME_Notes</sourceName>
+        <destinationName>TurbiditySMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Turbidity SME Notes</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
@@ -7230,6 +7356,17 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="colorBarMaximum" type="double">150.0</att>
             <att name="colorBarMinimum" type="double">0.0</att>
             <att name="long_name">pH Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>hydrocatPH_SME_Notes</sourceName>
+        <destinationName>pHSurfaceSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">pH SME Notes</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
@@ -7376,6 +7513,17 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>CAPO4_SME_Notes</sourceName>
+        <destinationName>PhosphateSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Phosphate SME Notes</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>sunaNitrateMicroMol</sourceName>
         <destinationName>Nitrate</destinationName>
         <dataType>float</dataType>
@@ -7445,6 +7593,87 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>sunaNitrateMicroMol_SME_Notes</sourceName>
+        <destinationName>NitrateSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">50.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Nitrate SME Notes</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PARcalibrated</sourceName>
+        <destinationName>PAR</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">15.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation </att>
+            <att name="standard_name">surface_downwelling_photosynthetic_photon_flux_in_air</att>
+            <att name="units">umol m-2 s-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PAR_despike</sourceName>
+        <destinationName>PARDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">15.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation Despike</att>
+            <att name="standard_name">surface_downwelling_photosynthetic_photon_flux_in_air</att>
+            <att name="units">umol m-2 s-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PAR_Inst_Range_QC</sourceName>
+        <destinationName>PARInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PAR_Stuck_Value_QC</sourceName>
+        <destinationName>PARStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation Stuck Value QC</att>
+        </addAttributes>
+    <dataVariable>
+        <sourceName>PARcalibrated_SME_Notes</sourceName>
+        <destinationName>PARSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">50.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">PAR SME Notes</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>station_name</sourceName>
         <destinationName>station_name</destinationName>
         <dataType>String</dataType>
@@ -7511,6 +7740,19 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>avgWindSpeed_SME_Notes</sourceName>
+        <destinationName>WindSpeedAverageSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">15.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Average Wind Speed SME Notes</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>avgWindDir</sourceName>
         <destinationName>WindDirectionFrom</destinationName>
         <dataType>float</dataType>
@@ -7549,6 +7791,19 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="colorBarMaximum" type="double">150.0</att>
             <att name="colorBarMinimum" type="double">0.0</att>
             <att name="long_name">Wind From Direction Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>avgWindDir_SME_Notes</sourceName>
+        <destinationName>WindDirectionFromSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">360.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind From Direction SME Notes</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
@@ -7608,6 +7863,19 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>gustWindSpeed_SME_Notes</sourceName>
+        <destinationName>WindGustSpeedSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind Speed Of Gust SME Notes</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>gustWindDir</sourceName>
         <destinationName>WindGustDirectionFrom</destinationName>
         <dataType>float</dataType>
@@ -7646,6 +7914,19 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="colorBarMaximum" type="double">150.0</att>
             <att name="colorBarMinimum" type="double">0.0</att>
             <att name="long_name">Wind Gust From Direction Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>gustWindDir_SME_Notes</sourceName>
+        <destinationName>WindGustDirectionFromSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">360.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Wind Gust From Direction SME Notes</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
@@ -7701,6 +7982,17 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>maximetTemperature_SME_Notes</sourceName>
+        <destinationName>AirTempSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Air Temperature SME Notes</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>maximetPressure</sourceName>
         <destinationName>AirPressure</destinationName>
         <dataType>float</dataType>
@@ -7752,6 +8044,16 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="long_name">Air Pressure Stuck Value QC</att>
         </addAttributes>
     </dataVariable>
+    <dataVariable>
+        <sourceName>maximetPressure_SME_Notes</sourceName>
+        <destinationName>AirPressure SME Notes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Air Pressure SME Notes</att>
+        </addAttributes>
     <dataVariable>
         <sourceName>maximetHumidity</sourceName>
         <destinationName>HumiditySurface</destinationName>
@@ -7805,6 +8107,16 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>maximetHumidity_SME_Notes</sourceName>
+        <destinationName>HumiditySurfaceSMENotes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Surface Relative Humidity SME Notes</att>
+        </addAttributes>
+    <dataVariable>
         <sourceName>maximetPrecipitation</sourceName>
         <destinationName>Precipitation</destinationName>
         <dataType>float</dataType>
@@ -7857,6 +8169,17 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>maximetPrecipitation_SME_Notes</sourceName>
+        <destinationName>Precipitation SME Notes</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Precipitation SME Notes</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>maximetSolar</sourceName>
         <destinationName>SolarIrradiance</destinationName>
         <dataType>float</dataType>
@@ -7906,6 +8229,17 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="colorBarMaximum" type="double">150.0</att>
             <att name="colorBarMinimum" type="double">0.0</att>
             <att name="long_name">Solar Irradiance Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>maximetSolar_SME_Notes</sourceName>
+        <destinationName>SolarIrradiance</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="long_name">Solar Irradiance SME Notes</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
