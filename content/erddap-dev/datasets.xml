@@ -6306,7 +6306,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>PAR_despike</sourceName>
+        <sourceName>PARcalibrated_despike</sourceName>
         <destinationName>PARDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
@@ -6321,7 +6321,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>PAR_Inst_Range_QC</sourceName>
+        <sourceName>PARcalibrated_Inst_Range_QC</sourceName>
         <destinationName>PARInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
@@ -6334,7 +6334,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>PAR_Stuck_Value_QC</sourceName>
+        <sourceName>PARcalibrated_Stuck_Value_QC</sourceName>
         <destinationName>PARStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
@@ -7621,7 +7621,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>PAR_despike</sourceName>
+        <sourceName>PARcalibrated_despike</sourceName>
         <destinationName>PARDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
@@ -7636,7 +7636,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>PAR_Inst_Range_QC</sourceName>
+        <sourceName>PARcalibrated_Inst_Range_QC</sourceName>
         <destinationName>PARInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
@@ -7649,7 +7649,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>PAR_Stuck_Value_QC</sourceName>
+        <sourceName>PARcalibrated_Stuck_Value_QC</sourceName>
         <destinationName>PARStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
@@ -7661,7 +7661,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="long_name">Photosynthetically Active Radiation Stuck Value QC</att>
         </addAttributes>
     <dataVariable>
-        <sourceName>PARcalibrated_SME_Notes</sourceName>
+        <sourceName>PAR_SME_Notes</sourceName>
         <destinationName>PARSMENotes</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
