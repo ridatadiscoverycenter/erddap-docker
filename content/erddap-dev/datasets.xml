@@ -7513,7 +7513,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>CAPO4_SME_Notes</sourceName>
+        <sourceName>Phosphate_SME_Notes</sourceName>
         <destinationName>PhosphateSMENotes</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
@@ -7593,7 +7593,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>sunaNitrateMicroMol_SME_Notes</sourceName>
+        <sourceName>Nitrate_SME_Notes</sourceName>
         <destinationName>NitrateSMENotes</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
@@ -8233,7 +8233,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>maximetSolar_SME_Notes</sourceName>
-        <destinationName>SolarIrradiance</destinationName>
+        <destinationName>SolarIrradianceSMENotes</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
