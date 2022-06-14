@@ -2,3 +2,4 @@ kiatest
 buoy_data
 erddap_data
 .DS_Store
+content/erddap-dev/datasets_metdata.xml
