@@ -6292,7 +6292,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>PARcalibrated</sourceName>
-        <destinationName>PAR</destinationName>
+        <destinationName>PARSurface</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6307,7 +6307,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>PARcalibrated_despike</sourceName>
-        <destinationName>PARDespike</destinationName>
+        <destinationName>PARSurfaceDespike</destinationName>
         <dataType>float</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6322,7 +6322,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>PARcalibrated_Inst_Range_QC</sourceName>
-        <destinationName>PARInstrumentRangeQC</destinationName>
+        <destinationName>PARSurfaceInstrumentRangeQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
@@ -6335,7 +6335,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
     <dataVariable>
         <sourceName>PARcalibrated_Stuck_Value_QC</sourceName>
-        <destinationName>PARStuckValueQC</destinationName>
+        <destinationName>PARSurfaceStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
         </sourceAttributes -->
