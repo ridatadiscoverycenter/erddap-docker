@@ -5643,6 +5643,19 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
+        <sourceName>Chla_Seasonal_NB_Range_QC</sourceName>
+        <destinationName>ChlorophyllSurfaceSeasonalNBRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Chlorophyll a Fluorescence Seasonal NB Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
         <sourceName>fluorescence_Stuck_Value_QC</sourceName>
         <destinationName>ChlorophyllSurfaceStuckValueQC</destinationName>
         <dataType>byte</dataType>
@@ -5954,6 +5967,62 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="colorBarMaximum" type="double">150.0</att>
             <att name="colorBarMinimum" type="double">0.0</att>
             <att name="long_name">Nitrate Stuck Value QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PARcalibrated</sourceName>
+        <destinationName>PARSurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">15.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation</att>
+            <att name="standard_name">surface_downwelling_photosynthetic_photon_flux_in_air</att>
+            <att name="units">umol m-2 s-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PARcalibrated_despike</sourceName>
+        <destinationName>PARSurfaceDespike</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="float">NaN</att>
+            <att name="colorBarMaximum" type="double">15.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation Despike</att>
+            <att name="standard_name">surface_downwelling_photosynthetic_photon_flux_in_air</att>
+            <att name="units">umol m-2 s-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PARcalibrated_Inst_Range_QC</sourceName>
+        <destinationName>PARSurfaceInstrumentRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation Instrument Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>PARcalibrated_Stuck_Value_QC</sourceName>
+        <destinationName>PARSurfaceStuckValueQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Photosynthetically Active Radiation Stuck Value QC</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
