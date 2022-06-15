@@ -5977,7 +5977,20 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>fluorescence_Stuck_Value_QC</sourceName>
+        <sourceName>Chla_Seasonal_NB_Range_QC</sourceName>
+        <destinationName>ChlorophyllSurfaceSeasonalNBRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Chlorophyll a Fluorescence Seasonal NB Range QC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName></sourceName>
         <destinationName>ChlorophyllSurfaceStuckValueQC</destinationName>
         <dataType>byte</dataType>
         <!-- sourceAttributes>
@@ -7234,6 +7247,18 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="units">ug L-1</att>
         </addAttributes>
     </dataVariable>
+    <dataVariable>
+        <sourceName>Chla_Seasonal_NB_Range_QC</sourceName>
+        <destinationName>ChlorophyllSurfaceSeasonalNBRangeQC</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="byte">127</att>
+            <att name="colorBarMaximum" type="double">150.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">Chlorophyll a Fluorescence Seasonal NB Range QC</att>
+        </addAttributes>
     <dataVariable>
         <sourceName>fluorescence_Stuck_Value_QC</sourceName>
         <destinationName>ChlorophyllSurfaceStuckValueQC</destinationName>
