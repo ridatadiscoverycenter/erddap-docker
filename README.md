@@ -22,7 +22,7 @@ in a folder called `buoy_data` in the root of this project.
 
 ## Running Locally
 
-To start the container run `docker-compose -f docker-compose.dev.yml up -d erddap`. Then go to http://localhost:8080. To check that the service is up run `docker-compose exec erddap bash` and check to see that there's data in
+To start the container run `docker compose -f docker-compose.dev.yml up erddap`. Then go to http://localhost:8080/erddap. To check that the service is up run `docker compose exec erddap bash` and check to see that there's data in
 the `logs/` directory. Tomcat takes a while to start up, don't be surprised if
 you don't see anything.
 
@@ -37,10 +37,10 @@ ERDDAP also provides a few tools to help you create the dataset's XML file, and 
 To create a XML block for a dataset, run:
 ```bash
 #development
-docker-compose -f docker-compose.dev.yml run generate_dataset_xml
+docker compose -f docker-compose.dev.yml run generate_dataset_xml
 
 #production
-docker-compose run generate_dataset_xml
+docker compose run generate_dataset_xml
 ```
 
 This will run the script `GenerateDatasetXml.sh` provided by ERDDAP. This is an interactive tool that will ask you to enter some information about the dataset. We place data files in `/erddapData/`, which is mounted to `isilon_erddap/erddap_data`. Make sure you have downloaded the `isilon_erddap` folder from Google Drive. If you don't have that, ask an administrator for the link.
@@ -53,7 +53,7 @@ The XML block will have the dataset ID. This ID is used to generate the dataset 
 
 ```bash
 #development
-docker-compose -f docker-compose.dev.yml run generate_data_structure
+docker compose -f docker-compose.dev.yml run generate_data_structure
 
 #production
 docker-compose run generate_data_structure
@@ -63,10 +63,10 @@ This will run ERDDAP's `DasDds.sh` script. It will ask you the enter the ID of y
 
 ```bash
 #development
-docker-compose -f docker-compose.dev.yml up erddap
+docker compose -f docker-compose.dev.yml up erddap
 
 #production
-docker-compose up -d erddap
+docker compose up -d erddap
 ```
 
 You can then visit `localhost:8080/erddap/index.html`. The server might take a few minutes to start and load all datasets.

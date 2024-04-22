@@ -1,7 +1,7 @@
 version: '3'
 services:
   erddap: &erddap
-    image: axiom/docker-erddap:2.02
+    image: axiom/docker-erddap:2.23-jdk17-openjdk
     environment:
      - TZ=America/New_York
     ports:
