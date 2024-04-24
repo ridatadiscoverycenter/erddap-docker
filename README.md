@@ -73,6 +73,8 @@ You can then visit `localhost:8080/erddap/index.html`. The server might take a f
 
 If you can see your dataset in your local ERDDAP server, you're ready to start a Pull Request to the production server.
 
+**Note:** If the graph fails to load when viewing NetCDF data on your local ERDDAP server, there is likely a mismatch in the order of variables between the XML and the NetCDF file itself. Beware if using a prior dataset's XML as a template. It is best to use the XML from `generate_dataset_xml` without changing the order.
+
 To do that:
 - paste the dataset's XML block in the production `erddap/dataset.xml` file in this repo.
 - add a link to the raw data files in your PR's description.
