@@ -1434,7 +1434,7 @@ This dataset has both historical data (quality controlled, before
         <att name="time_coverage_start">2005-07-29T10:15:00Z</att>
         <att name="cdm_data_type">Timeseries</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="infoUrl">https://ridatadiscovery.org</att>
+        <att name="infoUrl">https://riddc.brown.edu</att>
         <att name="institution">Brown</att>
         <att name="keywords">data, latitude, longitude, name, quonset, station, station_name</att>
         <att name="license">[standard]</att>
@@ -1535,7 +1535,7 @@ This dataset has both historical data (quality controlled, before
     <addAttributes>
         <att name="cdm_data_type">Timeseries</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="infoUrl">ridatadiscovery.org</att>
+        <att name="infoUrl">riddc.brown.edu</att>
         <att name="institution">Rhode Island Data Discovery</att>
         <att name="keywords">bottom, chemistry, chlorophyll, ChlorophyllSurface, concentration, cond, conductivity, data, density, depth, DepthBottom, dissolved, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Oxygen, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; pH, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Conductivity, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, electrical, fractional, fractional_saturation_of_oxygen_in_sea_water, FSpercentSurface, mass, mass_concentration_of_chlorophyll_in_sea_water, mass_concentration_of_oxygen_in_sea_water, north, O2, O2PercentSurface, O2Surface, ocean, oceans, oxygen, percent, pHBottom, pHSurface, practical, prudence, reported, salinity, SalinityBottom, SalinitySurface, sample, saturated, saturation, scale, science, sea, sea_water_electrical_conductivity, sea_water_ph_reported_on_total_scale, sea_water_practical_salinity, sea_water_temperature, seawater, SpCondBottom, SpCondSurface, surface, temperature, time, total, turbidity, TurbidityBottom, water, WaterTempBottom, WaterTempSurface</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
@@ -2446,7 +2446,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="Conventions">CF-1.6, COARDS, ACDD-1.3</att>
         <att name="cpu">null</att>
         <att name="format">null</att>
-        <att name="infoUrl">ridatadiscovery.org</att>
+        <att name="infoUrl">riddc.brown.edu</att>
         <att name="institution">Rhode Island Data Discovery</att>
         <att name="keywords">beta0.1, data, density, earth, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Potential Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, eta_rho, ocean, ocean_time, oceans, osom, osom-beta0.1-2018, potential, practical, salinity, SalinityBottom, SalinitySurface, science, sea, sea_water_potential_temperature, sea_water_practical_salinity, seawater, temperature, water, WaterTempBottom, WaterTempSurface, xi_rho</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
@@ -2622,7 +2622,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <addAttributes>
         <att name="cdm_data_type">Grid</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="infoUrl">ridatadiscovery.org</att>
+        <att name="infoUrl">riddc.brown.edu</att>
         <att name="institution">Rhode Island Data Discovery</att>
         <att name="keywords">coords, data, eta_rho, latitude, latitute, long, longitude, osom, osom-coords-lat-long, points, rho, rho-points, xi_rho</att>
         <att name="license">[standard]</att>
@@ -2766,7 +2766,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="creator_name">RIDDC</att>
         <att name="creator_type">institution</att>
         <att name="format">null</att>
-        <att name="infoUrl">ridatadiscovery.org</att>
+        <att name="infoUrl">riddc.brown.edu</att>
         <att name="institution">Rhode Island Data Discovery</att>
         <att name="keywords">beta0.1, buoy, buoys, data, density, dim, earth, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Potential Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, latitude, latitute, longitude, multi, name, ocean, oceans, osom, osom-beta0.1-2006-buoys, points, potential, practical, rho, rho-points, riddc, salinity, SalinityBottom, SalinitySurface, science, sea, sea_water_potential_temperature, sea_water_practical_salinity, seawater, station, station_name, temperature, test, time, water, WaterTempBottom, WaterTempSurface</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
@@ -2965,7 +2965,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <addAttributes>
         <att name="cdm_data_type">Other</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="infoUrl">ridatadicovery.org</att>
+        <att name="infoUrl">riddc.brown.edu</att>
         <att name="institution">Rhode Island Data Discovery</att>
         <att name="keywords">bottom, Bottom_Temperature, data, date, earth, Earth Science &gt; Land Surface &gt; Land Temperature &gt; Land Surface Temperature, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, fish, land, ocean, oceans, science, sea, station, surface, surface_temperature, temperature, temps, trawl</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
@@ -3055,7 +3055,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <addAttributes>
         <att name="cdm_data_type">Other</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="infoUrl">ridatadicovery.org</att>
+        <att name="infoUrl">riddc.brown.edu</att>
         <att name="institution">Rhode Island Data Discovery</att>
         <att name="keywords">2006-2017, bottom, Bottom_Depth, Bottom_Dissolved_Oxygen_Concentration, Bottom_Dissolved_Oxygen_Percent, Bottom_Salinity, Bottom_Temperature, chemistry, concentration, data, density, depth, dissolved, earth, Earth Science &gt; Land Surface &gt; Land Temperature &gt; Land Surface Temperature, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Oxygen, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, fox, fraction, i_Date, island, land, O2, ocean, oceans, oxygen, oygen, practical, rock, salinity, science, sea, sea_water_practical_salinity, seawater, station, surface, Surface_Depth, Surface_Dissolved_Oxygen_Percent, Surface_Dissolved_Oygen_Concentration, Surface_Salinity, surface_temperature, temperature, volume, volume_fraction_of_oxygen_in_sea_water, water, whale, &#xef;&#xbb;&#xbf;date</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
@@ -3256,7 +3256,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="cdm_data_type">Other</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
         <att name="institution">Rhode Island Data Discovery</att>
-        <att name="infoUrl">ridatadicovery.org</att>
+        <att name="infoUrl">riddc.brown.edu</att>
         <att name="keywords">alosa, Alosa_spp, atlantic, Atlantic_herring, bluefish, brown, butterfish, cancer, Cancer_crab, catch, crab, cunner, data, flounder, fourspot, Fourspot_flounder, fox, hake, herring, horseshoe, Horseshoe_crab, i_Year, island, lady, Lady_crab, little, Little_skate, lobster, Longhorned_sculpin, longitude, northern, Northern_searobin, red, Red_Hake, rock, scup, sea, Sea_star, searobin, silver, Silver_hake, skate, spider, Spider_crab, spp, star, striped, Striped_searobin, summer, Summer_flounder, tautog, university, weakfish, whale, windowpane, winter, Winter_flounder, &#xef;&#xbb;&#xbf;year</att>
         <att name="license">[standard]</att>
         <att name="sourceUrl">(local files)</att>
@@ -3570,7 +3570,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="cdm_data_type">Other</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
         <att name="creator_name">Rhode Island Data Discovery</att>
-        <att name="infoUrl">ridatadiscovery.org</att>
+        <att name="infoUrl">riddc.brown.edu</att>
         <att name="institution">Rhode Island Data Discovery</att>
         <att name="keywords">1ng, ammonia, ammonium, Ammonium_uM, analysis, analyzer, atmosphere, atmospheric, bottom, Bottom_Chla_lessthan20um_ugL, Bottom_Chla_ugL, Bottom_Pheo_lessthan20_um_ugL, Bottom_Pheo_ugL, cells, chains, chemistry, chlorophyll, collected, collection, CollectionTime, concentration, concentration_of_chlorophyll_in_sea_water, corrected, data, date, density, depth, Depth_bottom_m, Depth_surface_m, din, DIN_P_Ratio, DIN_Si_Ratio, DIN_uM, direction, discovery, earth, Earth Science &gt; Atmosphere &gt; Atmospheric Winds &gt; Surface Winds, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Ammonia, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Nitrate, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Phosphate, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Silicate, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, Earth Science &gt; Oceans &gt; Sea Surface Topography &gt; Sea Surface Height, filter, filtered, fluorometer, gust, height, Hrs_before_high_tide, instrument, island, L_seawater_filtered_for_pDA_filter_corrected, lessthan20, lessthan20um, loq, lseawater, mass, mass_concentration_of_phosphate_in_sea_water, mass_concentration_of_silicate_in_sea_water, mole, mole_concentration_of_ammonium_in_sea_water, mole_concentration_of_nitrate_in_sea_water, mole_concentration_of_nitrite_in_sea_water, month, n02, net, nh4, nitrate, Nitrate_and_Nitrite_uM, Nitrate_uM, nitrite, Nitrite_uM, no3, nuts, Nuts_Analyzer, Nuts_Collected_By, Nuts_n_analysis_replicates, ocean, oceans, odo, ODO_bottom, ODO_surface, pDA_ng_Lseawater_1ngL_LOQ, percent, pH_bottom, pH_surface, pheo, phosphate, Phosphate_uM, plankton, po4, practical, ratio, replicates, rhode, salinity, Salinity_bottom_psu, Salinity_surface_psu, sample, science, sea, sea_surface_height, sea_water_practical_salinity, seawater, secchi, Secchi_Depth_m, silicate, Silicate_uM, site, site2, snc, SNC_SurfaceNet_Pn, speed, srdepth, SRDepth_Pn_cellsL, SRDepth_Pn_Percent, SRDepth_TotalPlankton_cellsL, srsurface, SRSurface_Pn_cellsL, SRSurface_Pn_Percent, SRSurface_PnChains_cellsL, SRSurface_TotalPlankton_cellsL, surface, Surface_Chla_lessthan20um_ugL, Surface_Chla_ugL, Surface_Pheo_lessthan20um_ugL, Surface_Pheo_ugL, Temp_Bottom_degC, Temp_Surface_degC, temperature, time, topography, total, u, water, wind, Wind_Dir_deg, wind_from_direction, Wind_Gust_m_s, wind_speed, Wind_Speed_m_s, wind_speed_of_gust, winds, year, ysi, YSI_Instrument</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
@@ -4289,7 +4289,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="cdm_data_type">Other</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
         <att name="creator_name">Rhode Island Data Discovery</att>
-        <att name="infoUrl">ridatadiscovery.org</att>
+        <att name="infoUrl">riddc.brown.edu</att>
         <att name="institution">Rhode Island Data Discovery</att>
         <att name="keywords">access, data, demstation, description, discovery, island, latitude, locations, longitude, rhode, station, user</att>
         <att name="license">[standard]</att>
@@ -4405,7 +4405,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="infoUrl">https://www.mass.gov/info-details/mount-hope-bay-marine-buoy-continuous-probe-data</att>
         <att name="institution">MassDEP</att>
         <att name="publisher_name">Rhode Island Data Discovery</att>
-        <att name="publisher_url">ridatadicovery.org</att>
+        <att name="publisher_url">riddc.brown.edu</att>
         <att name="keywords">bottom, buoy, chemistry, chlorophyll, ChlorophyllBottom, ChlorophyllQualifiersBottom, ChlorophyllQualifiersSurface, ChlorophyllSurface, concentration, concentration_of_chlorophyll_in_sea_water, cond, data, density, depth, DepthQualifiersBottom, DepthQualifiersSurface, DepthSurface, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Nitrate, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Water Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, hbottom, hqualifiers, hsurface, latitude, longitude, mole, mole_concentration_of_nitrate_in_sea_water, n02, name, nitrate, NitrateNQualifiersSurface, NitrateNSurface, no3, nqualifiers, O2, O2Bottom, O2PercentBottom, O2PercentQualifiersBottom, O2PercentQualifiersSurface, O2PercentSurface, O2QualifiersBottom, O2QualifiersSurface, O2Surface, ocean, oceans, oxygen, percent, pHBottom, pHQualifiersBottom, pHQualifiersSurface, pHSurface, phycoerythrin, PhycoerythrinBottom, PhycoerythrinQualifiersBottom, PhycoerythrinQualifiersSurface, PhycoerythrinSurface, practical, qualifiers, salinity, SalinityBottom, SalinityQualifiersBottom, SalinityQualifiersSurface, SalinitySurface, science, sea, sea_water_practical_salinity, sea_water_temperature, seawater, SpCondBottom, SpCondQualifiersBottom, SpCondQualifiersSurface, SpCondSurface, station, station_name, surface, temperature, time, timezone, water, WaterTempBottom, WaterTempQualifiersBottom, WaterTempQualifiersSurface, WaterTempSurface</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
         <att name="license">[standard]</att>
@@ -5096,7 +5096,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
           <att name="institution">United States Geolocical Survey</att>
           <att name="infoUrl">https://earthexplorer.usgs.gov</att>
           <att name="publisher_name">Rhode Island Data Discovery</att>
-          <att name="publisher_url">ridatadicovery.org</att>
+          <att name="publisher_url">riddc.brown.edu</att>
           <att name="keywords">amount, area, atmosphere, bay, bias, buoys, cloud, cloud cover, cloud_area_fraction, cloudiness, clouds, correction, cover, data, dem, derived, digital, earth, Earth Science &gt; Atmosphere &gt; Clouds &gt; Cloud Amount/Frequency, Earth Science &gt; Land Surface &gt; Land Temperature &gt; Land Surface Temperature, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, elevation, fraction, frequency, geolocical, included, lakes, land, landsat, landsat-derived, model, narragansett, near, NG_Clouds, number, ocean, oceans, over, rivers, satellite, science, sea, seawater, states, surface, surface_temperature, survey, Temp, temperature, time, total, united, water, with</att>
           <att name="keywords_vocabulary">GCMD Science Keywords</att>
           <att name="license">[standard]</att>
@@ -5225,7 +5225,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="institution">United States Geolocical Survey</att>
         <att name="infoUrl">https://earthexplorer.usgs.gov</att>
         <att name="publisher_name">Rhode Island Data Discovery</att>
-        <att name="publisher_url">ridatadicovery.org</att>
+        <att name="publisher_url">riddc.brown.edu</att>
         <att name="keywords">bay, bias, buoys, correction, data, dem, derived, digital, elevation, geolocical, included, lakes, landsat, landsat-derived, latitude, longitude, model, narragansett, near, rivers, states, surface, survey, temperature, united, water, with</att>
         <att name="license">[standard]</att>
         <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
@@ -5326,7 +5326,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
         <att name="creator_name">Rhode Island Data Discovery Center</att>
         <att name="creator_type">group</att>
-        <att name="infoUrl">ridatadiscovery.org</att>
+        <att name="infoUrl">riddc.brown.edu</att>
         <att name="institution">Rhode Island Data Discovery Center</att>
         <att name="keywords">atmosphere, atmospheric, avgWindDir, avgWindSpeed, bubbleflag, calflag, capo4, center, chemistry, concentration, conductivity, covflag, data, datetime, density, direction, discovery, diss, earth, Earth Science &gt; Atmosphere &gt; Atmospheric Winds &gt; Surface Winds, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Nitrate, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Conductivity, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, eco, ecoFDOM, ecoReadingRaw, electrical, fdom, fluorescence, gust, gustWindDir, gustWindSpeed, humidity, hydrocat, hydrocatConductivity, hydrocatDissOxygen, hydrocatFluorescence, hydrocatPH, hydrocatSalinity, hydrocatTemperature, hydrocatTurbidity, island, local, lowsigflag, maximet, maximetHumidity, maximetPrecipitation, maximetPressure, maximetSolar, maximetTemperature, mixingflag, mole, mole_concentration_of_nitrate_in_sea_water, n02, name, nitrate, no3, O2, ocean, oceans, OoRflag, oxygen, parcalibrated, practical, precipitation, pressure, qcflag, rain, rainfall, raw, reading, rflag, rhode, salinity, science, sea, sea_water_electrical_conductivity, sea_water_practical_salinity, seawater, solar, source, speed, station, station_name, sunaNitrateMicroMol, surface, temperature, time, turbidity, water, wind, wind_from_direction, wind_speed, wind_speed_of_gust, winds</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
