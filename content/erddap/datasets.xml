@@ -5457,16 +5457,6 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="summary">Translation from x,y coordinates to latitude and longitude for the "Landsat Satellite Surface Temperature v2" dataset.</att>
     </addAttributes>
     <axisVariable>
-        <sourceName>y</sourceName>
-        <destinationName>Y</destinationName>
-        <addAttributes>
-            <att name="long_name">Y</att>
-            <att name="source_name">y</att>
-            <!-- <att name="standard_name">latitude</att>
-            <att name="units">degrees_north</att> -->
-        </addAttributes>
-    </axisVariable>
-    <axisVariable>
         <sourceName>x</sourceName>
         <destinationName>X</destinationName>
         <addAttributes>
@@ -5474,6 +5464,16 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="source_name">x</att>
             <!-- <att name="standard_name">longitude</att>
             <att name="units">degrees_east</att> -->
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>y</sourceName>
+        <destinationName>Y</destinationName>
+        <addAttributes>
+            <att name="long_name">Y</att>
+            <att name="source_name">y</att>
+            <!-- <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att> -->
         </addAttributes>
     </axisVariable>
     <dataVariable>
@@ -5664,16 +5664,6 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="summary">Translation from x,y coordinates to latitude and longitude for the "Landsat Satellite Surface Temperature v2" dataset.</att>
     </addAttributes>
     <axisVariable>
-        <sourceName>y</sourceName>
-        <destinationName>Y</destinationName>
-        <addAttributes>
-            <att name="long_name">Y</att>
-            <att name="source_name">y</att>
-            <!-- <att name="standard_name">latitude</att>
-            <att name="units">degrees_north</att> -->
-        </addAttributes>
-    </axisVariable>
-    <axisVariable>
         <sourceName>x</sourceName>
         <destinationName>X</destinationName>
         <addAttributes>
@@ -5681,6 +5671,16 @@ tke:                 Rad    Rad    Rad    Clo</att>
             <att name="source_name">x</att>
             <!-- <att name="standard_name">longitude</att>
             <att name="units">degrees_east</att> -->
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>y</sourceName>
+        <destinationName>Y</destinationName>
+        <addAttributes>
+            <att name="long_name">Y</att>
+            <att name="source_name">y</att>
+            <!-- <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att> -->
         </addAttributes>
     </axisVariable>
     <dataVariable>
