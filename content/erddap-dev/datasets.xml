@@ -6138,6 +6138,428 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
 </dataset>
 
+<!-- NOTE! The source for landsat_sst_mthope_v3_data has nGridVariables=5,
+  but this dataset will only serve 4 because the others use different dimensions. -->
+<dataset type="EDDGridFromNcFiles" datasetID="landsat_sst_mthope_v3_data" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/landsat_sst_mthope_v3/</fileDir>
+    <fileNameRegex>.*_data\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <matchAxisNDigits>20</matchAxisNDigits>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <defaultGraphQuery>temperature[0:last][0:last][last]&amp;.draw=surface&amp;.vars=X|Y|temperature</defaultGraphQuery>
+    <addAttributes>
+        <att name="title">Landsat Satellite Surface Temperature version 3, Mt. Hope Bay</att>
+        <att name="source">https://earthexplorer.usgs.gov/ accessed through https://code.earthengine.google.com/</att>
+        <att name="_NCProperties">null</att>
+        <att name="cdm_data_type">Grid</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="creator_name">Rhode Island Data Discovery/United States Geological Survey</att>
+        <att name="infoUrl">https://earthexplorer.usgs.gov</att>
+        <att name="publisher_name">Rhode Island Data Discovery/United States Geological Survey</att>
+        <att name="publisher_url">https://riddc.brown.edu/</att>
+        <att name="institution">Rhode Island Data Discovery/United States Geological Survey</att>
+        <att name="publication">https://doi.org/10.26300/ja0b-xa86</att>
+        <att name="keywords">amount, area, atmosphere, bay, cloud, cloud cover, cloud_area_fraction, cloudiness, clouds, cover, data, deseasonalized, detrended, discovery, earth, Earth Science &gt; Atmosphere &gt; Clouds &gt; Cloud Amount/Frequency, Earth Science &gt; Land Surface &gt; Land Temperature &gt; Land Surface Temperature, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, fraction, frequency, geological, hope, island, land, landsat, mount, number, ocean, oceans, over, rhode, satellite, science, sea, states, surface, surface_temperature, survey, temerapture, temperature, temperature_detrend, time, united, version</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="summary">Landsat-derived water surface in Mt. Hope Bay with K-fold bias correction from RI DEM buoys. For translation from the x,y coordinates to latitude and longitude see the "Landsat Satellite Coordinates v3 - Mt. Hope Bay" dataset.</att>
+        <att name="comment">Attribute Accuracy Report: Satellite-derived orthorectified brightness temperature was measured within 0.1 degrees C for Landsat 8, 0.6 degrees C for Landsat 7, and 0.5 degrees C for Landsat 5. Satellite measurements were compared to in situ (buoy) surface temperatures from 2003 to 2019, and the bias between the RI DEM buoy temperatures and the satellite temperatures at the pixel of the buoys was removed from each satellite pixel. See https://www.usgs.gov/land-resources/nli/landsat/landsat-surface-reflectance?qt-science_support_page_related_con=0#qt-science_support_page_related_con for more information.</att>
+        <att name="history">Converted from Landsat 5, 7, and 8 Surface Reflectance geotiff products to netCDF. The units were changed from K to degrees C and the average bias determined through RI DEM buoy comparison in Narragansett Bay (2003-2019) to each satellite was removed from all scenes from the corresponding satellite. The errors were determined by using a K-fold cross-validation to minimize error at each satellite pixel. The scenes were also cloud masked, land masked, and stripes in Landsat 7 imagery (due to sensor failure) were masked as well. A buoy comparison was only conducted within Narragansett Bay for Landsat scenes with less than 50&#37; cloud cover, and applied to available scenes back to 1984 for Landsat 5, 1999 for Landsat 7, and 2013 for Landsat 8. As a result, data uncertainties are unknown outside of the Narragansett Bay region, for scenes with greater cloud cover, and scenes before 2003.</att>
+    </addAttributes>
+    <axisVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">764</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="standard_name">time</att>
+            <att name="long_name">Time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>y</sourceName>
+        <destinationName>Y</destinationName>
+        <addAttributes>
+            <att name="source_name">y</att>
+            <att name="long_name">Y</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>x</sourceName>
+        <destinationName>X</destinationName>
+        <addAttributes>
+            <att name="long_name">X</att>
+            <att name="source_name">x</att>
+        </addAttributes>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>satellite</sourceName>
+        <destinationName>satellite</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">255 126 90</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">8</att>
+            <att name="colorBarMinimum" type="double">5</att>
+            <att name="long_name">Landsat Satellite Number</att>
+            <att name="note">This value is for the entire satellite image, so all values at a given timestep will be the same.</att>
+            <att name="units">Landsat 5, Landsat 7, or Landsat 8.</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>clouds</sourceName>
+        <destinationName>clouds</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">128 63 45</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">cloud cover over Mount Hope Bay</att>
+            <att name="standard_name">cloud_area_fraction</att>
+            <att name="units">percent clouds</att>
+            <att name="note">This value is for the entire satellite image, so all values at a given timestep will be the same.</att>
+            <att name="units">&#37; clouds</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>temperature</sourceName>
+        <destinationName>temperature</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">128 63 45</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">25</att>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="standard_name">surface_temperature</att>
+            <att name="units">degree_C</att>
+            <att name="long_name">Surface Temperature</att>
+            <att name="comment">Accuracy of Satellite = within 0.1 degrees C for Landsat 8, 0.6 degrees C for Landsat 7, and 0.5 degrees C for Landsat 5.</att>
+            <att name="units">degC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>temperature_detrend</sourceName>
+        <destinationName>temperature_detrend</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">128 63 45</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">5</att>
+            <att name="colorBarMinimum" type="double">-5</att>
+            <att name="long_name">Surface Temperature - deseasonalized and detrended</att>
+            <att name="comment">Accuracy of Satellite = within 0.1 degrees C for Landsat 8, 0.6 degrees C for Landsat 7, and 0.5 degrees C for Landsat 5.</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<dataset type="EDDGridFromNcFiles" datasetID="landsat_sst_mthope_v3_grid" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/landsat_sst_mthope_v3/</fileDir>
+    <fileNameRegex>.*grid.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <matchAxisNDigits>20</matchAxisNDigits>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <defaultGraphQuery>Longitude[0:last][0:last][last]&amp;.draw=surface&amp;.vars=X|Y|Longitude</defaultGraphQuery>
+    <addAttributes>
+        <att name="cdm_data_type">Grid</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="institution">Rhode Island Data Discovery/United States Geological Survey</att>
+        <att name="creator_name">Rhode Island Data Discovery/United States Geological Survey</att>
+         <att name="publisher_url">https://riddc.brown.edu/</att>
+        <att name="infoUrl">https://earthexplorer.usgs.gov/ accessed through https://code.earthengine.google.com/</att>
+        <att name="publication">https://doi.org/10.26300/ja0b-xa86</att>
+        <att name="keywords">bay, coordinates, data, discovery, geological, hope, island, landsat, latitude, longitude, rhode, satellite, states, survey, united, version</att>
+        <att name="license">[standard]</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="title">Landsat Satellite Coordinates version 3, Mt. Hope Bay</att>
+        <att name="summary">Translation from x,y coordinates to latitude and longitude for the "Landsat Satellite Surface Temperature v3" dataset.</att>
+    </addAttributes>
+    <axisVariable>
+        <sourceName>x</sourceName>
+        <destinationName>X</destinationName>
+        <addAttributes>
+            <att name="long_name">X</att>
+            <att name="source_name">x</att>
+            <!-- <att
+            name="standard_name">longitude</att>
+            <att name="units">degrees_east</att> -->
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>y</sourceName>
+        <destinationName>Y</destinationName>
+        <addAttributes>
+            <att name="long_name">Y</att>
+            <att name="source_name">y</att>
+            <!-- <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att> -->   
+        </addAttributes>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>Longitude</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">268 376</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">-71.1</att>
+            <att name="colorBarMinimum" type="double">-71.5</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degrees_east</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>Latitude</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">268 376</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">41.8</att>
+            <att name="colorBarMinimum" type="double">41.4</att>
+            <att name="long_name">latitude</att>
+            <att name="units">degrees_north</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<!-- NOTE! The source for landsat_sst_narrbay_v3_data has nGridVariables=5,
+  but this dataset will only serve 4 because the others use different dimensions. -->
+<dataset type="EDDGridFromNcFiles" datasetID="landsat_sst_narrbay_v3_data" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/landsat_sst_narrbay_v3/</fileDir>
+    <fileNameRegex>.*_data\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <matchAxisNDigits>20</matchAxisNDigits>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <defaultGraphQuery>temperature[0:last][0:last][last]&amp;.draw=surface&amp;.vars=X|Y|temperature</defaultGraphQuery>
+    <addAttributes>
+        <att name="title">Landsat Satellite Surface Temperature version 3, Narragansett Bay</att>
+        <att name="source">https://earthexplorer.usgs.gov/ accessed through https://code.earthengine.google.com/</att>
+        <att name="_NCProperties">null</att>
+        <att name="cdm_data_type">Grid</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="creator_name">Rhode Island Data Discovery/United States Geological Survey</att>
+        <att name="infoUrl">https://earthexplorer.usgs.gov</att>
+        <att name="publisher_name">Rhode Island Data Discovery/United States Geological Survey</att>
+        <att name="publisher_url">https://riddc.brown.edu/</att>
+        <att name="institution">Rhode Island Data Discovery/United States Geological Survey</att>
+        <att name="publication">https://doi.org/10.26300/ja0b-xa86</att>
+        <att name="keywords">amount, area, atmosphere, bay, cloud, cloud cover, cloud_area_fraction, cloudiness, clouds, cover, data, deseasonalized, detrended, discovery, earth, Earth Science &gt; Atmosphere &gt; Clouds &gt; Cloud Amount/Frequency, Earth Science &gt; Land Surface &gt; Land Temperature &gt; Land Surface Temperature, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, fraction, frequency, geological, island, land, landsat, narragansett, number, ocean, oceans, over, rhode, satellite, science, sea, states, surface, surface_temperature, survey, temerapture, temperature, temperature_detrend, time, united, version</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="summary">Landsat-derived water surface temperature in Narragansett Bay with K-fold bias correction from RI DEM buoys. For translation from the x,y coordinates to latitude and longitude see the "Landsat Satellite Coordinates v3 - Narragansett Bay" dataset.</att>
+        <att name="comment">Attribute Accuracy Report: Satellite-derived orthorectified brightness temperature was measured within 0.1 degrees C for Landsat 8, 0.6 degrees C for Landsat 7, and 0.5 degrees C for Landsat 5. Satellite measurements were compared to in situ (buoy) surface temperatures from 2003 to 2019, and the bias between the RI DEM buoy temperatures and the satellite temperatures at the pixel of the buoys was removed from each satellite pixel. See https://www.usgs.gov/land-resources/nli/landsat/landsat-surface-reflectance?qt-science_support_page_related_con=0#qt-science_support_page_related_con for more information.</att>
+        <att name="history">Converted from Landsat 5, 7, and 8 Surface Reflectance geotiff products to netCDF. The units were changed from K to degrees C and the average bias determined through RI DEM buoy comparison in Narragansett Bay (2003-2019) to each satellite was removed from all scenes from the corresponding satellite. The errors were determined by using a K-fold cross-validation to minimize error at each satellite pixel. The scenes were also cloud masked, land masked, and stripes in Landsat 7 imagery (due to sensor failure) were masked as well. A buoy comparison was only conducted within Narragansett Bay for Landsat scenes with less than 50&#37; cloud cover, and applied to available scenes back to 1984 for Landsat 5, 1999 for Landsat 7, and 2013 for Landsat 8. As a result, data uncertainties are unknown outside of the Narragansett Bay region, for scenes with greater cloud cover, and scenes before 2003.</att>
+    </addAttributes>
+    <axisVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">764</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="standard_name">time</att>
+            <att name="long_name">Time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>y</sourceName>
+        <destinationName>Y</destinationName>
+        <addAttributes>
+            <att name="long_name">Y</att>
+            <att name="source_name">y</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>x</sourceName>
+        <destinationName>X</destinationName>
+        <addAttributes>
+            <att name="long_name">X</att>
+            <att name="source_name">x</att>
+        </addAttributes>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>satellite</sourceName>
+        <destinationName>satellite</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">128 189 134</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">8</att>
+            <att name="colorBarMinimum" type="double">5</att>
+            <att name="long_name">Landsat Satellite Number</att>
+            <att name="note">This value is for the entire satellite image, so all values at a given timestep will be the same.</att>
+            <att name="units">Landsat 5, Landsat 7, or Landsat 8.</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>clouds</sourceName>
+        <destinationName>clouds</destinationName>
+        <dataType>byte</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">64 95 67</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">100.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="long_name">cloud cover over Narragansett Bay</att>
+            <att name="standard_name">cloud_area_fraction</att>
+            <att name="units">percent clouds</att>
+            <att name="note">This value is for the entire satellite image, so all values at a given timestep will be the same.</att>
+            <att name="units">&#37; clouds</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>temperature</sourceName>
+        <destinationName>temperature</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">64 95 67</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">25</att>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="standard_name">surface_temperature</att>
+            <att name="units">degree_C</att>
+            <att name="long_name">Surface Temperature</att>
+            <att name="comment">Accuracy of Satellite = within 0.1 degrees C for Landsat 8, 0.6 degrees C for Landsat 7, and 0.5 degrees C for Landsat 5.</att>
+            <att name="units">degC</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>temperature_detrend</sourceName>
+        <destinationName>temperature_detrend</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">64 95 67</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">5</att>
+            <att name="colorBarMinimum" type="double">-5</att>
+            <att name="long_name">Surface Temperature - deseasonalized and detrended</att>
+            <att name="comment">Accuracy of Satellite = within 0.1 degrees C for Landsat 8, 0.6 degrees C for Landsat 7, and 0.5 degrees C for Landsat 5.</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<dataset type="EDDGridFromNcFiles" datasetID="landsat_sst_narrbay_v3_grid" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/landsat_sst_narrbay_v3/</fileDir>
+    <fileNameRegex>.*grid.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <matchAxisNDigits>20</matchAxisNDigits>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <defaultGraphQuery>Longitude[0:last][0:last][last]&amp;.draw=surface&amp;.vars=X|Y|Longitude</defaultGraphQuery>
+    <addAttributes>
+        <att name="cdm_data_type">Grid</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="institution">Rhode Island Data Discovery/United States Geological Survey</att>
+        <att name="creator_name">Rhode Island Data Discovery/United States Geological Survey</att>
+        <att name="infoUrl">https://earthexplorer.usgs.gov/ accessed through https://code.earthengine.google.com/</att>
+        <att name="publication">https://doi.org/10.26300/ja0b-xa86</att>
+        <att name="keywords">bay, coordinates, data, discovery, geological, island, landsat, latitude, longitude, narragansett, rhode, satellite, states, survey, united, version</att>
+        <att name="license">[standard]</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="title">Landsat Satellite Coordinates version 3, Narragansett Bay</att>
+        <att name="summary">Translation from x,y coordinates to latitude and longitude for the "Landsat Satellite Surface Temperature v3" dataset.</att>
+    </addAttributes>
+    <axisVariable>
+        <sourceName>x</sourceName>
+        <destinationName>X</destinationName>
+        <addAttributes>
+            <att name="long_name">X</att>
+            <att name="source_name">x</att>
+            <!-- <att name="standard_name">longitude</att>
+            <att name="units">degrees_east</att> -->
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>y</sourceName>
+        <destinationName>Y</destinationName>
+        <addAttributes>
+            <att name="long_name">Y</att>
+            <att name="source_name">y</att>
+            <!-- <att name="standard_name">latitude</att>
+            <att name="units">degrees_north</att> -->
+        </addAttributes>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>lon</sourceName>
+        <destinationName>Longitude</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">400 565</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">-71.1</att>
+            <att name="colorBarMinimum" type="double">-71.5</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degrees_east</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lat</sourceName>
+        <destinationName>Latitude</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">400 565</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">41.8</att>
+            <att name="colorBarMinimum" type="double">41.4</att>
+            <att name="long_name">latitude</att>
+            <att name="units">degrees_north</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
 <!-- Buoy Telemetry Added by MCM on 2022-02-01 -->
 <dataset type="EDDTableFromAsciiFiles" datasetID="buoy_telemetry_0ffe_2dc0_916e" active="true">
     <reloadEveryNMinutes>30</reloadEveryNMinutes>
@@ -7355,4 +7777,5 @@ tke:                 Rad    Rad    Rad    Clo</att>
         </addAttributes>
     </dataVariable>
 </dataset>
+
 </erddapDatasets>
