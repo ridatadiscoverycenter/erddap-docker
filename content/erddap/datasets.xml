@@ -5093,7 +5093,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
       <addAttributes>
           <att name="cdm_data_type">Grid</att>
           <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-          <att name="institution">United States Geolocical Survey</att>
+          <att name="institution">United States Geological Survey</att>
           <att name="infoUrl">https://earthexplorer.usgs.gov</att>
           <att name="publisher_name">Rhode Island Data Discovery</att>
           <att name="publisher_url">riddc.brown.edu</att>
@@ -5101,10 +5101,10 @@ tke:                 Rad    Rad    Rad    Clo</att>
           <att name="keywords_vocabulary">GCMD Science Keywords</att>
           <att name="license">[standard]</att>
           <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-          <att name="title">Landsat Satellite Surface Temperature</att>
-          <att name="summary">Landsat-Derived water surface temperature near Narragansett Bay with bias correction from RI DEM buoys (lakes and rivers included).  For translation from the x,y coordinates to latitude and longitude see the "Landsat Satellite Coordinates" dataset.</att>
+          <att name="title">Landsat Satellite Surface Temperature version 1</att>
+          <att name="summary">Landsat-derived water surface temperature near Narragansett Bay with bias correction from RI DEM buoys (lakes and rivers included).  For translation from the x,y coordinates to latitude and longitude see the "Landsat Satellite Coordinates version 1" dataset.</att>
           <att name="comment">Attribute Accuracy Report: Satellite-derived orthorectified brightness temperature was measured within 0.1 degrees C for Landsat 8, 0.6 degrees C for Landsat 7, and 0.5 degrees C for Landsat 5. Satellite measurements were compared to in situ (buoy) surface temperatures from 2003 to 2015, and the mean bias between the RI DEM buoy temperatures and the satellite temperatures at the pixel of the buoys was added to all scenes by satellite. The standard deviation between the buoys and the satellie after adding the bias is 1.9 for Landsat 5, 1.9 for Landsat 7 and 1.3 for Landsat 8. The standard deviation is considered the uncertainty of the satellite measurements. See https://www.usgs.gov/land-resources/nli/landsat/landsat-surface-reflectance?qt-science_support_page_related_con=0#qt-science_support_page_related_con for more information.</att>
-          <att name="history">Converted from Landsat 5, 7, and 8 Surface Refelectance geotiff products to netCDF. The units were changed from K to degrees C and the average bias determined through RI DEM buoy comparison in Narragansett Bay (2003-2015) to each satellite was added to all scenes from the corresponding satellite. For Landsat 5, 3.36 degrees C was added to all scenes, 3.34 for Landsat 7, and 1.92 for Landsat 8. The errors were determined by calculating the standard deviation of the difference between Landsat and buoy temperature at buoy locations for each satellite. The scenes were also cloud masked, land masked, and stripes in Landsat 7 imagery (due to sensor failure) were masked as well. Data outside of the Narragansett Bay region and for all cloud cover is included, though a buoy comparison was only conducted within Narragansett Bay for Landsat scenes with less than 50% cloud cover. As a result, data uncertainties are unknown outside of the Narragansett Bay region and for scenes with greater cloud cover.</att>
+          <att name="history">Converted from Landsat 5, 7, and 8 Surface Reflectance geotiff products to netCDF. The units were changed from K to degrees C and the average bias determined through RI DEM buoy comparison in Narragansett Bay (2003-2015) to each satellite was added to all scenes from the corresponding satellite. For Landsat 5, 3.36 degrees C was added to all scenes, 3.34 for Landsat 7, and 1.92 for Landsat 8. The errors were determined by calculating the standard deviation of the difference between Landsat and buoy temperature at buoy locations for each satellite. The scenes were also cloud masked, land masked, and stripes in Landsat 7 imagery (due to sensor failure) were masked as well. Data outside of the Narragansett Bay region and for all cloud cover is included, though a buoy comparison was only conducted within Narragansett Bay for Landsat scenes with less than 50% cloud cover. As a result, data uncertainties are unknown outside of the Narragansett Bay region and for scenes with greater cloud cover.</att>
           <att name="testOutOfDate">now-71days</att>
       </addAttributes>
       <axisVariable>
@@ -5222,15 +5222,15 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <addAttributes>
         <att name="cdm_data_type">Grid</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="institution">United States Geolocical Survey</att>
+        <att name="institution">United States Geological Survey</att>
         <att name="infoUrl">https://earthexplorer.usgs.gov</att>
         <att name="publisher_name">Rhode Island Data Discovery</att>
         <att name="publisher_url">riddc.brown.edu</att>
         <att name="keywords">bay, bias, buoys, correction, data, dem, derived, digital, elevation, geolocical, included, lakes, landsat, landsat-derived, latitude, longitude, model, narragansett, near, rivers, states, surface, survey, temperature, united, water, with</att>
         <att name="license">[standard]</att>
         <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-        <att name="title">Landsat Satellite Coordinates</att>
-        <att name="summary">Translation form x,y coordinates to latitude and longitude for the "Landsate Satellite Surface Temperature" dataset.</att>
+        <att name="title">Landsat Satellite Coordinates version 1</att>
+        <att name="summary">Translation form x,y coordinates to latitude and longitude for the "Landsat Satellite Surface Temperature version 1" dataset.</att>
     </addAttributes>
     <axisVariable>
         <sourceName>y</sourceName>
@@ -5327,7 +5327,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
         <att name="license">[standard]</att>
         <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-        <att name="summary">Landsat-derived water surface temperature in Mount Hope Bay with bias correction from RI DEM buoys. For translation from the x,y coordinates to latitude and longitude see the "Landsat Satellite Coordinates v2 - Mt. Hope Bay" dataset.</att>
+        <att name="summary">Landsat-derived water surface temperature in Mount Hope Bay with bias correction from RI DEM buoys. For translation from the x,y coordinates to latitude and longitude see the "Landsat Satellite Coordinates version 2, Mt. Hope Bay" dataset.</att>
         <att name="comment">Attribute Accuracy Report: Satellite-derived orthorectified brightness temperature was measured within 0.1 degrees C for Landsat 8, 0.6 degrees C for Landsat 7, and 0.5 degrees C for Landsat 5. Satellite measurements were compared to in situ (buoy) surface temperatures from 2003 to 2022, and the mean bias between the RI DEM buoy temperatures and the satellite temperatures at the pixel of the buoys was added to or subtrcted from all scenes by satellite. The standard deviation between the buoys and the satellite after adding the bias is 1.9 degrees C for Landsat 5, 1.9 degrees C for Landsat 7 and 1.3 degrees C for Landsat 8. The standard deviation is considered the uncertainty of the satellite measurements. See https://www.usgs.gov/land-resources/nli/landsat/landsat-surface-reflectance?qt-science_support_page_related_con=0#qt-science_support_page_related_con for more information.</att>
         <att name="history">Converted from Landsat 5, 7, and 8 Surface Reflectance geotiff products to netCDF. The units were changed from K to degrees C and the average bias determined through RI DEM buoy comparison in Mount Hope Bay (2003-2022) to each satellite was added to or subtracted from all scenes from the corresponding satellite. For Landsat 5, 0.45 degrees C was subtracted from all scenes; similarly, 1.094 was subtracted for Landsat 7, and 0.178 was added for Landsat 8. The errors were determined by averaging the five closest temporal buoy readings for each satellite image capture and spatially averaging buoy locations within a 200-square-meter zone. The scenes were also cloud masked, land masked, and stripes in Landsat 7 imagery (due to sensor failure) were masked as well. A buoy comparison was only conducted within Mount Hope Bay for Landsat scenes with less than 50&#37; cloud cover, and applied to available scenes back to 1984 for Landsat 5, 1999 for Landsat 7, and 2013 for Landsat 8. As a result, data uncertainties are unknown outside of the Mount Hope Bay region, for scenes with greater cloud cover, and scenes before 2003.</att>
     </addAttributes>
@@ -5454,7 +5454,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="license">[standard]</att>
         <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
         <att name="title">Landsat Satellite Coordinates version 2, Mt. Hope Bay</att>
-        <att name="summary">Translation from x,y coordinates to latitude and longitude for the "Landsat Satellite Surface Temperature v2" dataset.</att>
+        <att name="summary">Translation from x,y coordinates to latitude and longitude for the "Landsat Satellite Surface Temperature version 2, Mt. Hope bay" dataset.</att>
     </addAttributes>
     <axisVariable>
         <sourceName>x</sourceName>
@@ -5521,7 +5521,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <accessibleViaFiles>false</accessibleViaFiles>
     <defaultGraphQuery>temperature[0:last][0:last][last]&amp;.draw=surface&amp;.vars=X|Y|temperature</defaultGraphQuery>
     <addAttributes>
-        <att name="title">Landsat Satellite Surface Temerapture version 2, Narragansett Bay</att>
+        <att name="title">Landsat Satellite Surface Temperature version 2, Narragansett Bay</att>
         <att name="_NCProperties">null</att>
         <att name="cdm_data_type">Grid</att>
         <att name="Conventions">COARDS, CF-1.10, ACDD-1.3</att>
@@ -5534,9 +5534,9 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
         <att name="license">[standard]</att>
         <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-        <att name="summary">Landsat-derived water surface temperature in Mount Hope Bay with bias correction from RI DEM buoys. For translation from the x,y coordinates to latitude and longitude see the "Landsat Satellite Coordinates v2 - Narragansett Bay" dataset.</att>
+        <att name="summary">Landsat-derived water surface temperature in Mount Hope Bay with bias correction from RI DEM buoys. For translation from the x,y coordinates to latitude and longitude see the "Landsat Satellite Coordinates version 2, Narragansett Bay" dataset.</att>
         <att name="comment">Attribute Accuracy Report: Satellite-derived orthorectified brightness temperature was measured within 0.1 degrees C for Landsat 8, 0.6 degrees C for Landsat 7, and 0.5 degrees C for Landsat 5. Satellite measurements were compared to in situ (buoy) surface temperatures from 2003 to 2022, and the mean bias between the RI DEM buoy temperatures and the satellite temperatures at the pixel of the buoys was added to or subtrcted from all scenes by satellite. The standard deviation between the buoys and the satellite after adding the bias is 1.9 degrees C for Landsat 5, 1.9 degrees C for Landsat 7 and 1.3 degrees C for Landsat 8. The standard deviation is considered the uncertainty of the satellite measurements. See https://www.usgs.gov/land-resources/nli/landsat/landsat-surface-reflectance?qt-science_support_page_related_con=0#qt-science_support_page_related_con for more information.</att>
-        <att name="description">Landsat-derived water surface temperature in Narragansett Bay with bias correction from RI DEM buoys</att>
+        <att name="description">Landsat-derived water surface temperature in Narragansett Bay with bias correction from RI DEM buoys.</att>
         <att name="history">Converted from Landsat 5, 7, and 8 Surface Reflectance geotiff products to netCDF. The units were changed from K to degrees C and the average bias determined through RI DEM buoy comparison in Mount Hope Bay (2003-2022) to each satellite was added to or subtracted from all scenes from the corresponding satellite. For Landsat 5, 0.45 degrees C was subtracted from all scenes; similarly, 1.094 was subtracted for Landsat 7, and 0.178 was added for Landsat 8. The errors were determined by averaging the five closest temporal buoy readings for each satellite image capture and spatially averaging buoy locations within a 200-square-meter zone. The scenes were also cloud masked, land masked, and stripes in Landsat 7 imagery (due to sensor failure) were masked as well. A buoy comparison was only conducted within Narragansett Bay for Landsat scenes with less than 50&#37; cloud cover, and applied to available scenes back to 1984 for Landsat 5, 1999 for Landsat 7, and 2013 for Landsat 8. As a result, data uncertainties are unknown outside of the Narragansett Bay region, for scenes with greater cloud cover, and scenes before 2003.</att>
     </addAttributes>
     <axisVariable>
@@ -5662,7 +5662,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
         <att name="license">[standard]</att>
         <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
         <att name="title">Landsat Satellite Coordinates version 2, Narragansett Bay</att>
-        <att name="summary">Translation from x,y coordinates to latitude and longitude for the "Landsat Satellite Surface Temperature v2" dataset.</att>
+        <att name="summary">Translation from x,y coordinates to latitude and longitude for the "Landsat Satellite Surface Temperature version 2, Narragansett Bay" dataset.</att>
     </addAttributes>
     <axisVariable>
         <sourceName>x</sourceName>
