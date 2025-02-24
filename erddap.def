@@ -1,0 +1,30 @@
+Bootstrap: docker
+From: axiom/docker-erddap:2.23-jdk17-openjdk
+
+%files
+    ./content/erddap-dev /usr/local/tomcat/content/erddap
+    ./isilon_erddap/erddap_data /erddapData
+    ./config/web.xml /usr/local/tomcat/webapps/erddap/WEB-INF/web.xml
+
+%post
+    # Create any necessary directories that might not exist in the base image
+    mkdir -p /usr/local/tomcat/content/erddap
+    mkdir -p /erddapData
+    mkdir -p /usr/local/tomcat/webapps/erddap/WEB-INF
+
+%environment
+    export TOMCAT_HOME=/usr/local/tomcat
+    export ERDDAP_DATA=/erddapData
+
+%runscript
+    # This is the default command that will run when the container is executed
+    cd /usr/local/tomcat && catalina.sh run
+
+%apprun erddap
+    cd /usr/local/tomcat && catalina.sh run
+
+%apprun generate_dataset_xml
+    cd /usr/local/tomcat/webapps/erddap/WEB-INF/ && bash GenerateDatasetsXml.sh -verbose
+
+%apprun generate_data_structure
+    cd /usr/local/tomcat/webapps/erddap/WEB-INF/ && bash DasDds.sh -verbose
