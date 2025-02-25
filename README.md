@@ -17,8 +17,8 @@ This file differs from the production compose in two aspects:
 to `http://localhost:8080` instead of `https://pricaimcit.services.brown.edu`.
 
 To run ERDDAP with real data locally, you'll need to grab the data from
-`pricaimcit.services.brown.edu:/isilon_erddap/buoy_data` and put it
-in a folder called `buoy_data` in the root of this project.
+`pricaimcit.services.brown.edu:/isilon_erddap/erddap_data` and put it
+in a folder called `isilon_erddap` in the root of this project.
 
 ## Running Locally
 
@@ -93,3 +93,47 @@ To costumize ERDDAP's appearance and text, edit the `content/erddap/setup.xml` o
 It's recommended to use the `erddap-dev/setup.xml` and check if your changes are working correctly. (See development workflow above). When everything looks correct, add those changes to `erddap/setup.xml`
 
 [1]: https://hub.docker.com/r/axiom/docker-erddap
+
+## Working with OSOM data
+
+The OSOM dataset is huge (>1.5 TB) and requires some special consideration.
+It is best to work on the `/jobtmp` partition that has a much larger storage capacity for each user. It is similar to `scratch` in that it is for short-term work and will get wiped after 30 days.
+
+- `cd /jobtemp/<user>
+- clone this repo there
+- copy over `isilon_data` from `pricaimcit.services.brown.edu:/isilon_erddap/erddap_data` to `./content/isilon_erddap/'
+- transfer the OSOM files for each year to `./content/isilon_erddap/erddap_data/netcdf/osom_v2`
+- build a Singularity image from the `erddap.def` specification
+    ```
+    singularity build erddap.sif erddap.def
+    ```
+- start the local ERDDAP server using Singularity: 
+    ```
+    singularity run \
+    --bind ./content/erddap-dev:/usr/local/tomcat/content/erddap \
+    --bind ./content/isilon_erddap/erddap_data:/erddapData \
+    --bind ${PWD}/config/web.xml:/usr/local/tomcat/webapps/erddap/WEB-INF/web.xml \
+    erddap.sif
+    ```
+- _in a new terminal_, generate the XML with:
+    ```
+    singularity run --app generate_dataset_xml \
+    --bind ./content/erddap-dev:/usr/local/tomcat/content/erddap \
+    --bind ./isilon_erddap/erddap_data:/erddapData \
+    --bind ${PWD}/config/web.xml:/usr/local/tomcat/webapps/erddap/WEB-INF/web.xml \
+    erddap.sif
+    ```
+    **Note:** use the bound path when telling the `generate_dataset_xml` prompts where to find your files. For example, to find the `.nc` files for osom_v2, the path will be `./erddapData/netcdf/osom_v2`
+- then clean upn the XML manually to match the formats of the original OSOM dataset
+- copy the XML block to the `datasets.xml` file inside the `erddap-dev` dir, noting the dataset ID
+- generate the data structure for erddap, which should then load the new dataset into the local server:
+    ```
+    singularity run --app generate_data_structure \
+    --bind ./content/erddap-dev:/usr/local/tomcat/content/erddap \
+    --bind ./content/isilon_erddap/erddap_data:/erddapData \
+    --bind ${PWD}/config/web.xml:/usr/local/tomcat/webapps/erddap/WEB-INF/web.xml \
+    erddap.sif
+    ```
+
+
+
