@@ -2681,6 +2681,7 @@ This dataset has both historical data (quality controlled, before
     <metadataFrom>last</metadataFrom>
     <matchAxisNDigits>20</matchAxisNDigits>
     <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
     <!-- sourceAttributes>
         <att name="_NCProperties">version=2,netcdf=4.9.2,hdf5=1.14.2</att>
         <att name="ana_file">ROMS/Functionals/ana_btflux.h</att>
@@ -2728,8 +2729,8 @@ tke:   Rad    Rad    Rad    Clo</att>
         <att name="Conventions">CF-1.10, COARDS, ACDD-1.3</att>
         <att name="cpu">null</att>
         <att name="format">null</att>
-        <att name="infoUrl">???</att>
-        <att name="institution">???</att>
+        <att name="infoUrl">riddc.brown.edu</att>
+        <att name="institution">Rhode Island Data Discovery</att>
         <att name="keywords">beta0.2, component, data, density, earth, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Potential Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, Earth Science &gt; Oceans &gt; Sea Surface Topography &gt; Sea Surface Height, eastward, energy, eta, eta_rho, free, free-surface, height, kinetic, KineticEnergyBottom, KineticEnergySurface, momentum, northward, ocean, ocean_time, oceans, osom, osom-beta0.2-2005, points, potential, practical, rho, rho-points, salinity, SalinityBottom, SalinitySurface, science, sea, sea_surface_height, sea_water_potential_temperature, sea_water_practical_salinity, seawater, surface, SurfaceHeight, temperature, time, topography, VelocityEastwardBottom, VelocityEastwardSurface, VelocityNorthwardBottom, VelocityNorthwardSurface, water, WaterTempBottom, WaterTempSurface, xi, xi_rho</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
         <att name="license">[standard]</att>
@@ -2744,7 +2745,8 @@ salt:  RadNud RadNud RadNud Clo
 tke:   Rad    Rad    Rad    Clo</att>
         <att name="os">null</att>
         <att name="standard_name_vocabulary">CF Standard Name Table v70</att>
-        <att name="summary">OSOM-Beta0.2-2005. Data from a local source.</att>
+        <att name="summary">OSOM-Beta0.2. Beta version of OSOM model data (2005-2022). Data from a local source.</att>
+        <att name="title">OSOM-Beta0.2</att>
     </addAttributes>
     <axisVariable>
         <sourceName>ocean_time</sourceName>
