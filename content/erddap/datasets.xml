@@ -2685,6 +2685,659 @@ tke:                 Rad    Rad    Rad    Clo</att>
     </dataVariable>
 </dataset>
 
+<!-- TJD added 2-25-25 -->
+<dataset type="EDDGridFromNcFiles" datasetID="osom_v2_9429_72b1_b541" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/osom_v2/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <matchAxisNDigits>20</matchAxisNDigits>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="_NCProperties">version=2,netcdf=4.9.2,hdf5=1.14.2</att>
+        <att name="ana_file">ROMS/Functionals/ana_btflux.h</att>
+        <att name="bry_file">ROMS_forcing_files/openbound/bry_osom_cosine_hab_monthly-nuts_grid4_mod10_15level_smooth_2005.nc</att>
+        <att name="code_dir">/oscar/data/epscor/OSOM/opt/ROMS_Cosine_Sed</att>
+        <att name="compiler_command">/oscar/runtime/software/hpcx-mpi/4.1.5rc2/hpcx-ompi/bin/mpif90</att>
+        <att name="compiler_flags">-frepack-arrays -fallow-argument-mismatch -fallow-invalid-boz -O3 -ffast-math -ffree-form -ffree-line-length-none -ffree-form -ffree-line-length-none -ffree-for</att>
+        <att name="compiler_system">gfortran</att>
+        <att name="Conventions">CF-1.4</att>
+        <att name="CPP_options">osom_ramptides, ADD_FSOBC, ADD_M2OBC, ANA_BSFLUX, ANA_BTFLUX, ASSUMED_SHAPE, BULK_FLUXES, CURVGRID, DEFLATE, DIFF_GRID, DJ_GRADPS, DOUBLE_PRECISION, EMINUSP, GLS_MIXING, HDF5, LONGWAVE_OUT, MASKING, MIX_GEO_TS, MIX_S_UV, MPI, NONLINEAR, NONLIN_EOS, NO_WRITE_GRID, PERFECT_RESTART, POWER_LAW, PROFILE, K_GSCHEME, RADIATION_2D, RAMP_TIDES, !RST_SINGLE, SALINITY, SOLAR_SOURCE, SOLVE3D, SSH_TIDES, STATIONS, TS_MPDATA, TS_DIF2, UV_ADV, UV_COR, UV_U3HADVECTION, UV_C4VADVECTION, UV_LOGDRAG, UV_TIDES, UV_VIS2, VAR_RHO_2D, VISC_GRID</att>
+        <att name="cpu">x86_64</att>
+        <att name="file">/oscar/data/epscor/OSOM/output/OSOM_v2/2005/ocean_his_0001.nc</att>
+        <att name="format">netCDF-4/HDF5 file</att>
+        <att name="frc_file_01">ROMS_forcing_files/tidal/osom_grid4_mindep_smlp_mod10_tidalforcing_2005.nc</att>
+        <att name="frc_file_02">ROMS_forcing_files/met/frc_NAM_wind_fields_OSOM_2005_ref-2005-01-01.nc</att>
+        <att name="frc_file_03">ROMS_forcing_files/met/frc_bulk8_point_osom_2005_ref-2005-01-01_localswrad.nc</att>
+        <att name="grd_file">ROMS_forcing_files/grid/osom_grid4_mindep_smlp_mod10.nc</att>
+        <att name="header_dir">/oscar/data/epscor/OSOM/work/OSOM_v2</att>
+        <att name="header_file">osom_ramptides.h</att>
+        <att name="his_base">/oscar/data/epscor/OSOM/output/OSOM_v2/2005/ocean_his</att>
+        <att name="history">ROMS/TOMS, Version 3.7, Tuesday - September 17, 2024 -  1:52:51 PM</att>
+        <att name="ini_file">ROMS_forcing_files/init/osom_grid4_mindep_smlp_mod10_ini_hydro_2005.nc</att>
+        <att name="NLM_LBC">
+EDGE:  WEST   SOUTH  EAST   NORTH  
+zeta:  Cha    Cha    Cha    Clo    
+ubar:  Fla    Fla    Fla    Clo    
+vbar:  Fla    Fla    Fla    Clo    
+u:     RadNud RadNud RadNud Clo    
+v:     RadNud RadNud RadNud Clo    
+temp:  RadNud RadNud RadNud Clo    
+salt:  RadNud RadNud RadNud Clo    
+tke:   Rad    Rad    Rad    Clo</att>
+        <att name="os">Linux</att>
+        <att name="rst_file">/oscar/data/epscor/OSOM/output/OSOM_v2/2005/ocean_rst.nc</att>
+        <att name="spos_file">ROMS_forcing_files/input_files/stations_osom_cosine_apr2024_optics.in</att>
+        <att name="sta_file">/oscar/data/epscor/OSOM/output/OSOM_v2/2005/ocean_sta.nc</att>
+        <att name="svn_url">https://www.myroms.org/svn/src/trunk</att>
+        <att name="tiling">016x016</att>
+        <att name="title">OSOM-Beta0.2-2005</att>
+        <att name="type">ROMS/TOMS history file</att>
+    </sourceAttributes -->
+    <addAttributes>
+        <att name="_NCProperties">null</att>
+        <att name="cdm_data_type">Grid</att>
+        <att name="Conventions">CF-1.10, COARDS, ACDD-1.3</att>
+        <att name="cpu">null</att>
+        <att name="format">null</att>
+        <att name="infoUrl">riddc.brown.edu</att>
+        <att name="institution">Rhode Island Data Discovery</att>
+        <att name="keywords">beta0.2, component, data, density, earth, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Potential Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, Earth Science &gt; Oceans &gt; Sea Surface Topography &gt; Sea Surface Height, eastward, energy, eta, eta_rho, free, free-surface, height, kinetic, KineticEnergyBottom, KineticEnergySurface, momentum, northward, ocean, ocean_time, oceans, osom, osom-beta0.2-2005, points, potential, practical, rho, rho-points, salinity, SalinityBottom, SalinitySurface, science, sea, sea_surface_height, sea_water_potential_temperature, sea_water_practical_salinity, seawater, surface, SurfaceHeight, temperature, time, topography, VelocityEastwardBottom, VelocityEastwardSurface, VelocityNorthwardBottom, VelocityNorthwardSurface, water, WaterTempBottom, WaterTempSurface, xi, xi_rho</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="NLM_LBC">EDGE:  WEST   SOUTH  EAST   NORTH  
+zeta:  Cha    Cha    Cha    Clo    
+ubar:  Fla    Fla    Fla    Clo    
+vbar:  Fla    Fla    Fla    Clo    
+u:     RadNud RadNud RadNud Clo    
+v:     RadNud RadNud RadNud Clo    
+temp:  RadNud RadNud RadNud Clo    
+salt:  RadNud RadNud RadNud Clo    
+tke:   Rad    Rad    Rad    Clo</att>
+        <att name="os">null</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v70</att>
+        <att name="summary">OSOM-Beta0.2. Beta version of OSOM model data (2005-2022). Data from a local source.</att>
+        <att name="title">OSOM-Beta0.2</att>
+    </addAttributes>
+    <axisVariable>
+        <sourceName>ocean_time</sourceName>
+        <destinationName>time</destinationName>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uint">17</att>
+            <att name="calendar">gregorian</att>
+            <att name="field">time, scalar, series</att>
+            <att name="long_name">time since initialization</att>
+            <att name="units">seconds since 1970-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="source_name">ocean_time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>eta_rho</sourceName>
+        <destinationName>eta_rho</destinationName>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">eta rho</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>xi_rho</sourceName>
+        <destinationName>xi_rho</destinationName>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">xi rho</att>
+        </addAttributes>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>SalinityBottom</sourceName>
+        <destinationName>SalinityBottom</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">salinity, scalar, series</att>
+            <att name="long_name">salinity</att>
+            <att name="time">ocean_time</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="coordinates">null</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinitySurface</sourceName>
+        <destinationName>SalinitySurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">salinity, scalar, series</att>
+            <att name="long_name">salinity</att>
+            <att name="time">ocean_time</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="coordinates">null</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempBottom</sourceName>
+        <destinationName>WaterTempBottom</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">temperature, scalar, series</att>
+            <att name="long_name">potential temperature</att>
+            <att name="time">ocean_time</att>
+            <att name="units">Celsius</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+            <att name="standard_name">sea_water_potential_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempSurface</sourceName>
+        <destinationName>WaterTempSurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">temperature, scalar, series</att>
+            <att name="long_name">potential temperature</att>
+            <att name="time">ocean_time</att>
+            <att name="units">Celsius</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+            <att name="standard_name">sea_water_potential_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SurfaceHeight</sourceName>
+        <destinationName>SurfaceHeight</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho ocean_time</att>
+            <att name="field">free-surface, scalar, series</att>
+            <att name="long_name">free-surface</att>
+            <att name="time">ocean_time</att>
+            <att name="units">meter</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">2.0</att>
+            <att name="colorBarMinimum" type="double">-2.0</att>
+            <att name="coordinates">null</att>
+            <att name="standard_name">sea_surface_height</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>VelocityEastwardBottom</sourceName>
+        <destinationName>VelocityEastwardBottom</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">u_eastward, scalar, series</att>
+            <att name="long_name">eastward momentum component at RHO-points</att>
+            <att name="time">ocean_time</att>
+            <att name="units">meter second-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">0.3</att>
+            <att name="colorBarMinimum" type="double">-0.3</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>VelocityEastwardSurface</sourceName>
+        <destinationName>VelocityEastwardSurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">u_eastward, scalar, series</att>
+            <att name="long_name">eastward momentum component at RHO-points</att>
+            <att name="time">ocean_time</att>
+            <att name="units">meter second-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">0.3</att>
+            <att name="colorBarMinimum" type="double">-0.3</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>VelocityNorthwardBottom</sourceName>
+        <destinationName>VelocityNorthwardBottom</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">v_northward, scalar, series</att>
+            <att name="long_name">northward momentum component at RHO-points</att>
+            <att name="time">ocean_time</att>
+            <att name="units">meter second-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">0.3</att>
+            <att name="colorBarMinimum" type="double">-0.3</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>VelocityNorthwardSurface</sourceName>
+        <destinationName>VelocityNorthwardSurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">v_northward, scalar, series</att>
+            <att name="long_name">northward momentum component at RHO-points</att>
+            <att name="time">ocean_time</att>
+            <att name="units">meter second-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">0.3</att>
+            <att name="colorBarMinimum" type="double">-0.3</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>KineticEnergyBottom</sourceName>
+        <destinationName>KineticEnergyBottom</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">ke, scalar, series</att>
+            <att name="long_name">kinetic energy at RHO-points</att>
+            <att name="time">ocean_time</att>
+            <att name="units">J kg-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>KineticEnergySurface</sourceName>
+        <destinationName>KineticEnergySurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="uintList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">ke, scalar, series</att>
+            <att name="long_name">kinetic energy at RHO-points</att>
+            <att name="time">ocean_time</att>
+            <att name="units">J kg-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="coordinates">null</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<!-- MCM added -->
+<!-- NOTE! The source for model_data_57db_4a85_81d9 has nGridVariables=5,
+  but this dataset will only serve 4 because the others use different dimensions. -->
+<dataset type="EDDGridFromNcFiles" datasetID="model_data_57db_4a85_81d9" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/model_data/</fileDir>
+    <fileNameRegex>[0-9]+_surf_his\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <matchAxisNDigits>20</matchAxisNDigits>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="ana_file">ROMS/Functionals/ana_btflux.h, ROMS/Functionals/ana_stflux.h</att>
+        <att name="bio_file">ROMS/Nonlinear/Biology/bio_UMAINE15.h</att>
+        <att name="bpar_file">bio_UMAINE15_v5.in</att>
+        <att name="bry_file">bry_osom_cosine_monthly_grid4_mindep_smlp_mod7_2018.nc</att>
+        <att name="code_dir">/gpfs_home/dullman1/ROMS/trunk</att>
+        <att name="compiler_command">/gpfs/runtime/opt/mpi/openmpi_2.0.3_intel/bin/mpif90</att>
+        <att name="compiler_flags">-heap-arrays -fp-model precise -ip -O3 -free -free</att>
+        <att name="compiler_system">ifort</att>
+        <att name="Conventions">CF-1.4</att>
+        <att name="CPP_options">epscor_umaine15, ADD_FSOBC, ADD_M2OBC, ANA_BPFLUX, ANA_BSFLUX, ANA_BTFLUX, ANA_SPFLUX, ASSUMED_SHAPE, BIO_UMAINE15, BULK_FLUXES, CARBON, CURVGRID, DEFLATE, DIFF_GRID, DJ_GRADPS, DOUBLE_PRECISION, EMINUSP, GLS_MIXING, HDF5, LONGWAVE_OUT, MASKING, MIX_GEO_TS, MIX_S_UV, MPI, NONLINEAR, NONLIN_EOS, NO_WRITE_GRID, OXYGEN, SINK_OP2, TALK_NONCO PERFECT_RESTART, POWER_LAW, PROFILE, K_GSCHEME, RADIATION_2D, RAMP_TIDES, !RST_SINGLE, SALINITY, SOLVE3D, SSH_TIDES, STATIONS, TS_A4HADVECTION, TS_A4VADVECTION, TS_DIF2, UV_ADV, UV_COR, UV_U3HADVECTION, UV_C4VADVECTION, UV_LOGDRAG, UV_TIDES, UV_VIS2, VAR_RHO_2D, VISC_GRID</att>
+        <att name="cpu">x86_64</att>
+        <att name="file">/users/dullman1/data/dullman1/EPSCOR/2018_run1_NAM/ocean_his_0001.nc</att>
+        <att name="format">netCDF-4/HDF5 file</att>
+        <att name="frc_file_01">osom_grid4_mindep_smlp_mod7_tidalforcing_2018.nc</att>
+        <att name="frc_file_02">frc_NAM_wind_fields_osom_2018.nc</att>
+        <att name="frc_file_03">frc_bulk8_point_osom_2018.nc</att>
+        <att name="grd_file">osom_grid4_mindep_smlp_mod7.nc</att>
+        <att name="header_dir">/users/dullman1/projects/EPSCoR</att>
+        <att name="header_file">epscor_umaine15.h</att>
+        <att name="his_base">/users/dullman1/data/dullman1/EPSCOR/2018_run1_NAM/ocean_his</att>
+        <att name="history">ROMS/TOMS, Version 3.7, Monday - February 24, 2020 - 10:50:00 AM</att>
+        <att name="ini_file">osom_cosine_grid4_mindep_smlp_mod7_ini_hydro_2018.nc</att>
+        <att name="NLM_LBC">
+EDGE:                WEST   SOUTH  EAST   NORTH
+zeta:                Cha    Cha    Cha    Clo
+ubar:                Fla    Fla    Fla    Clo
+vbar:                Fla    Fla    Fla    Clo
+u:                   RadNud RadNud RadNud Clo
+v:                   RadNud RadNud RadNud Clo
+temp:                RadNud RadNud RadNud Clo
+salt:                RadNud RadNud RadNud Clo
+NO3:                 RadNud RadNud RadNud Clo
+NH4:                 RadNud RadNud RadNud Clo
+SiOH4:               RadNud RadNud RadNud Clo
+smallphytoplankton:  Rad    Rad    Rad    Clo
+diatom:              Rad    Rad    Rad    Clo
+microzooplankton:    Rad    Rad    Rad    Clo
+mesozooplankton:     Rad    Rad    Rad    Clo
+detritus:            Rad    Rad    Rad    Clo
+opal:                Rad    Rad    Rad    Clo
+PO4:                 RadNud RadNud RadNud Clo
+chlorophyll1:        Rad    Rad    Rad    Clo
+chlorophyll2:        Rad    Rad    Rad    Clo
+oxygen:              Rad    Rad    Rad    Clo
+TIC:                 Rad    Rad    Rad    Clo
+alkalinity:          Rad    Rad    Rad    Clo
+tke:                 Rad    Rad    Rad    Clo</att>
+        <att name="os">Linux</att>
+        <att name="rst_file">/users/dullman1/data/dullman1/EPSCOR/2018_run1_NAM/ocean_rst.nc</att>
+        <att name="spos_file">stations_osom_cosine_feb2020.in</att>
+        <att name="sta_file">/users/dullman1/data/dullman1/EPSCOR/2018_run1_NAM/ocean_sta.nc</att>
+        <att name="svn_url">https://www.myroms.org/svn/src/trunk</att>
+        <att name="tiling">016x013</att>
+        <att name="title">OSOM-Beta0.1-2018</att>
+        <att name="type">ROMS/TOMS history file</att>
+    </sourceAttributes -->
+    <addAttributes>
+        <att name="cdm_data_type">Grid</att>
+        <att name="Conventions">CF-1.6, COARDS, ACDD-1.3</att>
+        <att name="cpu">null</att>
+        <att name="format">null</att>
+        <att name="infoUrl">riddc.brown.edu</att>
+        <att name="institution">Rhode Island Data Discovery</att>
+        <att name="keywords">beta0.1, data, density, earth, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Potential Temperature, Earth Science &gt; Oceans &gt; Salinity/Density &gt; Salinity, eta_rho, ocean, ocean_time, oceans, osom, osom-beta0.1-2018, potential, practical, salinity, SalinityBottom, SalinitySurface, science, sea, sea_water_potential_temperature, sea_water_practical_salinity, seawater, temperature, water, WaterTempBottom, WaterTempSurface, xi_rho</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="license">[standard]</att>
+        <att name="NLM_LBC">EDGE:                WEST   SOUTH  EAST   NORTH
+zeta:                Cha    Cha    Cha    Clo
+ubar:                Fla    Fla    Fla    Clo
+vbar:                Fla    Fla    Fla    Clo
+u:                   RadNud RadNud RadNud Clo
+v:                   RadNud RadNud RadNud Clo
+temp:                RadNud RadNud RadNud Clo
+salt:                RadNud RadNud RadNud Clo
+NO3:                 RadNud RadNud RadNud Clo
+NH4:                 RadNud RadNud RadNud Clo
+SiOH4:               RadNud RadNud RadNud Clo
+smallphytoplankton:  Rad    Rad    Rad    Clo
+diatom:              Rad    Rad    Rad    Clo
+microzooplankton:    Rad    Rad    Rad    Clo
+mesozooplankton:     Rad    Rad    Rad    Clo
+detritus:            Rad    Rad    Rad    Clo
+opal:                Rad    Rad    Rad    Clo
+PO4:                 RadNud RadNud RadNud Clo
+chlorophyll1:        Rad    Rad    Rad    Clo
+chlorophyll2:        Rad    Rad    Rad    Clo
+oxygen:              Rad    Rad    Rad    Clo
+TIC:                 Rad    Rad    Rad    Clo
+alkalinity:          Rad    Rad    Rad    Clo
+tke:                 Rad    Rad    Rad    Clo</att>
+        <att name="os">null</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="summary">OSOM-Beta0.1. Beta version of OSOM model data. Data from a local source.</att>
+        <att name="title">OSOM-Beta0.1</att>
+    </addAttributes>
+    <axisVariable>
+        <sourceName>ocean_time</sourceName>
+        <destinationName>time</destinationName>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="int">17</att>
+            <att name="calendar">gregorian</att>
+            <att name="field">time, scalar, series</att>
+            <att name="long_name">time since initialization</att>
+            <att name="units">seconds since 2018-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="source_name">ocean_time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>eta_rho</sourceName>
+        <destinationName>eta_rho</destinationName>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">eta rho</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>xi_rho</sourceName>
+        <destinationName>xi_rho</destinationName>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">xi rho</att>
+        </addAttributes>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>SalinityBottom</sourceName>
+        <destinationName>SalinityBottom</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">salinity, scalar, series</att>
+            <att name="long_name">salinity</att>
+            <att name="time">ocean_time</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="coordinates">null</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempBottom</sourceName>
+        <destinationName>WaterTempBottom</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">temperature, scalar, series</att>
+            <att name="long_name">potential temperature</att>
+            <att name="time">ocean_time</att>
+            <att name="units">Celsius</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+            <att name="standard_name">sea_water_potential_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>SalinitySurface</sourceName>
+        <destinationName>SalinitySurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">salinity, scalar, series</att>
+            <att name="long_name">salinity</att>
+            <att name="time">ocean_time</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">37.0</att>
+            <att name="colorBarMinimum" type="double">32.0</att>
+            <att name="coordinates">null</att>
+            <att name="standard_name">sea_water_practical_salinity</att>
+            <att name="units">PSU</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>WaterTempSurface</sourceName>
+        <destinationName>WaterTempSurface</destinationName>
+        <dataType>float</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">1 550 500</att>
+            <att name="_FillValue" type="float">1.0E37</att>
+            <att name="coordinates">lon_rho lat_rho s_rho ocean_time</att>
+            <att name="field">temperature, scalar, series</att>
+            <att name="long_name">potential temperature</att>
+            <att name="time">ocean_time</att>
+            <att name="units">Celsius</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">32.0</att>
+            <att name="colorBarMinimum" type="double">0.0</att>
+            <att name="coordinates">null</att>
+            <att name="standard_name">sea_water_potential_temperature</att>
+            <att name="units">degree_C</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<dataset type="EDDGridFromNcFiles" datasetID="model_data_949c_d20a_81a7" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/erddapData/netcdf/model_data/</fileDir>
+    <fileNameRegex>ngbay_grd_lat_long\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <matchAxisNDigits>20</matchAxisNDigits>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="history">GRID file using Matlab script: c_grid, Tuesday - May 3, 2016 - 11:31:28.2636 AM</att>
+        <att name="title">OSOM-coords-lat-long</att>
+        <att name="type">GRID file</att>
+    </sourceAttributes -->
+    <addAttributes>
+        <att name="cdm_data_type">Grid</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="infoUrl">riddc.brown.edu</att>
+        <att name="institution">Rhode Island Data Discovery</att>
+        <att name="keywords">coords, data, eta_rho, latitude, latitute, long, longitude, osom, osom-coords-lat-long, points, rho, rho-points, xi_rho</att>
+        <att name="license">[standard]</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
+        <att name="summary">OSOM-coords-lat-long. Translation from rho coordinates used in OSOM model to latitude and longitude. Data from a local source.</att>
+        <att name="title">OSOM-coords-lat-long</att>
+
+    </addAttributes>
+    <axisVariable>
+        <sourceName>eta_rho</sourceName>
+        <destinationName>eta_rho</destinationName>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">eta rho</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>xi_rho</sourceName>
+        <destinationName>xi_rho</destinationName>
+        <!-- sourceAttributes>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">xi rho</att>
+        </addAttributes>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>latitude</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">550 500</att>
+            <att name="long_name">latitute of RHO-points</att>
+            <att name="standard_name">latitude</att>
+            <att name="units">degree_north</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">90.0</att>
+            <att name="colorBarMinimum" type="double">-90.0</att>
+            <att name="units">degrees_north</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>longitude</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_ChunkSizes" type="intList">550 500</att>
+            <att name="long_name">longitude of RHO-points</att>
+            <att name="standard_name">longitude</att>
+            <att name="units">degree_east</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_ChunkSizes">null</att>
+            <att name="colorBarMaximum" type="double">180.0</att>
+            <att name="colorBarMinimum" type="double">-180.0</att>
+            <att name="units">degrees_east</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
 <dataset type="EDDTableFromMultidimNcFiles" datasetID="model_data_77bb_15c2_6ab3" active="true">
     <reloadEveryNMinutes>10080</reloadEveryNMinutes>
     <updateEveryNMillis>10000</updateEveryNMillis>

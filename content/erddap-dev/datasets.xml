@@ -5766,7 +5766,7 @@ tke:                 Rad    Rad    Rad    Clo</att>
     <addAttributes>
         <att name="cdm_data_type">Grid</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="institution">United States Geolocical Survey</att>
+        <att name="institution">United States Geological Survey</att>
         <att name="infoUrl">https://earthexplorer.usgs.gov</att>
         <att name="publisher_name">Rhode Island Data Discovery</att>
         <att name="publisher_url">riddc.brown.edu</att>
