@@ -1,5 +1,15 @@
 # ERDDAP Docker
 
+⛔️⛔️⛔️⛔️⛔️⛔️⛔️⛔️⛔️
+
+## Depracation Notice
+
+1-13-2026
+We are no longer using this Docker and are now using the official release at
+https://hub.docker.com/r/erddap/erddap
+
+⛔️⛔️⛔️⛔️⛔️⛔️⛔️⛔️⛔️
+
 This repository contains the common setup files for the
 [axiom/docker-erddap][1] image. This image starts up the ERDDAP service and
 serves it using Apache Tomcat. ERRDAP is a Java application that acts as a 
